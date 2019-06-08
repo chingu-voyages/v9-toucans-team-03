@@ -1,4 +1,67 @@
 body {
   background: #080E1A;
 }
+
+#card1 {
+  background-color: #E84C3D;
+  width: 368px;
+  height: 431px;
+  color: #FFFFFF;
+  border-radius: 15%;
+}
+
+#card1 h2 {
+  padding-top: 51px;
+  padding-left: 32px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+#card1 ul li {
+  list-style-type: none;
+  padding-bottom: 32px;
+}
+
+#card2 {
+  background-color: #FFFFFF;
+  width: 368px;
+  height: 431px;
+  color: black;
+  border-radius: 15%;
+}
+
+#card2 h2 {
+  padding-top: 51px;
+  padding-left: 32px;
+  font-size: 35px;
+  font-weight: bold;
+  padding-bottom: 2px;
+}
+
+#card2 p {
+  padding-left: 32px;
+}
+
+#card2 #wrapper {
+  padding-left: 32px;
+}
+
+#card2 #wrapper #name {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+#card2 #wrapper #email {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+#card2 #wrapper #textarea {
+  border-bottom: black solid 1px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
 /*# sourceMappingURL=contact.css.map */

@@ -4,6 +4,84 @@ $colors:(
     card2bg: #FFFFFF,
 );
 
+  $cardwidth: 368px;
+  $cardheight: 431px;
+  $padding-top: 51px;
+  $padding-left: 32px;
+  $padding-bottom: 32px;
+  $radius: 15%;
+  $h2fontsi: 35px;
+  $fontweight: bold;
+  
+
 body {
-    background: map-get($colors, bg )
+    background: map-get($colors, bg );
 } 
+ #card1 {
+     background-color: map-get($colors, card1bg );
+     width: $cardwidth;
+     height: $cardheight;
+     color: #FFFFFF;
+     border-radius: $radius;
+      
+     h2 {
+        padding-top: $padding-top;
+        padding-left: $padding-left;
+        font-size: $h2fontsi;
+        font-weight: $fontweight;
+        
+     }
+
+     ul{
+        
+        li{
+            list-style-type: none;
+            padding-bottom: $padding-bottom;
+        }
+       
+     }
+ }
+
+ #card2 {
+    background-color: map-get($colors, card2bg );
+    width: $cardwidth;
+    height: $cardheight;
+    color: black;
+    border-radius: $radius;
+     
+    h2 {
+       padding-top: $padding-top;
+       padding-left: $padding-left;
+       font-size: $h2fontsi;
+       font-weight: $fontweight;
+       padding-bottom: 2px;
+       
+    }
+    p{
+        padding-left: $padding-left;
+    }
+
+    #wrapper {
+        padding-left: $padding-left;
+
+        #name {
+            
+            border-left: none;
+            border-right: none;
+            border-top: none;
+        }
+        #email {
+            
+            border-left: none;
+            border-right: none;
+            border-top: none;
+        }
+        #textarea {
+            border-bottom: black solid 1px;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+        }
+
+    }
+}
