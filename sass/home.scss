@@ -1,0 +1,203 @@
+*{
+    margin:0;
+    box-sizing: border-box;
+    padding:0;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    height:100vh;
+
+}
+//Header start
+header.top{
+    height:100%;
+    width:100%;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.287),rgba(0, 0, 0, 0.287)), url('../images/wallpaper.jpg') ;
+    background-size: cover;
+    position: relative;
+    nav{
+        color:#fff;
+        .logo{
+            flex:1;
+            text-transform: uppercase;
+            font-weight: lighter;
+        }
+   
+        height:10%;
+        padding:20px 0;
+        width:90%;
+        float: right;
+        display:flex;
+        align-items: center;
+        .buttons{
+            color:#fff;
+            flex:.1; 
+            span:last-child{
+                margin-left:25px;
+            }
+        }
+    }
+    .content{
+        width:90%;
+        height: 90%;
+        float: right;
+        display: flex;
+        align-items: center;
+        .box{
+            span{display:block;}
+           span.type{
+               color:#fff;
+               text-transform: uppercase;
+               font-weight: lighter;
+               font-size: 1.5em;
+               letter-spacing: 15px;
+
+           }
+           span.title{
+               @extend .type;
+               font-weight: bolder;
+               font-size: 4em;
+               width:15em;
+               letter-spacing: 0;
+           }
+           span.title::after{
+               content: '';
+               display: block;
+               width:3em;
+               height:2px;
+               background-color:#707070;
+               margin: .2em 0 ;
+           }
+           p.description{
+               color:#fff;
+               width:52%;
+               margin-bottom: 1em;
+           }
+           button.watch{
+               @extend %watch-button;
+               margin-right:2em;
+           }
+           button.trailer{
+               @extend %trailer-button;
+           }
+        }
+    }
+
+    .sideNav{
+        position: absolute;
+        height: 100%;
+        width:7em;
+        transition: all ease 500ms;
+        z-index:1;
+        float: left;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        background-color: #fff;
+        overflow: hidden;
+        span.menu img{
+            width:2em;            
+        }
+        span.menu{
+            position: absolute;
+            left:2.3em;
+            padding : 2em 0;
+            position: relative;
+        }
+        span.menu::after{
+            content:'MENU';
+            left: 8em;
+            position: absolute;
+        }
+        img{
+            cursor: pointer;
+        }
+        span.settings img{
+            width: 2.2em;     
+            margin-bottom:1em;
+        }
+        span.settings{
+            position: absolute;
+            bottom: 0;
+            left:2.1em;
+            width:25em;
+            cursor: pointer;
+        }
+        span.settings::after{
+            content:'SETTINGS';
+            top:.5em;
+            left: 7em;
+            position: absolute;
+        }
+        ul li img{
+            width:2.8em;
+        }
+        ul li{
+            margin:3em 0;
+            cursor: pointer;
+        }
+        ul li:nth-child(1){
+            position: relative;
+        }
+        ul li:nth-child(1)::after{
+            content:'MOVIES';
+            left: 8em;
+            top:.8em;
+            position: absolute;
+        }
+        ul li:nth-child(2){
+            position: relative;
+            width:25em;
+        }
+        ul li:nth-child(2)::after{
+            content:'TV SHOWS';
+            text-align: center;
+            left: 7.3em;
+            top:.2em;
+            position: absolute;
+        }
+        ul li:nth-child(3){
+            position: relative;
+        }
+        ul li:nth-child(3)::after{
+            content:'documentary';
+            text-transform: uppercase;
+            text-align: center;
+            left: 6em;
+            top:.5em;
+            position: absolute;
+        }
+        ul{
+            position: absolute;
+            top:7em;
+            left:2.1em;
+            list-style: none;
+        }
+    }
+}
+//Header end
+
+//Classes
+%watch-button{
+    background-color:#F4311E;
+    padding:10px 25px;
+    color:#fff;
+    font-weight: bolder;
+    text-transform: uppercase;
+    border:0;
+    border-radius: .5em;
+}
+button{
+    cursor: pointer;
+}
+%trailer-button{
+    background-color:#0F0F0F ;
+    padding:10px 25px;
+    color:#fff;
+    font-weight: bolder;
+    text-transform: uppercase;
+    border:0;
+    border:solid 1px #959595;
+    border-radius: .5em;
+}
+//End Classes
