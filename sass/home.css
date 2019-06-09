@@ -1,1 +1,244 @@
-/* No CSS *//*# sourceMappingURL=home.css.map */
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  height: 100vh;
+}
+
+header.top {
+  height: 100%;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.287)), to(rgba(0, 0, 0, 0.287))), url("../images/wallpaper.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.287), rgba(0, 0, 0, 0.287)), url("../images/wallpaper.jpg");
+  background-size: cover;
+  position: relative;
+}
+
+header.top nav {
+  color: #fff;
+  height: 10%;
+  padding: 20px 0;
+  width: 90%;
+  float: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header.top nav .logo {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+header.top nav .buttons {
+  color: #fff;
+  -webkit-box-flex: .1;
+      -ms-flex: .1;
+          flex: .1;
+}
+
+header.top nav .buttons span:last-child {
+  margin-left: 25px;
+}
+
+header.top .content {
+  width: 90%;
+  height: 90%;
+  float: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header.top .content .box span {
+  display: block;
+}
+
+header.top .content .box span.type, header.top .content .box span.title {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-size: 1.5em;
+  letter-spacing: 15px;
+}
+
+header.top .content .box span.title {
+  font-weight: bolder;
+  font-size: 4em;
+  width: 15em;
+  letter-spacing: 0;
+}
+
+header.top .content .box span.title::after {
+  content: '';
+  display: block;
+  width: 3em;
+  height: 2px;
+  background-color: #707070;
+  margin: .2em 0;
+}
+
+header.top .content .box p.description {
+  color: #fff;
+  width: 52%;
+  margin-bottom: 1em;
+}
+
+header.top .content .box button.watch {
+  margin-right: 2em;
+}
+
+header.top .sideNav {
+  position: absolute;
+  height: 100%;
+  width: 7em;
+  -webkit-transition: all ease 500ms;
+  transition: all ease 500ms;
+  z-index: 1;
+  float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+header.top .sideNav span.menu img {
+  width: 2em;
+}
+
+header.top .sideNav span.menu {
+  position: absolute;
+  left: 2.3em;
+  padding: 2em 0;
+  position: relative;
+}
+
+header.top .sideNav span.menu::after {
+  content: 'MENU';
+  left: 8em;
+  position: absolute;
+}
+
+header.top .sideNav img {
+  cursor: pointer;
+}
+
+header.top .sideNav span.settings img {
+  width: 2.2em;
+  margin-bottom: 1em;
+}
+
+header.top .sideNav span.settings {
+  position: absolute;
+  bottom: 0;
+  left: 2.1em;
+  width: 25em;
+  cursor: pointer;
+}
+
+header.top .sideNav span.settings::after {
+  content: 'SETTINGS';
+  top: .5em;
+  left: 7em;
+  position: absolute;
+}
+
+header.top .sideNav ul li img {
+  width: 2.8em;
+}
+
+header.top .sideNav ul li {
+  margin: 3em 0;
+  cursor: pointer;
+}
+
+header.top .sideNav ul li:nth-child(1) {
+  position: relative;
+}
+
+header.top .sideNav ul li:nth-child(1)::after {
+  content: 'MOVIES';
+  left: 8em;
+  top: .8em;
+  position: absolute;
+}
+
+header.top .sideNav ul li:nth-child(2) {
+  position: relative;
+  width: 25em;
+}
+
+header.top .sideNav ul li:nth-child(2)::after {
+  content: 'TV SHOWS';
+  text-align: center;
+  left: 7.3em;
+  top: .2em;
+  position: absolute;
+}
+
+header.top .sideNav ul li:nth-child(3) {
+  position: relative;
+}
+
+header.top .sideNav ul li:nth-child(3)::after {
+  content: 'documentary';
+  text-transform: uppercase;
+  text-align: center;
+  left: 6em;
+  top: .5em;
+  position: absolute;
+}
+
+header.top .sideNav ul {
+  position: absolute;
+  top: 7em;
+  left: 2.1em;
+  list-style: none;
+}
+
+header.top .content .box button.watch {
+  background-color: #F4311E;
+  padding: 10px 25px;
+  color: #fff;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: .5em;
+}
+
+button {
+  cursor: pointer;
+}
+
+header.top .content .box button.trailer {
+  background-color: #0F0F0F;
+  padding: 10px 25px;
+  color: #fff;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border: 0;
+  border: solid 1px #959595;
+  border-radius: .5em;
+}
+/*# sourceMappingURL=home.css.map */
