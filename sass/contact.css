@@ -18,8 +18,25 @@ body {
 }
 
 #card1 ul li {
+  display: inline-block;
   list-style-type: none;
+  position: relative;
+  left: 10px;
+  bottom: 6px;
   padding-bottom: 32px;
+}
+
+#card1 #social_media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 110px;
+  padding-right: 110px;
+  position: relative;
+  bottom: 30px;
 }
 
 #card2 {
@@ -63,5 +80,9 @@ body {
   border-left: none;
   border-right: none;
   border-top: none;
+}
+
+#Capa_1 {
+  fill: #E84C3D;
 }
 /*# sourceMappingURL=contact.css.map */

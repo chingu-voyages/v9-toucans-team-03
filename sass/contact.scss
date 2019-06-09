@@ -35,10 +35,24 @@ body {
      ul{
         
         li{
+            display: inline-block;
             list-style-type: none;
+            position: relative;
+            left: 10px;
+            bottom: 6px;
             padding-bottom: $padding-bottom;
         }
        
+     }
+     #social_media {
+         display: flex;
+         justify-content: space-between;
+         padding-left: 110px;
+         padding-right: 110px;
+         position: relative;
+         
+         bottom: 30px;
+         
      }
  }
 
@@ -70,6 +84,7 @@ body {
             border-right: none;
             border-top: none;
         }
+        
         #email {
             
             border-left: none;
@@ -84,4 +99,7 @@ body {
         }
 
     }
+}
+#Capa_1 {
+    fill: map-get($colors, card1bg );
 }
