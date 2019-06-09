@@ -1,5 +1,18 @@
 body {
   background: #080E1A;
+  margin: 0px;
+}
+
+#father {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  position: relative;
+  top: 130px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #card1 {
@@ -8,10 +21,15 @@ body {
   height: 431px;
   color: #FFFFFF;
   border-radius: 15%;
+  -webkit-box-shadow: 5px 5px -5px gray;
+          box-shadow: 5px 5px -5px gray;
+  z-index: 1;
+  position: relative;
+  left: 30px;
 }
 
 #card1 h2 {
-  padding-top: 51px;
+  padding-top: 30px;
   padding-left: 32px;
   font-size: 35px;
   font-weight: bold;
@@ -48,28 +66,30 @@ body {
 }
 
 #card2 h2 {
-  padding-top: 51px;
-  padding-left: 32px;
+  padding-top: 30px;
+  padding-left: 80px;
   font-size: 35px;
   font-weight: bold;
   padding-bottom: 2px;
 }
 
 #card2 p {
-  padding-left: 32px;
+  padding-left: 80px;
 }
 
 #card2 #wrapper {
-  padding-left: 32px;
+  padding-left: 80px;
 }
 
 #card2 #wrapper #name {
+  border-bottom: black solid 1px;
   border-left: none;
   border-right: none;
   border-top: none;
 }
 
 #card2 #wrapper #email {
+  border-bottom: black solid 1px;
   border-left: none;
   border-right: none;
   border-top: none;
@@ -82,7 +102,12 @@ body {
   border-top: none;
 }
 
-#Capa_1 {
-  fill: #E84C3D;
+#card2 #wrapper a {
+  text-decoration: none;
+  background-color: #E84C3D;
+  border-radius: 15px;
+  text-align: center;
+  padding: 7px 35px;
+  color: #FFFFFF;
 }
 /*# sourceMappingURL=contact.css.map */

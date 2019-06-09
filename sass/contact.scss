@@ -6,8 +6,9 @@ $colors:(
 
   $cardwidth: 368px;
   $cardheight: 431px;
-  $padding-top: 51px;
+  $padding-top: 30px;
   $padding-left: 32px;
+  $padding-leftc2: 80px;
   $padding-bottom: 32px;
   $radius: 15%;
   $h2fontsi: 35px;
@@ -16,13 +17,27 @@ $colors:(
 
 body {
     background: map-get($colors, bg );
+    margin: 0px
+
 } 
+
+#father{
+    display: flex;
+    margin: auto;
+    position: relative;
+    top: 130px;
+    justify-content: center;
+}
  #card1 {
      background-color: map-get($colors, card1bg );
      width: $cardwidth;
      height: $cardheight;
      color: #FFFFFF;
      border-radius: $radius;
+     box-shadow: 5px 5px -5px gray;
+     z-index: 1;
+     position: relative;
+     left: 30px;
       
      h2 {
         padding-top: $padding-top;
@@ -65,28 +80,28 @@ body {
      
     h2 {
        padding-top: $padding-top;
-       padding-left: $padding-left;
+       padding-left: $padding-leftc2;
        font-size: $h2fontsi;
        font-weight: $fontweight;
        padding-bottom: 2px;
        
     }
     p{
-        padding-left: $padding-left;
+        padding-left: $padding-leftc2;
     }
 
     #wrapper {
-        padding-left: $padding-left;
+        padding-left: $padding-leftc2;
 
         #name {
-            
+            border-bottom: black solid 1px;
             border-left: none;
             border-right: none;
             border-top: none;
         }
         
         #email {
-            
+            border-bottom: black solid 1px;
             border-left: none;
             border-right: none;
             border-top: none;
@@ -97,9 +112,17 @@ body {
             border-right: none;
             border-top: none;
         }
+        a{
+            text-decoration: none;
+            background-color: #E84C3D;
+            border-radius:  15px;
+            text-align: center;
+            padding: 7px 35px;
+            color: #FFFFFF;
+            
+            
+        }
 
     }
 }
-#Capa_1 {
-    fill: map-get($colors, card1bg );
-}
+
