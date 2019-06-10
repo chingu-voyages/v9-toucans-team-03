@@ -28,9 +28,9 @@ body {
   height: 431px;
   color: #FFFFFF;
   border-radius: 15%;
-  -webkit-box-shadow: 5px 5px -5px gray;
-          box-shadow: 5px 5px -5px gray;
-  z-index: 1;
+  -webkit-box-shadow: 5px 0px 0px lightgray;
+          box-shadow: 5px 0px 0px lightgray;
+  z-index: 5;
   position: relative;
   left: 30px;
 }
