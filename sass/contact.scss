@@ -3,7 +3,7 @@ $colors:(
     card1bg:#E84C3D,
     card2bg: #FFFFFF,
 );
-
+ 
   $cardwidth: 368px;
   $cardheight: 431px;
   $padding-top: 30px;
@@ -14,13 +14,15 @@ $colors:(
   $h2fontsi: 35px;
   $fontweight: bold;
   
-
+*{
+    font-family: sans-serif;
+}
 body {
     background: map-get($colors, bg );
     margin: 0px
 
 } 
-
+/* Cards container */
 #father{
     display: flex;
     margin: auto;
@@ -28,6 +30,9 @@ body {
     top: 130px;
     justify-content: center;
 }
+/* Card's container ends here*/
+
+/*The first card on the left */
  #card1 {
      background-color: map-get($colors, card1bg );
      width: $cardwidth;
@@ -48,7 +53,11 @@ body {
      }
 
      ul{
-        
+        a{
+                text-decoration: none;
+                
+                color: unset;
+            }
         li{
             display: inline-block;
             list-style-type: none;
@@ -56,6 +65,7 @@ body {
             left: 10px;
             bottom: 6px;
             padding-bottom: $padding-bottom;
+            
         }
        
      }
@@ -70,7 +80,9 @@ body {
          
      }
  }
+ /* First card  ends here */
 
+ /* Second card on the right */
  #card2 {
     background-color: map-get($colors, card2bg );
     width: $cardwidth;
@@ -87,17 +99,22 @@ body {
        
     }
     p{
-        padding-left: $padding-leftc2;
+        position: relative;
+        bottom: 1.7em;
+        font-size: 16px;
+        padding-left: 5.2em;
+        color: gray;
     }
 
     #wrapper {
-        padding-left: $padding-leftc2;
+        padding-left: 5.2em;
 
         #name {
             border-bottom: black solid 1px;
             border-left: none;
             border-right: none;
             border-top: none;
+            height: 2em;
         }
         
         #email {
@@ -105,12 +122,18 @@ body {
             border-left: none;
             border-right: none;
             border-top: none;
+            height: 2em;
         }
         #textarea {
             border-bottom: black solid 1px;
             border-left: none;
             border-right: none;
             border-top: none;
+            width: 12.3em;
+            height: 4em;
+            
+            
+
         }
         a{
             text-decoration: none;
@@ -125,4 +148,4 @@ body {
 
     }
 }
-
+ /*second card ends here */
