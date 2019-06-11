@@ -27,9 +27,10 @@ function set_head_mv(){
     fetch(url_trending)
     .then(res => res.json())
     .then(json =>{
-        const res = json.results[0];
-        $('header.top').css("background-image" ,`linear-gradient(rgba(0, 0, 0, 0.287),rgba(0, 0, 0, 0.287)) , url('http://image.tmdb.org/t/p/original//${res.backdrop_path}')`)
-        const best= json.results[0].genre_ids[0];
+        const random = Math.floor(Math.random() * json.results.length);
+        const res = json.results[random];
+        $('header.top').css("background-image" ,`linear-gradient(rgba(0, 0, 0, 0.500),rgba(0, 0, 0, 0.500)) , url('http://image.tmdb.org/t/p/original//${res.backdrop_path}')`)
+        const best= json.results[random].genre_ids[0];
         $('.box .title').text(res.title)
         $('.box .description').text(res.overview)
         fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=2db0c43524a948edd34445269d54997d&language=en-US')
