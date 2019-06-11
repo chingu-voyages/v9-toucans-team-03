@@ -283,4 +283,42 @@ section.main .data .buttons {
 section.main .data .buttons button {
   cursor: pointer;
 }
+
+.trailer {
+  background: rgba(8, 8, 8, 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 999;
+  display: none;
+}
+
+.trailer .window {
+  height: 30em;
+  width: 50em;
+  background-color: #000;
+  position: relative;
+  border-radius: 1em;
+}
+
+.trailer .window iframe {
+  border-radius: 1em;
+}
+
+.trailer .window span i {
+  color: #fff;
+  position: absolute;
+  top: -1em;
+  right: -1.5em;
+  cursor: pointer;
+}
 /*# sourceMappingURL=view.css.map */

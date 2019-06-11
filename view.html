@@ -6,10 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compaible" content="ie=edge">
     <link rel="stylesheet" href="sass/view.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,500,600,700&display=swap" rel="stylesheet">
     <title></title>
 </head>
 
 <body>
+    <div class="trailer">
+        <div class="window">
+                <iframe id='if' width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <span id="close"><i class="fas fa-times fa-lg"></i></span>
+        </div>
+    </div>
     <div class="sideNav">
         <span id='menu' class='menu'><img src="images/icons/Menu icon.png" alt=""> </span>
         <ul>
@@ -30,8 +38,8 @@
                 <span class="typepr"></span>
                 <p class="description-pr"></p>
                 <div class='buttons'>
-                        <button id="get" class='watch'>Watch now</button>
-                        <button class='watch_tr'>Watch trailer</button>
+                        <button  class='watch'>Watch now</button>
+                        <button  id='trailer' class='watch_tr'>Watch trailer</button>
                 </div>
                 
             </div>

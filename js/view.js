@@ -15,5 +15,21 @@ fetch(url)
     title.innerHTML = json.title;
     type.innerHTML = json.genres[0].name;
     over.innerHTML = json.overview;
-    poster.setAttribute('src' , `http://image.tmdb.org/t/p/w500//${json.poster_path}`)
+    poster.setAttribute('src' , `http://image.tmdb.org/t/p/w500//${json.poster_path}`);
+  
+    $('#trailer').click(()=>{
+        fetch(`http://api.themoviedb.org/3/movie/${id}/videos?api_key=${api_key}`)
+        .then(res => res.json())
+        .then(json=>{
+            const rs= json.results[0];
+            const link = `https://www.youtube.com/embed/${rs.key}`
+            document.getElementById('if').setAttribute('src' , link);
+        })
+        $(".trailer").css("display" , "flex");
+    })
+    $("#close i").click(()=>{
+        $('.trailer').css('display' , "none")
+        const iframe = document.getElementById("if");
+        iframe.setAttribute('src' , ' ')
+    })
 }).catch(err => console.log(err))
