@@ -165,7 +165,7 @@ header.top{
             position: relative;
         }
         ul li:nth-child(1)::after{
-            content:'MOVIES';
+            content:'HOME';
             left: 8em;
             top:.8em;
             position: absolute;
@@ -245,6 +245,7 @@ section.main{
                 list-style:none;
                 display: flex;
                 li{
+                    cursor: pointer;
                     .boxart{
                         width:9em;
                         overflow: hidden;

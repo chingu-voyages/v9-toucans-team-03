@@ -23,6 +23,7 @@ window.addEventListener('click', function (e) {
 
     }
 });
+
 function set_head_mv(){
     fetch(url_trending)
     .then(res => res.json())
@@ -56,18 +57,20 @@ function get_trend(){
         const year = tr.split(' ')[0];
         const container = document.querySelector('#trending');
         const output = `
-        <li>
+        <li >
         <div class="boxart">
+        <span class='id' style="display:none">${movie.id}</span>
         <img src="http://image.tmdb.org/t/p/w500//${movie.poster_path}" alt="">
         </div>
         <span class="name">${movie.title}</span>
         <span class="year">${year}</span>
         </li>
         `
-        $(container).append(output) 
+        $(container).append(output)
     });
     })
 }
+
 function get_crime(){
     fetch(url_crime)
     .then(rs => rs.json())
@@ -82,12 +85,13 @@ function get_crime(){
         <li>
         <div class="boxart">
         <img src="http://image.tmdb.org/t/p/w500//${movie.poster_path}" alt="">
+        <span class='id' style="display:none">${movie.id}</span>
         </div>
         <span class="name">${movie.title}</span>
         <span class="year">${year}</span>
         </li>
         `
-        $(container).append(output) 
+        $(container).append(output)
     });
     })
 }
@@ -105,13 +109,33 @@ function get_action(){
         <li>
         <div class="boxart">
         <img src="http://image.tmdb.org/t/p/w500//${movie.poster_path}" alt="">
+        <span class='id' style="display:none">${movie.id}</span>
         </div>
         <span class="name">${movie.title}</span>
         <span class="year">${year}</span>
         </li>
         `
-        $(container).append(output) 
+        $(container).append(output)
     });
     })
 }
-window.onload = get_trend() , get_crime() , get_action() , set_head_mv();
+function view(){
+    const movie = document.querySelectorAll('.id');
+    const br = document.getElementsByClassName('boxart')
+    for(let i = 0 ; i < movie.length ; i++){
+       const sd = br[i];
+       sd.onclick = ()=>{
+           const id = sd.getElementsByClassName('id');
+           const id_b = id[0].innerText;
+           localStorage.setItem('movie_id', id_b)
+           window.location.href='view.html'
+       }
+      
+    }
+}
+window.onload = get_trend() , get_crime() , get_action() , set_head_mv() ;
+setTimeout(()=>{
+    view()
+}, 50)
+
+
