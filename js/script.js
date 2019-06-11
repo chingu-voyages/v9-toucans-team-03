@@ -139,4 +139,4 @@ function view(){
 window.onload = get_trend() , get_crime() , get_action() , set_head_mv() ;
 setTimeout(()=>{
     view()
-}, 1000)
+}, 3000)
