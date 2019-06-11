@@ -70,36 +70,15 @@ function get_trend(){
     });
     })
 }
-
-function get_crime(){
-    fetch(url_crime)
-    .then(rs => rs.json())
-    .then(json => {
-        const results = json.items;
-    results.forEach(movie => {
-        const date =movie.release_date;
-        const tr = date.replace('-' , " ");
-        const year = tr.split(' ')[0];
-        const container = document.querySelector('#crime');
-        const output = `
-        <li>
-        <div class="boxart">
-        <img src="http://image.tmdb.org/t/p/w500//${movie.poster_path}" alt="">
-        <span class='id' style="display:none">${movie.id}</span>
-        </div>
-        <span class="name">${movie.title}</span>
-        <span class="year">${year}</span>
-        </li>
-        `
-        $(container).append(output)
-    });
-    })
+async function get_action() {
+	const response = await fetch(url_action);
+	const data = await response.json();
+	return data;
 }
-function get_action(){
-    fetch(url_action)
-    .then(rs => rs.json())
-    .then(json => {
-        const results = json.items;
+
+const result = get_action();
+result.then(data =>{
+    const results = data.items;
     results.forEach(movie => {
         const date =movie.release_date;
         const tr = date.replace('-' , " ");
@@ -117,11 +96,38 @@ function get_action(){
         `
         $(container).append(output)
     });
-    })
+});
+
+async function get_crime() {
+	const response = await fetch(url_crime);
+	const data = await response.json();
+	return data;
 }
+
+const results_s = get_crime();
+results_s.then(data =>{
+    const results = data.items;
+    results.forEach(movie => {
+        const date =movie.release_date;
+        const tr = date.replace('-' , " ");
+        const year = tr.split(' ')[0];
+        const container = document.querySelector('#crime');
+        const output = `
+        <li>
+        <div class="boxart">
+        <img src="http://image.tmdb.org/t/p/w500//${movie.poster_path}" alt="">
+        <span class='id' style="display:none">${movie.id}</span>
+        </div>
+        <span class="name">${movie.title}</span>
+        <span class="year">${year}</span>
+        </li>
+        `
+        $(container).append(output)
+    });
+});
+
 function view(){
     const movie = document.querySelectorAll('.id');
-    console.log(movie)
     const br = document.getElementsByClassName('boxart')
     for(let i = 0 ; i < movie.length ; i++){
        const sd = br[i];
@@ -136,7 +142,7 @@ function view(){
     }
 
 }
-window.onload = get_trend() , get_crime() , get_action() , set_head_mv() ;
+window.onload = get_trend()  , set_head_mv() ;
 setTimeout(()=>{
     view()
-}, 3000)
+}, 4000)
