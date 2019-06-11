@@ -16,7 +16,22 @@ $colors:(
   
 *{
     font-family: sans-serif;
+
 }
+
+.logo{
+    position: absolute;
+    margin: 0px;
+    top: 1em;
+    left: 1em;
+    font-family: Montserrat;
+    color: #FFFFFF;
+    font-weight: lighter;
+    flex:1;
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
 body {
     background: map-get($colors, bg );
     margin: 0px
@@ -39,7 +54,7 @@ body {
      height: $cardheight;
      color: #FFFFFF;
      border-radius: $radius;
-     box-shadow: 5px 0px 0px lightgray;
+     box-shadow: 6px 0px 5px #ccc;
      z-index: 5;
      position: relative;
      left: 30px;
@@ -115,6 +130,7 @@ body {
             border-right: none;
             border-top: none;
             height: 2em;
+            outline: none;
         }
         
         #email {
@@ -123,6 +139,8 @@ body {
             border-right: none;
             border-top: none;
             height: 2em;
+            outline: none;
+            background-color: transparent;
         }
         #textarea {
             border-bottom: black solid 1px;
@@ -131,7 +149,9 @@ body {
             border-top: none;
             width: 12.3em;
             height: 4em;
-            
+            resize: none;
+            outline: none;
+            background-color: transparent;
             
 
         }
