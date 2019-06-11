@@ -121,6 +121,7 @@ function get_action(){
 }
 function view(){
     const movie = document.querySelectorAll('.id');
+    console.log(movie)
     const br = document.getElementsByClassName('boxart')
     for(let i = 0 ; i < movie.length ; i++){
        const sd = br[i];
@@ -128,14 +129,14 @@ function view(){
            const id = sd.getElementsByClassName('id');
            const id_b = id[0].innerText;
            localStorage.setItem('movie_id', id_b)
-           window.location.href='view.html'
+           window.location.href= 'view.html'
+           
        }
       
     }
+
 }
 window.onload = get_trend() , get_crime() , get_action() , set_head_mv() ;
 setTimeout(()=>{
     view()
-}, 50)
-
-
+}, 1000)
