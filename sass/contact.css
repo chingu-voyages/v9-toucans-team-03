@@ -1,8 +1,28 @@
+* {
+  font-family: sans-serif;
+}
+
+.logo {
+  position: absolute;
+  margin: 0px;
+  top: 1em;
+  left: 1em;
+  font-family: Montserrat;
+  color: #FFFFFF;
+  font-weight: lighter;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
 body {
   background: #080E1A;
   margin: 0px;
 }
 
+/* Cards container */
 #father {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15,15 +35,17 @@ body {
           justify-content: center;
 }
 
+/* Card's container ends here*/
+/*The first card on the left */
 #card1 {
   background-color: #E84C3D;
   width: 368px;
   height: 431px;
   color: #FFFFFF;
   border-radius: 15%;
-  -webkit-box-shadow: 5px 5px -5px gray;
-          box-shadow: 5px 5px -5px gray;
-  z-index: 1;
+  -webkit-box-shadow: 6px 0px 5px #ccc;
+          box-shadow: 6px 0px 5px #ccc;
+  z-index: 5;
   position: relative;
   left: 30px;
 }
@@ -33,6 +55,11 @@ body {
   padding-left: 32px;
   font-size: 35px;
   font-weight: bold;
+}
+
+#card1 ul a {
+  text-decoration: none;
+  color: unset;
 }
 
 #card1 ul li {
@@ -57,6 +84,8 @@ body {
   bottom: 30px;
 }
 
+/* First card  ends here */
+/* Second card on the right */
 #card2 {
   background-color: #FFFFFF;
   width: 368px;
@@ -74,11 +103,15 @@ body {
 }
 
 #card2 p {
-  padding-left: 80px;
+  position: relative;
+  bottom: 1.7em;
+  font-size: 16px;
+  padding-left: 5.2em;
+  color: gray;
 }
 
 #card2 #wrapper {
-  padding-left: 80px;
+  padding-left: 5.2em;
 }
 
 #card2 #wrapper #name {
@@ -86,6 +119,8 @@ body {
   border-left: none;
   border-right: none;
   border-top: none;
+  height: 2em;
+  outline: none;
 }
 
 #card2 #wrapper #email {
@@ -93,6 +128,9 @@ body {
   border-left: none;
   border-right: none;
   border-top: none;
+  height: 2em;
+  outline: none;
+  background-color: transparent;
 }
 
 #card2 #wrapper #textarea {
@@ -100,6 +138,11 @@ body {
   border-left: none;
   border-right: none;
   border-top: none;
+  width: 12.3em;
+  height: 4em;
+  resize: none;
+  outline: none;
+  background-color: transparent;
 }
 
 #card2 #wrapper a {
@@ -110,4 +153,6 @@ body {
   padding: 7px 35px;
   color: #FFFFFF;
 }
+
+/*second card ends here */
 /*# sourceMappingURL=contact.css.map */
