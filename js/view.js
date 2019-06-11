@@ -8,7 +8,10 @@ fetch(url)
     const title = document.querySelector('.titlepr');
     const type = document.querySelector('.typepr');
     const over = document.querySelector('.description-pr');
-    const poster = document.querySelector('#poster')
+    const poster = document.querySelector('#poster');
+    const background = json.backdrop_path;
+    const url = `http://image.tmdb.org/t/p/original//${background}`;
+    $('section.main').css('background-image' , `linear-gradient(rgba(0, 0, 0, 0.700),rgba(0, 0, 0, 0.700)) , url(${url})`)
     title.innerHTML = json.title;
     type.innerHTML = json.genres[0].name;
     over.innerHTML = json.overview;
