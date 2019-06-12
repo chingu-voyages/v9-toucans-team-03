@@ -333,6 +333,7 @@ footer.footer{
     text-transform: uppercase;
     border:0;
     border-radius: .5em;
+    margin-bottom: 1em;
 }
 button{
     cursor: pointer;
@@ -395,6 +396,8 @@ button{
   }
   section.main .switcher{
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
   header.top nav .mb-menu{
     display: initial;
@@ -402,6 +405,14 @@ button{
     cursor: pointer;
     position: relative;
     z-index: 999;
+  }
+  header.top{
+    background-position: center;
+    .content .box {
+      button{
+        margin-bottom: 1.1em;
+      }
+    }
   }
   header.top .content{
     width: 100%;
@@ -414,7 +425,8 @@ button{
         width:88%;
       }
       span.title{
-        width:80%;
+            font-size: 2.5em;
+            width:70%;
       }
     }
   }

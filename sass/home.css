@@ -319,6 +319,7 @@ header.top .content .box button.watch, section.main .switcher button:first-child
   text-transform: uppercase;
   border: 0;
   border-radius: 0.5em;
+  margin-bottom: 1em;
 }
 
 button {
@@ -383,6 +384,8 @@ header.top .content .box button.trailer, section.main .switcher button:last-chil
 
   section.main .switcher {
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   header.top nav .mb-menu {
@@ -391,6 +394,13 @@ header.top .content .box button.trailer, section.main .switcher button:last-chil
     cursor: pointer;
     position: relative;
     z-index: 999;
+  }
+
+  header.top {
+    background-position: center;
+  }
+  header.top .content .box button {
+    margin-bottom: 1.1em;
   }
 
   header.top .content {
@@ -405,7 +415,8 @@ header.top .content .box button.trailer, section.main .switcher button:last-chil
     width: 88%;
   }
   header.top .content .box span.title {
-    width: 80%;
+    font-size: 2.5em;
+    width: 70%;
   }
 
   header.top nav {
