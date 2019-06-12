@@ -1,2 +1,62 @@
+$colors:(
+    bg: #080E1A,
+    
+);
+ 
+  $cardwidth: 368px;
+  $cardheight: 431px;
+  $padding-top: 30px;
+  $padding-left: 32px;
+  $padding-leftc2: 80px;
+  $padding-bottom: 32px;
+  $radius: 15%;
+  $h2fontsi: 35px;
+  $fontweight: bold;
+  
+*{
+    font-family: Montserrat;
 
+}
 
+.logo{
+    position: absolute;
+    margin: 0px;
+    top: 1em;
+    left: 1em;
+    font-family: Montserrat;
+    color: #FFFFFF;
+    font-weight: lighter;
+    flex:1;
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
+body {
+    background: map-get($colors, bg );
+    margin: 0px;
+    width: 100%;
+    height:auto;
+
+} 
+ #company {
+     display: flex;
+     padding-top: 10em;
+     
+     
+     h2{
+         font-weight: bolder;
+         color: #FFFFFF;
+         text-transform: uppercase;
+         font-size: 40px;
+         padding-left: 2em;
+ 
+
+       }
+       p{
+           font-family: sans-serif;
+           font-size: 18px;
+           color: #FFFFFF;
+           padding-left: 4em;
+           line-height: 1.5em;
+       }
+ }

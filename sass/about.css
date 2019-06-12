@@ -1,1 +1,49 @@
-/* No CSS *//*# sourceMappingURL=about.css.map */
+* {
+  font-family: Montserrat;
+}
+
+.logo {
+  position: absolute;
+  margin: 0px;
+  top: 1em;
+  left: 1em;
+  font-family: Montserrat;
+  color: #FFFFFF;
+  font-weight: lighter;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+body {
+  background: #080E1A;
+  margin: 0px;
+  width: 100%;
+  height: auto;
+}
+
+#company {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 10em;
+}
+
+#company h2 {
+  font-weight: bolder;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: 40px;
+  padding-left: 2em;
+}
+
+#company p {
+  font-family: sans-serif;
+  font-size: 18px;
+  color: #FFFFFF;
+  padding-left: 4em;
+  line-height: 1.5em;
+}
+/*# sourceMappingURL=about.css.map */
