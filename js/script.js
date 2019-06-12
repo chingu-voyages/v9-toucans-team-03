@@ -136,12 +136,20 @@ function view(){
            const id_b = id[0].innerText;
            localStorage.setItem('movie_id', id_b)
            window.location.href= 'view.html'
-           
+
        }
-      
+
     }
 
 }
+const menu_mb = document.querySelector('#col-menu');
+const lists = document.querySelector('.mb-navbar')
+menu_mb.addEventListener('click' , ()=>{
+  const ths = document.querySelector('#col-menu');
+  lists.classList.toggle("nav-open");
+  ths.classList.toggle('fixed')
+
+})
 window.onload = get_trend()  , set_head_mv() ;
 setTimeout(()=>{
     view()

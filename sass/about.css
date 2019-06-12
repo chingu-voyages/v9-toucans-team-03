@@ -10,9 +10,7 @@
   font-family: Montserrat;
   color: #FFFFFF;
   font-weight: lighter;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
   text-transform: uppercase;
   font-weight: lighter;
 }
@@ -25,12 +23,9 @@ body {
 }
 
 #company {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding-top: 10em;
 }
-
 #company h2 {
   font-weight: bolder;
   color: #FFFFFF;
@@ -38,7 +33,6 @@ body {
   font-size: 40px;
   padding-left: 2em;
 }
-
 #company p {
   font-family: sans-serif;
   font-size: 18px;
@@ -46,4 +40,5 @@ body {
   padding-left: 4em;
   line-height: 1.5em;
 }
+
 /*# sourceMappingURL=about.css.map */
