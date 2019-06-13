@@ -1,18 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:200,400,500,600,700&display=swap);
+
 $colors:(
     bg: #080E1A,
     
 );
  
-  $cardwidth: 368px;
-  $cardheight: 431px;
-  $padding-top: 30px;
-  $padding-left: 32px;
-  $padding-leftc2: 80px;
-  $padding-bottom: 32px;
-  $radius: 15%;
-  $h2fontsi: 35px;
+ 
   $fontweight: bold;
-  $font: sans-serif;
+  $font: Montserrat;
   
 
 
@@ -93,25 +88,34 @@ body {
    
 }
  #contact_link{
-        
     position: relative;
-    left: 28em;
-    top: 5em;
-    text-decoration: none;
-    background-color: #E84C3D;
-    border-radius:  16px;
-    font-size: 22px;
+    top: 2em;
+    font-size: 40px;
     font-weight: bolder;
     text-align: center;
-    padding: 7px 35px;
-    color: #FFFFFF;
     font-family: sans-serif;
+
+        a{
+            text-decoration: none;
+            color: #FFFFFF; 
+            background-color: #E84C3D;
+            border-radius:  30px;
+            padding: 7px 35px;
+            padding-bottom: 12px;
+        }
+        
+    
+   
+    
+    
+    
+    
     
             
             
     }
 
-#footer {
+.footer {
     display: block;
     position: relative;
     top: 15em;
@@ -119,4 +123,36 @@ body {
     width: 100%;
     border: #FFFFFF solid 1px;
 
-}
+    .flogo{
+        display: block;
+        position: relative;
+        padding-left: 5em;
+        padding-top: 3em;
+        float: left;
+        text-align: center;
+
+        #underlogo {
+
+            font-family: Montserrat;
+            color: #FFFFFF;
+            font-weight: lighter;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+        }
+
+        p {
+            position: relative;
+            bottom: 2em;
+            font-family: Montserrat;
+            letter-spacing: 3px ;
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: lighter;
+
+        }
+    }
+
+} 
+
+
