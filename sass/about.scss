@@ -12,11 +12,9 @@ $colors:(
   $radius: 15%;
   $h2fontsi: 35px;
   $fontweight: bold;
+  $font: sans-serif;
   
-*{
-    font-family: Montserrat;
 
-}
 
 .logo{
     position: absolute;
@@ -28,14 +26,14 @@ $colors:(
     font-weight: lighter;
     flex:1;
     text-transform: uppercase;
-    font-weight: lighter;
+    
 }
 
 body {
     background: map-get($colors, bg );
     margin: 0px;
     width: 100%;
-    height:auto;
+    height: auto;
 
 } 
  #company {
@@ -44,19 +42,81 @@ body {
      
      
      h2{
+         font-family: $font;
+         
          font-weight: bolder;
          color: #FFFFFF;
          text-transform: uppercase;
          font-size: 40px;
-         padding-left: 2em;
+         padding-left: 1.65em;
  
 
        }
        p{
-           font-family: sans-serif;
+           font-family: $font;
            font-size: 18px;
            color: #FFFFFF;
            padding-left: 4em;
            line-height: 1.5em;
        }
  }
+
+ #values {
+    display: flex;
+    padding-top: 0em;
+    padding-bottom: 0em;
+    
+    
+    h2{
+        font-weight: bolder;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        font-size: 40px;
+        padding-left: 1.65em;
+        font-family: $font;
+
+
+      }
+      p{
+          font-family: $font ;
+          font-size: 18px;
+          color: #FFFFFF;
+          padding-left: 4em;
+          line-height: 1.5em;
+      }
+}
+
+
+#link {
+    padding-bottom: 1em;
+    padding-top: 1em;
+   
+}
+ #contact_link{
+        
+    position: relative;
+    left: 28em;
+    top: 5em;
+    text-decoration: none;
+    background-color: #E84C3D;
+    border-radius:  16px;
+    font-size: 22px;
+    font-weight: bolder;
+    text-align: center;
+    padding: 7px 35px;
+    color: #FFFFFF;
+    font-family: sans-serif;
+    
+            
+            
+    }
+
+#footer {
+    display: block;
+    position: relative;
+    top: 15em;
+    height: 12em;
+    width: 100%;
+    border: #FFFFFF solid 1px;
+
+}
