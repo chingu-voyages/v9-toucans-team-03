@@ -7,7 +7,9 @@
   font-family: Montserrat;
   color: #FFFFFF;
   font-weight: lighter;
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   text-transform: uppercase;
 }
 
@@ -19,9 +21,12 @@ body {
 }
 
 #company {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding-top: 10em;
 }
+
 #company h2 {
   font-family: Montserrat;
   font-weight: bolder;
@@ -30,6 +35,7 @@ body {
   font-size: 40px;
   padding-left: 1.65em;
 }
+
 #company p {
   font-family: Montserrat;
   font-size: 18px;
@@ -63,7 +69,6 @@ body {
   line-height: 1.5em;
 }
 
-<<<<<<< HEAD
 #link {
   padding-bottom: 1em;
   padding-top: 1em;
@@ -81,7 +86,7 @@ body {
 #contact_link a {
   text-decoration: none;
   color: #FFFFFF;
-  background-color: #E84C3D;
+  background-color: #39D39F;
   border-radius: 30px;
   padding: 7px 35px;
   padding-bottom: 12px;
@@ -90,10 +95,11 @@ body {
 .footer {
   display: block;
   position: relative;
-  top: 15em;
+  top: 10em;
   height: 12em;
   width: 100%;
   border: #FFFFFF solid 1px;
+  background-color: #070B14;
 }
 
 .footer .flogo {
@@ -107,7 +113,7 @@ body {
 
 .footer .flogo #underlogo {
   font-family: Montserrat;
-  color: #FFFFFF;
+  color: #646464;
   font-weight: lighter;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -118,11 +124,31 @@ body {
   bottom: 2em;
   font-family: Montserrat;
   letter-spacing: 3px;
-  color: #FFFFFF;
+  color: #646464;
   font-size: 12px;
   font-weight: lighter;
 }
+
+.footer #socialMediaIcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  padding-top: 5em;
+  left: 25%;
+  width: 12em;
+}
+
+.footer #rights {
+  position: relative;
+  float: right;
+  bottom: 3em;
+  font-family: Montserrat;
+  color: #646464;
+  font-size: 16px;
+  padding-right: 4em;
+}
 /*# sourceMappingURL=about.css.map */
-=======
-/*# sourceMappingURL=about.css.map */
->>>>>>> ff28d3731d204beafd2dccb5668520591862d620

@@ -98,30 +98,22 @@ body {
         a{
             text-decoration: none;
             color: #FFFFFF; 
-            background-color: #E84C3D;
+            background-color: #39D39F;
             border-radius:  30px;
             padding: 7px 35px;
             padding-bottom: 12px;
-        }
-        
-    
-   
-    
-    
-    
-    
-    
-            
+        }    
             
     }
 
 .footer {
     display: block;
     position: relative;
-    top: 15em;
+    top: 10em;
     height: 12em;
     width: 100%;
-    border: #FFFFFF solid 1px;
+
+    background-color: #070B14;
 
     .flogo{
         display: block;
@@ -134,7 +126,7 @@ body {
         #underlogo {
 
             font-family: Montserrat;
-            color: #FFFFFF;
+            color: #646464;
             font-weight: lighter;
             letter-spacing: 3px;
             text-transform: uppercase;
@@ -144,13 +136,36 @@ body {
         p {
             position: relative;
             bottom: 2em;
+            
             font-family: Montserrat;
             letter-spacing: 3px ;
-            color: #FFFFFF;
+            color:#646464 ;
             font-size: 12px;
             font-weight: lighter;
 
         }
+    }
+
+    #socialMediaIcon {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        padding-top: 5em;
+        left: 25%;
+        width: 12em;
+        
+    }
+
+    #rights {
+        position: relative;
+        float: right;
+        bottom: 3em;
+        font-family: Montserrat;
+        color:#646464 ;
+        font-size: 16px;
+        padding-right: 4em;
+        
+
     }
 
 } 
