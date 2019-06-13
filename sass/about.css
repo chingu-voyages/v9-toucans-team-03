@@ -7,9 +7,7 @@
   font-family: Montserrat;
   color: #FFFFFF;
   font-weight: lighter;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
   text-transform: uppercase;
 }
 
@@ -21,12 +19,9 @@ body {
 }
 
 #company {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding-top: 10em;
 }
-
 #company h2 {
   font-family: Montserrat;
   font-weight: bolder;
@@ -35,7 +30,6 @@ body {
   font-size: 40px;
   padding-left: 1.65em;
 }
-
 #company p {
   font-family: Montserrat;
   font-size: 18px;
@@ -69,6 +63,7 @@ body {
   line-height: 1.5em;
 }
 
+<<<<<<< HEAD
 #link {
   padding-bottom: 1em;
   padding-top: 1em;
@@ -128,3 +123,6 @@ body {
   font-weight: lighter;
 }
 /*# sourceMappingURL=about.css.map */
+=======
+/*# sourceMappingURL=about.css.map */
+>>>>>>> ff28d3731d204beafd2dccb5668520591862d620
