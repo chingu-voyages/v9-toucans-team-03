@@ -28,9 +28,15 @@
  ::-webkit-scrollbar:vertical{
     width:.5em;
   }
-  
+
 body{
     height:100vh;
+}
+.mb-menu {
+  display: none;
+}
+.mb-navbar{
+  display: none;
 }
 .sideNav{
     position: absolute;
@@ -45,7 +51,7 @@ body{
     background-color: #fff;
     overflow: hidden;
     span.menu img{
-        width:2em;            
+        width:2em;
     }
     span.menu{
         position: absolute;
@@ -62,7 +68,7 @@ body{
         cursor: pointer;
     }
     span.settings img{
-        width: 2.2em;     
+        width: 2.2em;
         margin-bottom:1em;
     }
     span.settings{
@@ -128,7 +134,7 @@ section.main{
     background-color:#080E1A;
     background-size: cover;
     width:100%;
-    height:100%; 
+    height:100%;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -192,7 +198,7 @@ section.main{
             width:7em;
             display: block;
             height:1px;
-            background-color:#fff; 
+            background-color:#fff;
         }
         button.watch{
             background-color:#F4311E;
@@ -248,3 +254,94 @@ section.main{
         }
     }
 }
+
+// start media
+@media screen and (max-width:991px){
+  .nav-open{
+    clip-path:circle(25in at 10% 15%) !important;
+    -webkit-clip-path:circle(25in at 10% 15%) !important;
+  }
+  .fixed{
+    position: fixed !important;
+    z-index: 999;
+  }
+  .mb-navbar{
+    position: fixed;
+    z-index: 999;
+    background: #F4311E;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    clip-path:circle(100px at 0% -40%);
+    -webkit-clip-path:circle(100px at 0% -40%);
+    transition: all 500ms ease-out;
+
+    ul {
+      list-style: none;
+      text-align: center;
+      li{
+        margin:4em 0;
+      }
+      li:nth-child(3) a{
+        margin-left: 11px;
+      }
+      li a{
+        font-size: 2.5em;
+        text-decoration: none;
+        color:#fff;
+        font-weight: bolder;
+
+      }
+    }
+  }
+  nav{
+    position: absolute;
+    span i {
+      color:#fff;
+    }
+    .mb-menu{
+      display: initial;
+    }
+    width:100%;
+    height:10%;
+    display: flex;
+    align-items: center;
+    padding: 0 2em;
+  }
+  body{
+    height: 200vh;
+  }
+  .sideNav{
+    display: none
+  }
+  .cn-bx{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+  }
+section.main .content{
+  width: 100%;
+  height:100%;
+  flex-direction: column;
+  .boxpr{
+  }
+  .data{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    .titlepr{
+      text-align: center;
+    }
+    .titlepr:after{
+      content: none;
+    }
+  }
+}
+}
+
+// end media
