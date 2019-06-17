@@ -3,7 +3,7 @@
   position: absolute;
   margin: 0px;
   top: 1em;
-  left: 1em;
+  left: 4em;
   font-family: Montserrat;
   color: #FFFFFF;
   font-weight: lighter;
@@ -20,11 +20,134 @@ body {
   height: auto;
 }
 
+.sideNav {
+  position: fixed;
+  height: 100%;
+  width: 7em;
+  -webkit-transition: all ease 500ms;
+  transition: all ease 500ms;
+  z-index: 1;
+  float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.sideNav span.menu img {
+  width: 2em;
+}
+
+.sideNav span.menu {
+  position: absolute;
+  left: 2.3em;
+  padding: 2em 0;
+  position: relative;
+}
+
+.sideNav span.menu::after {
+  content: 'MENU';
+  left: 8em;
+  position: absolute;
+}
+
+.sideNav img {
+  cursor: pointer;
+}
+
+.sideNav span.settings img {
+  width: 2.2em;
+  margin-bottom: 1em;
+}
+
+.sideNav span.settings {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 2.1em;
+  width: 25em;
+  cursor: pointer;
+}
+
+.sideNav span.settings::after {
+  content: 'SETTINGS';
+  top: .5em;
+  left: 7.5em;
+  position: absolute;
+}
+
+.sideNav ul li img {
+  width: 2.8em;
+}
+
+.sideNav ul li {
+  margin: 3em 0;
+  position: relative;
+  right: 2.5em;
+  cursor: pointer;
+}
+
+.sideNav ul li:nth-child(1) {
+  position: relative;
+}
+
+.sideNav ul li:nth-child(1)::after {
+  content: 'HOME';
+  left: 8em;
+  top: .8em;
+  position: absolute;
+}
+
+.sideNav ul li:nth-child(2) {
+  position: relative;
+  width: 25em;
+}
+
+.sideNav ul li:nth-child(2)::after {
+  content: 'TV SHOWS';
+  text-align: center;
+  left: 7.3em;
+  top: .2em;
+  position: absolute;
+}
+
+.sideNav ul li:nth-child(3) {
+  position: relative;
+}
+
+.sideNav ul li:nth-child(3)::after {
+  content: 'documentary';
+  text-transform: uppercase;
+  text-align: center;
+  left: 6em;
+  top: .5em;
+  position: absolute;
+}
+
+.sideNav ul {
+  position: absolute;
+  top: 7em;
+  left: 2.1em;
+  list-style: none;
+}
+
 #company {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding-top: 10em;
+}
+
+#company img {
+  position: relative;
+  left: 4.5em;
 }
 
 #company h2 {
@@ -57,7 +180,7 @@ body {
   color: #FFFFFF;
   text-transform: uppercase;
   font-size: 40px;
-  padding-left: 1.65em;
+  padding-left: 3em;
   font-family: Montserrat;
 }
 
@@ -65,7 +188,7 @@ body {
   font-family: Montserrat;
   font-size: 18px;
   color: #FFFFFF;
-  padding-left: 4em;
+  padding-left: 7em;
   line-height: 1.5em;
 }
 
@@ -98,14 +221,13 @@ body {
   top: 10em;
   height: 12em;
   width: 100%;
-  border: #FFFFFF solid 1px;
   background-color: #070B14;
 }
 
 .footer .flogo {
   display: block;
   position: relative;
-  padding-left: 5em;
+  padding-left: 8em;
   padding-top: 3em;
   float: left;
   text-align: center;
