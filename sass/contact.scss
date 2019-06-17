@@ -19,12 +19,107 @@ $colors:(
     font-family: sans-serif;
 
 }
+#sideNav {
+    position: fixed;
+    height: 100%;
+    width:7em;
+    transition: all ease 500ms;
+    z-index:1;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: #fff;
+    overflow: hidden;
+    
+    span.menu img{
+        width:2em;
+    }
+    span.menu{
+        position: absolute;
+        left:2.3em;
+        padding : 2em 0;
+        position: relative;
+    }
+    span.menu::after{
+        content:'MENU';
+        left: 8em;
+        position: absolute;
+    }
+    img{
+        cursor: pointer;
+    }
+    span.settings img{
+        width: 2.2em;
+        margin-bottom:1em;
+    }
+    span.settings{
+        position: absolute;
+        z-index:2;
+        bottom: 0;
+        left:2.1em;
+        width:25em;
+        cursor: pointer;
+    }
+    span.settings::after{
+        content:'SETTINGS';
+        top:.5em;
+        left: 7.5em;
+        position: absolute;
+    }
+    ul li img{
+        width:2.8em;
+    }
+    ul li{
+        margin:3em 0;
+        position: relative;
+        right: 2.5em;
+        cursor: pointer;
+    }
+    ul li:nth-child(1){
+        position: relative;
+    }
+    ul li:nth-child(1)::after{
+        content:'HOME';
+        left: 8em;
+        top:.8em;
+        position: absolute;
+    }
+    ul li:nth-child(2){
+        position: relative;
+        width:25em;
+    }
+    ul li:nth-child(2)::after{
+        content:'TV SHOWS';
+        text-align: center;
+        left: 7.3em;
+        top:.2em;
+        position: absolute;
+    }
+    ul li:nth-child(3){
+        position: relative;
+    }
+    ul li:nth-child(3)::after{
+        content:'documentary';
+        text-transform: uppercase;
+        text-align: center;
+        left: 6em;
+        top:.5em;
+        position: absolute;
+    }
+    ul{
+        position: absolute;
+        top:7em;
+        left:2.1em;
+        list-style: none;
+    }
+}
 
 .logo{
     position: absolute;
     margin: 0px;
     top: 1em;
-    left: 1em;
+    left: 4em;
     font-family: Montserrat;
     color: #FFFFFF;
     font-weight: lighter;

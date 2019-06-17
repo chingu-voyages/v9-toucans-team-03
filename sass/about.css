@@ -20,7 +20,7 @@ body {
   height: auto;
 }
 
-.sideNav {
+#sideNav {
   position: fixed;
   height: 100%;
   width: 7em;
@@ -41,33 +41,33 @@ body {
   overflow: hidden;
 }
 
-.sideNav span.menu img {
+#sideNav span.menu img {
   width: 2em;
 }
 
-.sideNav span.menu {
+#sideNav span.menu {
   position: absolute;
   left: 2.3em;
   padding: 2em 0;
   position: relative;
 }
 
-.sideNav span.menu::after {
+#sideNav span.menu::after {
   content: 'MENU';
   left: 8em;
   position: absolute;
 }
 
-.sideNav img {
+#sideNav img {
   cursor: pointer;
 }
 
-.sideNav span.settings img {
+#sideNav span.settings img {
   width: 2.2em;
   margin-bottom: 1em;
 }
 
-.sideNav span.settings {
+#sideNav span.settings {
   position: absolute;
   z-index: 2;
   bottom: 0;
@@ -76,41 +76,41 @@ body {
   cursor: pointer;
 }
 
-.sideNav span.settings::after {
+#sideNav span.settings::after {
   content: 'SETTINGS';
   top: .5em;
   left: 7.5em;
   position: absolute;
 }
 
-.sideNav ul li img {
+#sideNav ul li img {
   width: 2.8em;
 }
 
-.sideNav ul li {
+#sideNav ul li {
   margin: 3em 0;
   position: relative;
   right: 2.5em;
   cursor: pointer;
 }
 
-.sideNav ul li:nth-child(1) {
+#sideNav ul li:nth-child(1) {
   position: relative;
 }
 
-.sideNav ul li:nth-child(1)::after {
+#sideNav ul li:nth-child(1)::after {
   content: 'HOME';
   left: 8em;
   top: .8em;
   position: absolute;
 }
 
-.sideNav ul li:nth-child(2) {
+#sideNav ul li:nth-child(2) {
   position: relative;
   width: 25em;
 }
 
-.sideNav ul li:nth-child(2)::after {
+#sideNav ul li:nth-child(2)::after {
   content: 'TV SHOWS';
   text-align: center;
   left: 7.3em;
@@ -118,11 +118,11 @@ body {
   position: absolute;
 }
 
-.sideNav ul li:nth-child(3) {
+#sideNav ul li:nth-child(3) {
   position: relative;
 }
 
-.sideNav ul li:nth-child(3)::after {
+#sideNav ul li:nth-child(3)::after {
   content: 'documentary';
   text-transform: uppercase;
   text-align: center;
@@ -131,7 +131,7 @@ body {
   position: absolute;
 }
 
-.sideNav ul {
+#sideNav ul {
   position: absolute;
   top: 7em;
   left: 2.1em;
