@@ -9,6 +9,3 @@ menu.addEventListener('click', event => {
     return sideNav.style.width = '7em';
   }
 })
-
-
-
