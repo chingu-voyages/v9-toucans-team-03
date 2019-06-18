@@ -9,7 +9,7 @@
   width: 7em;
   -webkit-transition: all ease 500ms;
   transition: all ease 500ms;
-  z-index: 1;
+  z-index: 6;
   float: left;
   display: -webkit-box;
   display: -ms-flexbox;
