@@ -34,6 +34,7 @@ function set_head_mv(){
         const best= json.results[random].genre_ids[0];
         $('.box .title').text(res.title)
         $('.box .description').text(res.overview)
+        $('.box .idm').text(res.id)
         fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=2db0c43524a948edd34445269d54997d&language=en-US')
         .then(res => res.json())
         .then(gn =>{
@@ -142,6 +143,26 @@ function view(){
     }
 
 }
+
+function trailer() {
+    const movie = document.querySelector('.content.title');
+    const br = document.querySelector('hearder .top.style.background-image');
+    const trailerButton = document.querySelector('.box .trailer ');
+
+    trailerButton.onclick = () => {
+        const id = document.querySelector('.idm').innerText;
+        console.log(id);
+        const id_b = id;
+        localStorage.setItem('movie_id', id_b)
+        window.location.href = 'view.html'
+
+    }
+
+    
+}
+
+
+
 const menu_mb = document.querySelector('#col-menu');
 const lists = document.querySelector('.mb-navbar')
 menu_mb.addEventListener('click' , ()=>{
@@ -152,5 +173,6 @@ menu_mb.addEventListener('click' , ()=>{
 })
 window.onload = get_trend()  , set_head_mv() ;
 setTimeout(()=>{
-    view()
+    view() ;
+    trailer()
 }, 4000)
