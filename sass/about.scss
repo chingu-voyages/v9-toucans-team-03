@@ -290,5 +290,79 @@ body {
     background-color: #fff;
     overflow: hidden;
 }
+.mb-navbar {
+    display: none; 
+}
 
+@media all and (max-width:705px){
 
+    body {
+        
+        height: auto;
+        max-width: 100%;
+        overflow-x:  hidden;
+    }
+
+   #sideNav {
+       display: none;
+   }
+
+   .logo{
+       
+    
+   }
+   main {
+       max-width: 100%;
+   }
+    #company {
+        position: relative;
+        top: 3em;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+
+        #img1 {
+            height: 100%;
+            max-width: 100%;
+
+            #mg{
+                max-width: 100%;
+            }
+
+            #content1{
+
+                text-align: center;
+
+                h2{
+                    font-size: 20px;
+                }
+            }
+        }
+   }
+
+   #values {
+
+    position: relative;
+    top: 3em;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+
+    p{
+        padding-left: 1em;
+    }
+    
+   }
+
+   .footer {
+    position: relative;
+    top: 3em;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+   }
+
+}

@@ -292,4 +292,83 @@ body {
   background-color: #fff;
   overflow: hidden;
 }
+
+.mb-navbar {
+  display: none;
+}
+
+@media all and (max-width: 705px) {
+  body {
+    height: auto;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  #sideNav {
+    display: none;
+  }
+  main {
+    max-width: 100%;
+  }
+  #company {
+    position: relative;
+    top: 3em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #company #img1 {
+    height: 100%;
+    max-width: 100%;
+  }
+  #company #img1 #mg {
+    max-width: 100%;
+  }
+  #company #img1 #content1 {
+    text-align: center;
+  }
+  #company #img1 #content1 h2 {
+    font-size: 20px;
+  }
+  #values {
+    position: relative;
+    top: 3em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #values p {
+    padding-left: 1em;
+  }
+  .footer {
+    position: relative;
+    top: 3em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
 /*# sourceMappingURL=about.css.map */
