@@ -31,7 +31,7 @@ fetch(url)
             }
             else {
                 $('#trailer').click(() => {
-                    fetch(`http://api.themoviedb.org/3/movie/${id}/videos?api_key=${api_key}`)
+                    fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${api_key}`)
                         .then(res => res.json())
                         .then(json => {
                             const rs = json.results[0];
