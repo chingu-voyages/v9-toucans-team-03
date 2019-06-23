@@ -32,6 +32,8 @@ body {
 
 } 
 
+
+
 #sideNav {
     position: fixed;
     height: 100%;
@@ -274,5 +276,19 @@ body {
     }
 
 } 
+
+#settingsPanel {
+    position: fixed;
+    height: 100%;
+    width: 25em;
+    transition: all ease 500ms;
+    z-index: 7 ;
+    float: left;
+    display: none;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: #fff;
+    overflow: hidden;
+}
 
 

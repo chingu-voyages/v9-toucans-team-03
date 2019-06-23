@@ -273,4 +273,23 @@ body {
   font-size: 16px;
   padding-right: 4em;
 }
+
+#settingsPanel {
+  position: fixed;
+  height: 100%;
+  width: 25em;
+  -webkit-transition: all ease 500ms;
+  transition: all ease 500ms;
+  z-index: 7;
+  float: left;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fff;
+  overflow: hidden;
+}
 /*# sourceMappingURL=about.css.map */
