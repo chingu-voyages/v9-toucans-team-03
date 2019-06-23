@@ -354,6 +354,7 @@ body {
   }
   #values p {
     padding-left: 1em;
+    padding-right: 1em;
   }
   .footer {
     position: relative;
