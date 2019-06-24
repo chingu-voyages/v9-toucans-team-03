@@ -18,6 +18,7 @@ body {
   margin: 0px;
   width: 100%;
   height: auto;
+  overflow-x: auto;
 }
 
 #sideNav {
@@ -27,7 +28,7 @@ body {
   -webkit-transition: all ease 500ms;
   transition: all ease 500ms;
   z-index: 1;
-  float: left;
+  margin-left: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -281,7 +282,7 @@ body {
   -webkit-transition: all ease 500ms;
   transition: all ease 500ms;
   z-index: 7;
-  float: left;
+  margin-left: 0px;
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -297,8 +298,20 @@ body {
   display: none;
 }
 
-@media all and (max-width: 705px) {
+@media all and (max-width: 963px) {
+  .logo {
+    position: relative;
+    margin: 0 auto;
+    top: 1em;
+    left: 0px;
+    font-family: Montserrat;
+    color: #FFFFFF;
+    font-weight: lighter;
+    text-align: center;
+    text-transform: uppercase;
+  }
   body {
+    margin: 0px;
     height: auto;
     max-width: 100%;
     overflow-x: hidden;
@@ -307,15 +320,17 @@ body {
     display: none;
   }
   main {
+    padding: 20px;
     max-width: 100%;
   }
   #company {
     position: relative;
-    top: 3em;
+    top: 1em;
+    margin: 0 auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 100%;
+    max-width: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -324,18 +339,26 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  #company #img1 {
-    height: 100%;
-    max-width: 100%;
+  #company img {
+    position: relative;
+    left: none;
+    margin: 0 auto;
+    width: 90%;
   }
-  #company #img1 #mg {
-    max-width: 100%;
+  #company #mg {
+    margin: 0 auto;
+    width: 60%;
   }
-  #company #img1 #content1 {
+  #company h2 {
     text-align: center;
+    padding-right: 1em;
+    padding-left: 1em;
+    font-size: 40px;
   }
-  #company #img1 #content1 h2 {
-    font-size: 20px;
+  #company p {
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: center;
   }
   #values {
     position: relative;
@@ -344,6 +367,7 @@ body {
     display: -ms-flexbox;
     display: flex;
     width: 100%;
+    margin: 0 auto;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -352,13 +376,29 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
   }
+  #values h2 {
+    text-align: center;
+    padding-right: 1em;
+    padding-left: 1em;
+    font-size: 40px;
+  }
   #values p {
     padding-left: 1em;
     padding-right: 1em;
+    text-align: center;
+  }
+  #values #img2 {
+    display: inline-block;
+    margin: 0 auto;
+    max-width: 60%;
+  }
+  #contact_link {
+    text-align: center;
   }
   .footer {
     position: relative;
     top: 3em;
+    margin: 0 auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -370,6 +410,40 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  .footer .flogo {
+    display: inline-block;
+    position: relative;
+    top: 2em;
+    padding-left: 0em;
+    padding-top: 0em;
+    text-align: center;
+  }
+  .footer #socialMediaIcon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: relative;
+    padding-top: 2em;
+    left: 0em;
+    margin: 0 auto;
+    width: 12em;
+  }
+  .footer #rights {
+    display: inline-block;
+    position: relative;
+    top: 1em;
+    float: none;
+    bottom: 0em;
+    padding-bottom: 1em;
+    font-family: Montserrat;
+    color: #646464;
+    font-size: 16px;
+    padding-right: 0em;
+    margin: 0 auto;
   }
 }
 /*# sourceMappingURL=about.css.map */

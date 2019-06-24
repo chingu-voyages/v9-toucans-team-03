@@ -29,6 +29,7 @@ body {
     margin: 0px;
     width: 100%;
     height: auto;
+    overflow-x: auto;
 
 } 
 
@@ -40,7 +41,7 @@ body {
     width:7em;
     transition: all ease 500ms;
     z-index:1;
-    float: left;
+    margin-left: 0px;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -264,6 +265,7 @@ body {
     }
 
     #rights {
+
         position: relative;
         float: right;
         bottom: 3em;
@@ -283,62 +285,100 @@ body {
     width: 25em;
     transition: all ease 500ms;
     z-index: 7 ;
-    float: left;
+    margin-left: 0px;
     display: none;
     flex-direction: column;
     box-sizing: border-box;
     background-color: #fff;
     overflow: hidden;
+   
 }
 .mb-navbar {
     display: none; 
 }
 
-@media all and (max-width:705px){
+@media all and (max-width:963px){
+
+    .logo{
+        position: relative;
+        margin: 0 auto;
+        top: 1em;
+        left: 0px;
+        
+        font-family: Montserrat;
+        color: #FFFFFF;
+        font-weight: lighter;
+        
+        text-align: center;
+        text-transform: uppercase;
+        
+    }
 
     body {
         
+        margin: 0px;
         height: auto;
         max-width: 100%;
-        overflow-x:  hidden;
+        overflow-x: hidden;
     }
 
    #sideNav {
        display: none;
    }
 
-   .logo{
+   
+
+
+    
        
     
-   }
+ 
    main {
+       
+       padding: 20px;
        max-width: 100%;
    }
     #company {
         position: relative;
-        top: 3em;
+        top: 1em;
+        margin: 0 auto;
         display: flex;
-        width: 100%;
+        max-width: 100%;
         flex-direction: column;
         justify-content: center;
 
-        #img1 {
-            height: 100%;
-            max-width: 100%;
+        img{
+            
+            position: relative;
+            left: none;
+            margin: 0 auto;
+            width: 90%;
+        }
 
-            #mg{
-                max-width: 100%;
-            }
+        #mg{
 
-            #content1{
+            margin: 0 auto;
+            width: 60%;
+         }
+
+            
+
+                
+
+            h2{
 
                 text-align: center;
-
-                h2{
-                    font-size: 20px;
-                }
+                padding-right: 1em;
+                padding-left: 1em;
+                font-size: 40px;
             }
-        }
+
+                p {
+                    padding-left: 1em;
+                    padding-right: 1em;
+                    text-align: center;
+                }
+        
    }
 
    #values {
@@ -347,23 +387,85 @@ body {
     top: 3em;
     display: flex;
     width: 100%;
+    margin: 0 auto;
     flex-direction: column;
     justify-content: center;
+
+
+    h2{
+        text-align: center;
+        padding-right: 1em;
+        padding-left: 1em;
+        font-size: 40px;
+        
+    }
 
     p{
         padding-left: 1em;
         padding-right: 1em;
+        text-align: center;
+
+    }
+
+    #img2{
+        display: inline-block;
+        margin: 0 auto;
+        max-width: 60%;
     }
     
+   }
+
+   #contact_link {
+       text-align: center;
    }
 
    .footer {
     position: relative;
     top: 3em;
+    margin: 0 auto;
     display: flex;
     width: 100%;
     flex-direction: column;
     justify-content: center;
+
+ .flogo{
+     display: inline-block;
+     position: relative;
+     top: 2em;
+    padding-left: 0em;
+    padding-top: 0em;
+        text-align: center;
+
+    }
+
+    #socialMediaIcon {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        padding-top: 2em;
+        left: 0em;
+        margin: 0 auto;
+        width: 12em;
+        
+    }
+
+    #rights {
+        display: inline-block;
+        position: relative;
+        top: 1em;
+        float: none;
+        bottom: 0em;
+        padding-bottom: 1em;
+        font-family: Montserrat;
+        color:#646464 ;
+        font-size: 16px;
+        padding-right: 0em;
+        margin: 0 auto;
+        
+
+    }
+
+
    }
 
 }
