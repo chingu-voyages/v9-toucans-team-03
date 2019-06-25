@@ -265,3 +265,83 @@ body {
     }
 }
  /*second card ends here */
+
+ @media all and (max-width:963px){
+
+    .logo{
+        position: relative;
+        margin: 0 auto;
+        top: 1em;
+        left: 0px;
+        
+        font-family: Montserrat;
+        color: #FFFFFF;
+        font-weight: lighter;
+        
+        text-align: center;
+        text-transform: uppercase;
+        
+    }
+
+    body {
+        
+        margin: 0px;
+        height: auto;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+   #sideNav {
+       display: none;
+   }
+
+   #father {
+       display: flex;
+       flex-direction: column;
+       position: relative;
+       margin: 0 auto;
+       top: 4em;
+       justify-content: center;
+       
+      
+   }
+
+   #card1 {
+       box-shadow: 0px 0px 0px;
+       position: relative;
+       left: 0em;
+       margin: 0 auto;
+       width: 370px;
+       
+       
+       
+
+   }
+
+   #card2 {
+    box-shadow: 0px 0px 0px;
+    position: relative;
+    top: 2em;
+    
+ 
+    left: 0em;
+    margin: 0 auto;
+    width: 370px;
+
+    h2 {
+        padding-left: 1.5em;
+    }
+
+    p{
+        padding-left: 3.4em;
+    }
+
+    #wrapper {
+        padding-left: 3.4em;
+
+       
+    }
+    
+
+    }
+}

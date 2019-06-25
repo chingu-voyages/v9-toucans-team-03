@@ -328,14 +328,10 @@ body {
 
    
 
-
-    
-       
-    
  
    main {
        
-       padding: 20px;
+       padding: 0px;
        max-width: 100%;
    }
     #company {
@@ -368,14 +364,16 @@ body {
             h2{
 
                 text-align: center;
-                padding-right: 1em;
-                padding-left: 1em;
+                padding-right: 0em;
+                padding-left: 0em;
                 font-size: 40px;
             }
 
                 p {
-                    padding-left: 1em;
-                    padding-right: 1em;
+                    margin-left: 1em;
+                    margin-right: 1em;
+                    padding-left: 0em;
+                    padding-right: 0em;
                     text-align: center;
                 }
         
@@ -393,16 +391,20 @@ body {
 
 
     h2{
+        margin-left: 1em;
+        margin-right: 1em;
         text-align: center;
-        padding-right: 1em;
-        padding-left: 1em;
+        padding-right: 0em;
+        padding-left: 0em;
         font-size: 40px;
         
     }
 
     p{
-        padding-left: 1em;
-        padding-right: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+        padding-left: 0em;
+        padding-right: 0em;
         text-align: center;
 
     }

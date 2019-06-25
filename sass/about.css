@@ -320,7 +320,7 @@ body {
     display: none;
   }
   main {
-    padding: 20px;
+    padding: 0px;
     max-width: 100%;
   }
   #company {
@@ -351,13 +351,15 @@ body {
   }
   #company h2 {
     text-align: center;
-    padding-right: 1em;
-    padding-left: 1em;
+    padding-right: 0em;
+    padding-left: 0em;
     font-size: 40px;
   }
   #company p {
-    padding-left: 1em;
-    padding-right: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-left: 0em;
+    padding-right: 0em;
     text-align: center;
   }
   #values {
@@ -377,14 +379,18 @@ body {
             justify-content: center;
   }
   #values h2 {
+    margin-left: 1em;
+    margin-right: 1em;
     text-align: center;
-    padding-right: 1em;
-    padding-left: 1em;
+    padding-right: 0em;
+    padding-left: 0em;
     font-size: 40px;
   }
   #values p {
-    padding-left: 1em;
-    padding-right: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-left: 0em;
+    padding-right: 0em;
     text-align: center;
   }
   #values #img2 {

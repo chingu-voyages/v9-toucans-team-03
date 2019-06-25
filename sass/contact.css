@@ -274,4 +274,67 @@ body {
 }
 
 /*second card ends here */
+@media all and (max-width: 963px) {
+  .logo {
+    position: relative;
+    margin: 0 auto;
+    top: 1em;
+    left: 0px;
+    font-family: Montserrat;
+    color: #FFFFFF;
+    font-weight: lighter;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  body {
+    margin: 0px;
+    height: auto;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  #sideNav {
+    display: none;
+  }
+  #father {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: relative;
+    margin: 0 auto;
+    top: 4em;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #card1 {
+    -webkit-box-shadow: 0px 0px 0px;
+            box-shadow: 0px 0px 0px;
+    position: relative;
+    left: 0em;
+    margin: 0 auto;
+    width: 370px;
+  }
+  #card2 {
+    -webkit-box-shadow: 0px 0px 0px;
+            box-shadow: 0px 0px 0px;
+    position: relative;
+    top: 2em;
+    left: 0em;
+    margin: 0 auto;
+    width: 370px;
+  }
+  #card2 h2 {
+    padding-left: 1.5em;
+  }
+  #card2 p {
+    padding-left: 3.4em;
+  }
+  #card2 #wrapper {
+    padding-left: 3.4em;
+  }
+}
 /*# sourceMappingURL=contact.css.map */
