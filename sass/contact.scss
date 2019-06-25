@@ -264,6 +264,72 @@ body {
 
     }
 }
+.footer {
+    display: block;
+    position: relative;
+    top: 15em;
+    height: 12em;
+    width: 100%;
+
+    background-color: #070B14;
+
+    .flogo{
+        display: block;
+        position: relative;
+        padding-left: 8em;
+        padding-top: 3em;
+        float: left;
+        text-align: center;
+
+        #underlogo {
+
+            font-family: Montserrat;
+            color: #646464;
+            font-weight: lighter;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+        }
+
+        p {
+            position: relative;
+            bottom: 2em;
+            
+            font-family: Montserrat;
+            letter-spacing: 3px ;
+            color:#646464 ;
+            font-size: 12px;
+            font-weight: lighter;
+
+        }
+    }
+
+    #socialMediaIcon {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        padding-top: 5em;
+        left: 25%;
+        width: 12em;
+        
+    }
+
+    #rights {
+
+        position: relative;
+        float: right;
+        bottom: 3em;
+        font-family: Montserrat;
+        color:#646464 ;
+        font-size: 16px;
+        padding-right: 4em;
+        
+
+    }
+
+} 
+
+
  /*second card ends here */
 
  @media all and (max-width:963px){
@@ -300,6 +366,7 @@ body {
        flex-direction: column;
        position: relative;
        margin: 0 auto;
+       left: 0em;
        top: 4em;
        justify-content: center;
        
@@ -311,8 +378,30 @@ body {
        position: relative;
        left: 0em;
        margin: 0 auto;
-       width: 370px;
+       //width: 100%;
        
+       width: 290px;
+
+      h2 {
+          padding-right: 1em;
+
+       }
+
+       ul{
+           padding-right: 1em; 
+           font-size: 15px;
+       }
+
+       #social_media {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 30%;
+        padding-right: 30%;
+        position: relative;
+        
+        bottom: 30px;
+        
+    }
        
        
 
@@ -323,25 +412,81 @@ body {
     position: relative;
     top: 2em;
     
- 
+    
     left: 0em;
     margin: 0 auto;
-    width: 370px;
+    //width: 95%;
+    width: 290px;
 
     h2 {
         padding-left: 1.5em;
+        
     }
 
     p{
         padding-left: 3.4em;
+        padding-right: 1em;
     }
 
     #wrapper {
         padding-left: 3.4em;
+        padding-right: 1em;
 
        
     }
     
 
     }
+
+    .footer {
+        position: relative;
+        top: 10em;
+        margin: 0 auto;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+    
+     .flogo{
+         display: inline-block;
+         position: relative;
+         top: 2em;
+        padding-left: 0em;
+        padding-top: 0em;
+            text-align: center;
+    
+        }
+    
+        #socialMediaIcon {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            padding-top: 2em;
+            left: 0em;
+            margin: 0 auto;
+            width: 12em;
+            
+        }
+    
+        #rights {
+            display: inline-block;
+            position: relative;
+            top: 1em;
+            float: none;
+            bottom: 0em;
+            padding-bottom: 1em;
+            font-family: Montserrat;
+            color:#646464 ;
+            font-size: 16px;
+            padding-right: 0em;
+            margin: 0 auto;
+            
+    
+        }
+    
+    
+       }
+
+
+
 }
