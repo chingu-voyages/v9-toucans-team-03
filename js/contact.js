@@ -9,3 +9,12 @@ menu.addEventListener('click', event => {
     return sideNav.style.width = '7em';
   }
 })
+
+const menu_mb = document.querySelector('#col-menu');
+const lists = document.querySelector('.mb-navbar')
+menu_mb.addEventListener('click' , ()=>{
+  const ths = document.querySelector('#col-menu');
+  lists.classList.toggle("nav-open");
+  ths.classList.toggle('fixed')
+
+})
