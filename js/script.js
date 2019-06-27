@@ -179,10 +179,10 @@ setTimeout(()=>{
 
 let searchItem = "matrix";
 
-let searchAction = "https://api.themoviedb.org/3/search/multi?api_key=db0c43524a948edd34445269d54997d&language=en-US&query=${searchItem}page=1&include_adult=false";
+let searchAction = `https://api.themoviedb.org/3/search/multi?api_key=db0c43524a948edd34445269d54997d&language=en-US&query=${searchItem}page=1&include_adult=false`;
 
  function search(){
-     fetch('https://api.themoviedb.org/3/search/multi?api_key=${movies_api}&language=en-US&query=${searchItem}page=1&include_adult=false')
+     fetch('https://api.themoviedb.org/3/search/multi?api_key=$(movies_api)&language=en-US&query=${searchItem}page=1&include_adult=false')
      .then(res => res.json())
      .then(json => {
         const results = json.results;
