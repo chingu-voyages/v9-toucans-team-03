@@ -5,6 +5,20 @@ const movies_api = '2db0c43524a948edd34445269d54997d';
 let url_trending = `https://api.themoviedb.org/3/trending/movie/day?api_key=${movies_api}`
 let url_crime = `https://api.themoviedb.org/3/list/80?api_key=${movies_api}&language=en-US`
 let url_action = `https://api.themoviedb.org/3/list/28?api_key=${movies_api}&language=en-US`
+let tv_shows = [
+    {
+        url:`https://api.themoviedb.org/3/tv/popular?api_key=${movies_api}&language=en-US&page=1`,
+        name:'popular tv shows'
+    },
+    {
+        url:`http://api.themoviedb.org/3/discover/tv?api_key=${movies_api}&sort_by=popularity.desc&with_genres=80`,
+        name:'crime' 
+    },
+    {
+        url:`http://api.themoviedb.org/3/discover/tv?api_key=${movies_api}&sort_by=popularity.desc&with_genres=28`,
+        name:'action' 
+    }
+]
 menu.onclick = () => {
     if (clicks == 0) {
         sideNav.style.width = '25em'
@@ -58,7 +72,7 @@ function get_trend(){
         const year = tr.split(' ')[0];
         const container = document.querySelector('#trending');
         const output = `
-        <li >
+        <li class='movies' >
         <div class="boxart">
         <span class='id' style="display:none">${movie.id}</span>
         <img src="http://image.tmdb.org/t/p/w500//${movie.poster_path}" alt="">
@@ -71,61 +85,54 @@ function get_trend(){
     });
     })
 }
-async function get_action() {
-	const response = await fetch(url_action);
-	const data = await response.json();
-	return data;
+function get_action(){
+    fetch(url_action)
+    .then(res => res.json())
+    .then(data =>{
+        const results = data.items;
+        results.forEach(movie => {
+            const date =movie.release_date;
+            const tr = date.replace('-' , " ");
+            const year = tr.split(' ')[0];
+            const container = document.querySelector('#action');
+            const output = `
+            <li class='movies'>
+            <div class="boxart">
+            <img src="http://image.tmdb.org/t/p/w500//${movie.poster_path}" alt="">
+            <span class='id' style="display:none">${movie.id}</span>
+            </div>
+            <span class="name">${movie.title}</span>
+            <span class="year">${year}</span>
+            </li>
+            `
+            $(container).append(output)
+        });
+    })
 }
-
-const result = get_action();
-result.then(data =>{
-    const results = data.items;
-    results.forEach(movie => {
-        const date =movie.release_date;
-        const tr = date.replace('-' , " ");
-        const year = tr.split(' ')[0];
-        const container = document.querySelector('#action');
-        const output = `
-        <li>
-        <div class="boxart">
-        <img src="http://image.tmdb.org/t/p/w500//${movie.poster_path}" alt="">
-        <span class='id' style="display:none">${movie.id}</span>
-        </div>
-        <span class="name">${movie.title}</span>
-        <span class="year">${year}</span>
-        </li>
-        `
-        $(container).append(output)
-    });
-});
-
-async function get_crime() {
-	const response = await fetch(url_crime);
-	const data = await response.json();
-	return data;
-}
-
-const results_s = get_crime();
-results_s.then(data =>{
-    const results = data.items;
-    results.forEach(movie => {
-        const date =movie.release_date;
-        const tr = date.replace('-' , " ");
-        const year = tr.split(' ')[0];
-        const container = document.querySelector('#crime');
-        const output = `
-        <li>
-        <div class="boxart">
-        <img src="http://image.tmdb.org/t/p/w500//${movie.poster_path}" alt="">
-        <span class='id' style="display:none">${movie.id}</span>
-        </div>
-        <span class="name">${movie.title}</span>
-        <span class="year">${year}</span>
-        </li>
-        `
-        $(container).append(output)
-    });
-});
+function get_crime(){
+    fetch(url_crime)
+    .then(res => res.json())
+    .then(data =>{
+        const results = data.items;
+        results.forEach(movie => {
+            const date =movie.release_date;
+            const tr = date.replace('-' , " ");
+            const year = tr.split(' ')[0];
+            const container = document.querySelector('#crime');
+            const output = `
+            <li class='movies'>
+            <div class="boxart">
+            <img src="http://image.tmdb.org/t/p/w500//${movie.poster_path}" alt="">
+            <span class='id' style="display:none">${movie.id}</span>
+            </div>
+            <span class="name">${movie.title}</span>
+            <span class="year">${year}</span>
+            </li>
+            `
+            $(container).append(output)
+        });
+    })
+} 
 
 function view(){
     const movie = document.querySelectorAll('.id');
@@ -160,9 +167,6 @@ function trailer() {
 
 
 }
-
-
-
 const menu_mb = document.querySelector('#col-menu');
 const lists = document.querySelector('.mb-navbar')
 menu_mb.addEventListener('click' , ()=>{
@@ -171,8 +175,105 @@ menu_mb.addEventListener('click' , ()=>{
   ths.classList.toggle('fixed')
 
 })
-window.onload = get_trend()  , set_head_mv() ;
+window.onload = get_trend()  , set_head_mv() ,get_crime()  , get_action();
 setTimeout(()=>{
     view() ;
     trailer()
 }, 4000)
+const tv_show_btn=  document.querySelector('#tv-shows');
+const movies_btn=  document.querySelector('#movies');
+movies_btn.onclick =  ()=>{
+    $(movies_btn).removeClass('disabled')
+    $(tv_show_btn).addClass('disabled')
+    $(movies_btn).addClass('active')
+    const trend = $('#trending')
+    const crime = $('#crime')
+    const action = $('#action')
+    $(trend).find(".series").fadeOut();
+    $(trend).find(".series").remove();
+    $(crime).find(".series").fadeOut();
+    $(crime).find(".series").remove();
+    $(action).find(".series").fadeOut();
+    $(action).find(".series").remove();
+    get_crime()
+    get_trend() 
+    get_action()
+}
+tv_show_btn.onclick = ()=>{
+    $(tv_show_btn).removeClass('disabled')
+    $(tv_show_btn).addClass('active')
+    $(movies_btn).addClass('disabled')
+    fetch(tv_shows[0].url)
+    .then(res => res.json())
+    .then(json =>{
+        $('#trending').find(".movies").fadeOut();
+        $('#crime').find(".movies").fadeOut();
+        $('#crime').find(".movies").remove();
+        $('#action').find(".movies").fadeOut();
+        $('#action').find(".movies").remove();
+        $('#trending').find(".series").remove();
+        const results = json.results;
+        results.forEach(movie => {
+            const date =movie.first_air_date;
+            const tr = date.replace('-' , " ");
+            const year = tr.split(' ')[0];
+            const container = document.querySelector('#trending');
+            const output = `
+            <li class='series'>
+            <div class="boxart">
+            <img src="http://image.tmdb.org/t/p/w500//${movie.poster_path}" alt="">
+            <span class='id' style="display:none">${movie.id}</span>
+            </div>
+            <span class="name">${movie.name}</span>
+            <span class="year">${year}</span>
+            </li>
+            `
+            $(container).append(output)
+        });
+    })
+    fetch(tv_shows[1].url)
+    .then(res => res.json())
+    .then(json =>{
+        const results = json.results;
+        results.forEach(movie => {
+            const date =movie.first_air_date;
+            const tr = date.replace('-' , " ");
+            const year = tr.split(' ')[0];
+            const container = document.querySelector('#crime');
+            const output = `
+            <li class='series'>
+            <div class="boxart">
+            <img src="http://image.tmdb.org/t/p/w500//${movie.poster_path}" alt="">
+            <span class='id' style="display:none">${movie.id}</span>
+            </div>
+            <span class="name">${movie.name}</span>
+            <span class="year">${year}</span>
+            </li>
+            `
+            $(container).append(output)
+        });
+    })
+    fetch(tv_shows[2].url)
+    .then(res => res.json())
+    .then(json =>{
+        const results = json.results;
+        results.forEach(movie => {
+            const date =movie.first_air_date;
+            const tr = date.replace('-' , " ");
+            const year = tr.split(' ')[0];
+            const container = document.querySelector('#action');
+            const output = `
+            <li class='series'>
+            <div class="boxart">
+            <img src="http://image.tmdb.org/t/p/w500//${movie.poster_path}" alt="">
+            <span class='id' style="display:none">${movie.id}</span>
+            </div>
+            <span class="name">${movie.name}</span>
+            <span class="year">${year}</span>
+            </li>
+            `
+            $(container).append(output)
+        });
+    })
+
+}
