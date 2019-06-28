@@ -177,24 +177,45 @@ setTimeout(()=>{
     trailer()
 }, 4000)
 
-let searchItem = "matrix";
+let searchItem = "heroes";
 
-let searchAction = `https://api.themoviedb.org/3/search/multi?api_key=db0c43524a948edd34445269d54997d&language=en-US&query=${searchItem}page=1&include_adult=false`;
+let settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": `https://api.themoviedb.org/3/search/multi?include_adult=false&page=1&query=${searchItem}&language=en-US&api_key=2db0c43524a948edd34445269d54997d`,
+    "method": "GET",
+    "headers": {},
+    "data": "{}"
+  }
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+    let results = response.results;
+    console.log(results);
+    results.forEach( results => {
+        const search = document.querySelector('#search');
+        let date = results.release_date;
+        console.log(date);
+        let year = date.toString();
+        console.log(year);
+        let makefine = year.slice(0,4);
+        console.log(makefine);
+        let fine = makefine.replace('"', "");
 
- function search(){
-     fetch('https://api.themoviedb.org/3/search/multi?api_key=$(movies_api)&language=en-US&query=${searchItem}page=1&include_adult=false')
-     .then(res => res.json())
-     .then(json => {
-        const results = json.results;
-        console.log(results);
-            for(let i = 0 ; i < results.length ; i++){
-                
-                    $('.search').text(results[i].overview);
-            }
+       
         
+        const output = `
+        <h2>Results</h2>
+        <span class='id' style="display:none">${results.id}</span>
+        <img src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+        <ul>
+        <li>${results.title}</li>
+        <li>${makefine}</li>
+        </ul>
+        <p>${results.overview}</p>
+        `
+        $(search).append(output)
+    })
+  });
 
-     })
- }
-
- console.log(search());
  
