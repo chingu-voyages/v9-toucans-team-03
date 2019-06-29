@@ -535,4 +535,23 @@ header.top .content .box button.trailer, section.main .switcher button:last-chil
     height: 15em;
   }
 }
+
+#search {
+  display: block;
+  color: #ffff;
+  background-color: #080E1A;
+}
+
+#search img {
+  position: relative;
+  width: 20em;
+  height: 30em;
+}
+
+#search ul {
+  display: block;
+  position: relative;
+  bottom: 28em;
+  left: 22em;
+}
 /*# sourceMappingURL=home.css.map */

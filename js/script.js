@@ -177,7 +177,7 @@ setTimeout(()=>{
     trailer()
 }, 4000)
 
-let searchItem = "heroes";
+let searchItem = "gilmore girls";
 
 let settings = {
     "async": true,
@@ -194,27 +194,48 @@ let settings = {
     console.log(results);
     results.forEach( results => {
         const search = document.querySelector('#search');
-        let date = results.release_date;
-        console.log(date);
-        let year = date.toString();
-        console.log(year);
-        let makefine = year.slice(0,4);
-        console.log(makefine);
-        let fine = makefine.replace('"', "");
-
-       
         
-        const output = `
-        <h2>Results</h2>
-        <span class='id' style="display:none">${results.id}</span>
-        <img src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
-        <ul>
-        <li>${results.title}</li>
-        <li>${makefine}</li>
-        </ul>
-        <p>${results.overview}</p>
-        `
-        $(search).append(output)
+        if(results.media_type == "movie") {
+            let date = results.release_date;
+            console.log(date);
+            let year = date.toString();
+            console.log(year);
+            let makefine = year.slice(0,4);
+
+            const output = `
+            
+            <span class='id' style="display:none">${results.id}</span>
+            <img src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+            <ul>
+            <li>Title:${results.title}</li>
+            <li>Release:${makefine}</li>
+            </ul>
+            <p>Description:${results.overview}</p>
+            `
+            $(search).append(output)
+
+        } else {
+            let date = results.first_air_date;
+            let year = date.toString();
+            let makefine = year.slice(0,4);
+
+            const output = `
+            
+            <span class='id' style="display:none">${results.id}</span>
+            <img src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+            <ul>
+            <li>Title: ${results.name}</li>
+            <li>Release: ${makefine}</li>
+            </ul>
+            <p>Description:${results.overview}</p>
+            
+            `
+            
+            $(search).append(output)
+        }
+
+        
+        
     })
   });
 
