@@ -235,7 +235,7 @@ let settings = {
             <img id="image" src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
             <ul>
             <li>Title: ${results.name}</li>
-            <li>Release: ${makefine}</li>
+            <li>First aired: ${makefine}</li>
             <li> Rating: ${results.vote_average}</li>
             </ul>
             <span id="dismobile">Description</span>
