@@ -301,6 +301,62 @@ body {
     display: none;
   }
 
+  .mother {
+
+    display: block;
+    position: relative;
+    margin-top: 1em;
+    left: 10em;
+    width: 60%;
+    height: 25em;
+    color : white;
+    box-shadow: 0px 0px 2px 2px  rgb(43, 54, 54);
+    border-radius: 15px;
+    
+    box-sizing: border-box;
+    
+    
+    #image {
+        
+
+        height: 20em;
+        width: 13em;
+        position: relative;
+        top: 3em;
+        
+    
+    }
+
+    ul{
+        position: relative;
+        left: 11.5em;
+        bottom: 17em;
+        list-style: none;
+
+        li{
+            padding-bottom: 0.5em;
+        }
+    }
+    #p {
+        display: flex;
+        position: relative;
+        
+        width: 30em;
+        height: auto;
+        border: 1px solid white;
+    }
+    p {
+        position: relative;
+        bottom: 18em;
+        left: 14em;
+        
+    }
+    #dismobile {
+        display: none;
+    }
+
+}
+
 @media all and (max-width:963px){
 
     .mb-menu{
@@ -527,5 +583,65 @@ body {
 
 
    }
+//mobile searh results styling
+
+.mother {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+    display: relative;
+    left: 0em;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 1em;
+
+
+
+    #image{
+        margin: 0 auto;
+    }
+
+    ul {
+        position: relative;
+        left: 0em;
+        bottom: 0em;
+        top: 3em;
+    }
+
+    #p {
+
+        display: block;
+        width: 90%;
+        height:auto;
+        border: none;
+        padding-top: 1em;
+    }
+
+    p{
+        position: relative;
+        
+        bottom: 0em;
+        left: 0em;
+        padding-left: 2.4em;
+    }
+
+    #dis {
+        display: none;
+        position: absolute;
+        
+        
+    }
+    #dismobile {
+        display: block;
+        margin-left:3em;
+        padding-top: 3em;
+        text-decoration-line: underline;
+    }
+}
+
+
+
+
 
 }

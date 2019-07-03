@@ -177,7 +177,7 @@ setTimeout(()=>{
     trailer()
 }, 4000)
 
-let searchItem = "gilmore girls";
+let searchItem = "game thrones";
 
 let settings = {
     "async": true,
@@ -203,14 +203,24 @@ let settings = {
             let makefine = year.slice(0,4);
 
             const output = `
-            
+            <div id="mother">
+
             <span class='id' style="display:none">${results.id}</span>
             <img src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
             <ul>
             <li>Title:${results.title}</li>
             <li>Release:${makefine}</li>
+            <li>Rating: ${results.vote_average}</li>
             </ul>
-            <p>Description:${results.overview}</p>
+            <span id="dismobile">Description</span>
+
+            <div id="p"> 
+            <p> 
+            <span id="dis">Description:${results.overview}</span>  
+            </p> 
+             </div>
+
+             </div>
             `
             $(search).append(output)
 
@@ -220,14 +230,23 @@ let settings = {
             let makefine = year.slice(0,4);
 
             const output = `
-            
+            <div id="mother">
             <span class='id' style="display:none">${results.id}</span>
-            <img src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+            <img id="image" src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
             <ul>
             <li>Title: ${results.name}</li>
             <li>Release: ${makefine}</li>
+            <li> Rating: ${results.vote_average}</li>
             </ul>
-            <p>Description:${results.overview}</p>
+            <span id="dismobile">Description</span>
+
+            <div id="p"> 
+            <p> 
+            <span id="dis">Description:${results.overview}</span>  
+            </p> 
+             </div>
+
+            </div>
             
             `
             
