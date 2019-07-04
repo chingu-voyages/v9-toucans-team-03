@@ -177,7 +177,7 @@ setTimeout(()=>{
     trailer()
 }, 4000)
 
-let searchItem = "game thrones";
+let searchItem = "gilmor girls";
 
 let settings = {
     "async": true,
@@ -202,27 +202,22 @@ let settings = {
             console.log(year);
             let makefine = year.slice(0,4);
 
-            const output = `
-            <div id="mother">
+            const image = ` <img  src="http://image.tmdb.org/t/p/w500//${results.poster_path}">`
 
-            <span class='id' style="display:none">${results.id}</span>
-            <img src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+            const details = ` 
             <ul>
-            <li>Title:${results.title}</li>
-            <li>Release:${makefine}</li>
+            <li>Title: ${results.title}</li>
+            <li>Release: ${makefine}</li>
             <li>Rating: ${results.vote_average}</li>
-            </ul>
-            <span id="dismobile">Description</span>
+            
+            </ul>`
 
-            <div id="p"> 
-            <p> 
-            <span id="dis">Description:${results.overview}</span>  
-            </p> 
-             </div>
+            const description = `<p> Description:${results.overview}</p> `
 
-             </div>
-            `
-            $(search).append(output)
+            
+            $(box1).append(image)
+            $(box2).append(details)
+            $(box3).append(description)
 
         } else {
             let date = results.first_air_date;
@@ -230,23 +225,41 @@ let settings = {
             let makefine = year.slice(0,4);
 
             const output = `
-            <div id="mother">
-            <span class='id' style="display:none">${results.id}</span>
-            <img id="image" src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
-            <ul>
-            <li>Title: ${results.name}</li>
-            <li>First aired: ${makefine}</li>
-            <li> Rating: ${results.vote_average}</li>
-            </ul>
-            <span id="dismobile">Description</span>
+            
+            <div style=" display: grid;
+            padding-top: 1em;
+            position: relative;
+            left: 17rem;
+            grid-template-columns: 25rem 25rem;
+            grid-template-rows: 15rem 15rem;" >
 
-            <div id="p"> 
-            <p> 
-            <span id="dis">Description:${results.overview}</span>  
-            </p> 
-             </div>
+        <div style="background: orange;
+        grid-row: 1/3;"
+        
+        ><img style=" height: 28rem  ; width: 22rem ; padding-left: 4rem; padding-top: 1.5rem; ;"  src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+        </div>
 
-            </div>
+        <div style="
+        background: #F4311E;
+        "
+        ><ul>
+        <li>Title: ${results.title}</li>
+        <li>Release: ${makefine}</li>
+        <li>Rating: ${results.vote_average}</li>
+        
+        </ul>
+        </div>
+
+        <div style="
+        background: green;
+        " 
+        ><p> Description:${results.overview}</p>
+        
+        </div>
+
+         </div>
+
+            
             
             `
             
