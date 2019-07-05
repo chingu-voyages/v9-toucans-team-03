@@ -177,8 +177,376 @@ setTimeout(()=>{
     trailer()
 }, 4000)
 
-let searchItem = "gilmor girls";
 
+//search below
+ 
+function value() {
+    let Item = document.querySelector('#search_field').value;
+
+    return Item.length;
+}
+
+let Item = document.querySelector('#search_field').value;
+
+const searchField =  document.querySelector('#search_field');
+
+const searchIcon = document.querySelector('#searchIcon');
+
+searchIcon.addEventListener('click', event => {
+    if (searchField.style.width == '0em') {
+      searchField.style.width = '15em'  ;
+      searchField.style.paddingLeft = '4px' ;
+      searchField.style.borderRadius = '8px';
+       
+                    searchIcon.addEventListener('click', event => {
+
+function get(){
+    let searchItem = document.querySelector('#search_field').value;
+    console.log(searchItem.length);
+
+    let settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": `https://api.themoviedb.org/3/search/multi?include_adult=false&page=1&query=${searchItem}&language=en-US&api_key=2db0c43524a948edd34445269d54997d`,
+        "method": "GET",
+        "headers": {},
+        "data": "{}"
+      }
+      
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+        let results = response.results;
+        console.log(results);
+        results.forEach( results => {
+            const search = document.querySelector('#search');
+            
+            if(results.media_type == "movie") {
+                let date = results.release_date;
+                console.log(date);
+                let year = date.toString();
+                console.log(year);
+                let makefine = year.slice(0,4);
+    
+                const output = `
+                
+                <div id="wrapper"  >
+    
+            <div id="poster" 
+            
+            ><img   src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+            </div>
+    
+            <div id="details" 
+            ><ul>
+            <li>Title: ${results.title}</li>
+            <li>Release: ${makefine}</li>
+            <li>Rating: ${results.vote_average}</li>
+            
+            </ul>
+            </div>
+    
+            <div id="descrip"
+            >
+            <p> Description:  <br/>${results.overview}</p>
+            
+            </div>
+    
+             </div>
+    
+                
+                
+                `
+                
+                $(search).append(output)
+    
+            } else {
+                let date = results.first_air_date;
+                let year = date.toString();
+                let makefine = year.slice(0,4);
+    
+                const output = `
+                
+                <div id="wrapper"  >
+    
+            <div id="poster" 
+            
+            ><img   src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+            </div>
+    
+            <div id="details" 
+            ><ul>
+            <li>Title: ${results.original_name}</li>
+            <li>First aired: ${makefine}</li>
+            <li>Rating: ${results.vote_average}</li>
+            
+            </ul>
+            </div>
+    
+            <div id="descrip"
+            ><p> Description:<br/>${results.overview}</p>
+            
+            </div>
+    
+             </div>
+    
+                
+                
+                `
+                
+                $(search).append(output)
+            }
+    
+            
+            
+        })
+      });
+
+}
+
+
+return get();
+}
+)
+
+
+        
+    } else if (value() == 0 ) {
+    searchField.style.borderRadius = '0px';
+      searchField.style.width = '0em';
+      searchField.style.paddingLeft = '0px' ;
+    }
+  });
+
+  searchField.addEventListener('keypress', function (e) {
+    let key = e.which || e.keyCode;
+    if (key === 13) { 
+        function get(){
+            let searchItem = document.querySelector('#search_field').value;
+            console.log(searchItem.length);
+        
+            let settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": `https://api.themoviedb.org/3/search/multi?include_adult=false&page=1&query=${searchItem}&language=en-US&api_key=2db0c43524a948edd34445269d54997d`,
+                "method": "GET",
+                "headers": {},
+                "data": "{}"
+              }
+              
+              $.ajax(settings).done(function (response) {
+                console.log(response);
+                let results = response.results;
+                console.log(results);
+                results.forEach( results => {
+                    const search = document.querySelector('#search');
+                    
+                    if(results.media_type == "movie") {
+                        let date = results.release_date;
+                        console.log(date);
+                        let year = date.toString();
+                        console.log(year);
+                        let makefine = year.slice(0,4);
+            
+                        const output = `
+                        
+                        <div id="wrapper"  >
+            
+                    <div id="poster" 
+                    
+                    ><img   src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+                    </div>
+            
+                    <div id="details" 
+                    ><ul>
+                    <li>Title: ${results.title}</li>
+                    <li>Release: ${makefine}</li>
+                    <li>Rating: ${results.vote_average}</li>
+                    
+                    </ul>
+                    </div>
+            
+                    <div id="descrip"
+                    >
+                    <p> Description:  <br/>${results.overview}</p>
+                    
+                    </div>
+            
+                     </div>
+            
+                        
+                        
+                        `
+                        
+                        $(search).append(output)
+            
+                    } else {
+                        let date = results.first_air_date;
+                        let year = date.toString();
+                        let makefine = year.slice(0,4);
+            
+                        const output = `
+                        
+                        <div id="wrapper"  >
+            
+                    <div id="poster" 
+                    
+                    ><img   src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+                    </div>
+            
+                    <div id="details" 
+                    ><ul>
+                    <li>Title: ${results.original_name}</li>
+                    <li>First aired: ${makefine}</li>
+                    <li>Rating: ${results.vote_average}</li>
+                    
+                    </ul>
+                    </div>
+            
+                    <div id="descrip"
+                    ><p> Description:<br/>${results.overview}</p>
+                    
+                    </div>
+            
+                     </div>
+            
+                        
+                        
+                        `
+                        
+                        $(search).append(output)
+                    }
+            
+                    
+                    
+                })
+              });
+        
+        }
+
+
+        return get();
+    }
+
+
+});
+
+
+/*
+searchIcon.addEventListener('click', event => {
+
+function get(){
+    let searchItem = document.querySelector('#search_field').value;
+    console.log(searchItem.length);
+
+    let settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": `https://api.themoviedb.org/3/search/multi?include_adult=false&page=1&query=${searchItem}&language=en-US&api_key=2db0c43524a948edd34445269d54997d`,
+        "method": "GET",
+        "headers": {},
+        "data": "{}"
+      }
+      
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+        let results = response.results;
+        console.log(results);
+        results.forEach( results => {
+            const search = document.querySelector('#search');
+            
+            if(results.media_type == "movie") {
+                let date = results.release_date;
+                console.log(date);
+                let year = date.toString();
+                console.log(year);
+                let makefine = year.slice(0,4);
+    
+                const output = `
+                
+                <div id="wrapper"  >
+    
+            <div id="poster" 
+            
+            ><img   src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+            </div>
+    
+            <div id="details" 
+            ><ul>
+            <li>Title: ${results.title}</li>
+            <li>Release: ${makefine}</li>
+            <li>Rating: ${results.vote_average}</li>
+            
+            </ul>
+            </div>
+    
+            <div id="descrip"
+            >
+            <p> Description:  <br/>${results.overview}</p>
+            
+            </div>
+    
+             </div>
+    
+                
+                
+                `
+                
+                $(search).append(output)
+    
+            } else {
+                let date = results.first_air_date;
+                let year = date.toString();
+                let makefine = year.slice(0,4);
+    
+                const output = `
+                
+                <div id="wrapper"  >
+    
+            <div id="poster" 
+            
+            ><img   src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+            </div>
+    
+            <div id="details" 
+            ><ul>
+            <li>Title: ${results.original_name}</li>
+            <li>First aired: ${makefine}</li>
+            <li>Rating: ${results.vote_average}</li>
+            
+            </ul>
+            </div>
+    
+            <div id="descrip"
+            ><p> Description:<br/>${results.overview}</p>
+            
+            </div>
+    
+             </div>
+    
+                
+                
+                `
+                
+                $(search).append(output)
+            }
+    
+            
+            
+        })
+      });
+
+}
+
+
+return get();
+}
+)
+
+ */
+
+
+
+/*
 let settings = {
     "async": true,
     "crossDomain": true,
@@ -202,46 +570,16 @@ let settings = {
             console.log(year);
             let makefine = year.slice(0,4);
 
-            const image = ` <img  src="http://image.tmdb.org/t/p/w500//${results.poster_path}">`
-
-            const details = ` 
-            <ul>
-            <li>Title: ${results.title}</li>
-            <li>Release: ${makefine}</li>
-            <li>Rating: ${results.vote_average}</li>
-            
-            </ul>`
-
-            const description = `<p> Description:${results.overview}</p> `
-
-            
-            $(box1).append(image)
-            $(box2).append(details)
-            $(box3).append(description)
-
-        } else {
-            let date = results.first_air_date;
-            let year = date.toString();
-            let makefine = year.slice(0,4);
-
             const output = `
             
-            <div style=" display: grid;
-            padding-top: 1em;
-            position: relative;
-            left: 17rem;
-            grid-template-columns: 25rem 25rem;
-            grid-template-rows: 15rem 15rem;" >
+            <div id="wrapper"  >
 
-        <div style="background: orange;
-        grid-row: 1/3;"
+        <div id="poster" 
         
-        ><img style=" height: 28rem  ; width: 22rem ; padding-left: 4rem; padding-top: 1.5rem; ;"  src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+        ><img   src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
         </div>
 
-        <div style="
-        background: #F4311E;
-        "
+        <div id="details" 
         ><ul>
         <li>Title: ${results.title}</li>
         <li>Release: ${makefine}</li>
@@ -250,10 +588,45 @@ let settings = {
         </ul>
         </div>
 
-        <div style="
-        background: green;
-        " 
-        ><p> Description:${results.overview}</p>
+        <div id="descrip"
+        >
+        <p> Description:  <br/>${results.overview}</p>
+        
+        </div>
+
+         </div>
+
+            
+            
+            `
+            
+            $(search).append(output)
+
+        } else {
+            let date = results.first_air_date;
+            let year = date.toString();
+            let makefine = year.slice(0,4);
+
+            const output = `
+            
+            <div id="wrapper"  >
+
+        <div id="poster" 
+        
+        ><img   src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+        </div>
+
+        <div id="details" 
+        ><ul>
+        <li>Title: ${results.original_name}</li>
+        <li>First aired: ${makefine}</li>
+        <li>Rating: ${results.vote_average}</li>
+        
+        </ul>
+        </div>
+
+        <div id="descrip"
+        ><p> Description:<br/>${results.overview}</p>
         
         </div>
 
@@ -271,4 +644,4 @@ let settings = {
     })
   });
 
- 
+ */

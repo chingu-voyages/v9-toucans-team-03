@@ -32,6 +32,7 @@
 body{
     height:100vh;
     overflow-x: hidden;
+    background: #080E1A;
 }
 .mb-menu {
   display: none;
@@ -336,8 +337,28 @@ footer.footer{
     border-radius: .5em;
     margin-bottom: 1em;
 }
-.button{
+.buttons{
+    position: relative;
+    right:3em;
+    top:1em;
     cursor: pointer;
+    display: flex;
+    #searchIcon{
+        position: relative;
+        top: 6px;
+    }
+
+
+    #search_field {
+        border-radius: 0px;
+        
+        height: 27px;
+        width: 0em;
+        outline: none;
+        padding-left: 0px;
+        transition: all ease 500ms;
+
+    }
 }
 %trailer-button{
     background-color:#0F0F0F ;
@@ -479,4 +500,53 @@ footer.footer{
 #search {
     color:#ffff;
     background: #080E1A;
+    
+    
+
+    #wrapper {
+            display: grid;
+            margin-top: 3em;
+            margin-bottom: 2em;
+            position: relative;
+            left: 17rem;
+            width:52rem;
+            
+            grid-template-columns: 25rem 25rem;
+            grid-template-rows: 15rem auto;
+            border: 1px solid rgb(22, 35, 65);
+            border-radius: 14px;
+            
+
+
+            #poster {
+                background: #080E1A;
+                grid-row: 1/3;
+
+                img{
+                    height: 28rem  ; 
+                    width: 22rem ; 
+                    padding-left: 4rem;
+                     padding-top: 1.5rem;
+                }
+            }
+
+            #details{
+                background: #080E1A;
+
+                ul{
+                    list-style: none;
+                    position: relative;
+                    top: 3em;
+                    li{
+                        padding-bottom: 1em;
+                    }
+                }
+            }
+
+            #descrip{
+                background:#080E1A ;
+                line-height: 23px;
+            }
+
+    }
 }
