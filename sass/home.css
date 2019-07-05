@@ -265,6 +265,16 @@ header.top .sideNav ul {
           filter: blur(40px);
 }
 
+.active {
+  background-color: #F4311E !important;
+  border: 0;
+}
+
+.disabled {
+  background-color: #0F0F0F !important;
+  border: solid 1px #959595;
+}
+
 section.main {
   width: 100%;
   background-color: #080E1A;
@@ -279,6 +289,13 @@ section.main .switcher {
 
 section.main .switcher button:first-child {
   margin-right: 1em;
+  -webkit-transition: all ease 500ms;
+  transition: all ease 500ms;
+}
+
+section.main .switcher button:last-child {
+  -webkit-transition: all ease 500ms;
+  transition: all ease 500ms;
 }
 
 section.main .movies {
@@ -412,6 +429,7 @@ header.top .content .box button.watch, section.main .switcher button:first-child
   border: 0;
   border-radius: .5em;
   margin-bottom: 1em;
+  outline: none;
 }
 
 .buttons {
@@ -448,6 +466,7 @@ header.top .content .box button.trailer, section.main .switcher button:last-chil
   border: 0;
   border: solid 1px #959595;
   border-radius: .5em;
+  outline: none;
 }
 
 @media all and (max-width: 1149px) {

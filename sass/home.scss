@@ -220,6 +220,14 @@ header.top{
 }
 //Header end
 //Main Section
+.active{
+    background-color:#F4311E !important;
+    border:0;
+}
+.disabled{
+    background-color:#0F0F0F !important;
+    border:solid 1px #959595;
+}
 section.main{
     width:100%;
     background-color:#080E1A;
@@ -230,9 +238,11 @@ section.main{
         button:first-child{
             margin-right: 1em;
             @extend %watch-button;
+            transition:all ease 500ms;
         }
         button:last-child{
             @extend %trailer-button;
+            transition:all ease 500ms;
         }
     }
     .movies{
@@ -336,6 +346,7 @@ footer.footer{
     border:0;
     border-radius: .5em;
     margin-bottom: 1em;
+    outline:none;
 }
 .buttons{
     position: relative;
@@ -369,6 +380,7 @@ footer.footer{
     border:0;
     border:solid 1px #959595;
     border-radius: .5em;
+    outline:none;
 }
 //End Classes-
 //Start responsive
