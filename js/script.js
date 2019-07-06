@@ -190,6 +190,8 @@ function value() {
     return Item.length;
 }
 
+const result = document.querySelector('#search');
+
 let Item = document.querySelector('#search_field').value;
 
 const searchField =  document.querySelector('#search_field');
@@ -230,6 +232,7 @@ function get(){
                 let year = date.toString();
                 console.log(year);
                 let makefine = year.slice(0,4);
+                
     
                 const output = `
                 
@@ -244,6 +247,9 @@ function get(){
             ><ul>
             <li>Title: ${results.title}</li>
             <li>Release: ${makefine}</li>
+            
+            
+
             <li>Rating: ${results.vote_average}</li>
             
             </ul>
@@ -281,6 +287,8 @@ function get(){
             ><ul>
             <li>Title: ${results.original_name}</li>
             <li>First aired: ${makefine}</li>
+            
+
             <li>Rating: ${results.vote_average}</li>
             
             </ul>
@@ -307,7 +315,7 @@ function get(){
 
 }
 
-
+$(result).empty();
 return get();
 }
 )
@@ -364,6 +372,8 @@ return get();
                     ><ul>
                     <li>Title: ${results.title}</li>
                     <li>Release: ${makefine}</li>
+                  
+
                     <li>Rating: ${results.vote_average}</li>
                     
                     </ul>
@@ -401,6 +411,8 @@ return get();
                     ><ul>
                     <li>Title: ${results.original_name}</li>
                     <li>First aired: ${makefine}</li>
+                    
+
                     <li>Rating: ${results.vote_average}</li>
                     
                     </ul>
@@ -427,7 +439,7 @@ return get();
         
         }
 
-
+        $(result).empty();
         return get();
     }
 
