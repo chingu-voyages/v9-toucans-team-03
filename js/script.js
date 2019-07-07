@@ -178,7 +178,7 @@ menu_mb.addEventListener('click' , ()=>{
 window.onload = get_trend()  , set_head_mv() ,get_crime()  , get_action();
 setTimeout(()=>{
     view() ;
-    trailer(); trail();
+    trailer(); 
 }, 4000)
 
 
@@ -204,13 +204,13 @@ searchIcon.addEventListener('click', event => {
       searchField.style.paddingLeft = '4px' ;
       searchField.style.borderRadius = '8px';
        
-                    searchIcon.addEventListener('click', event => {
+         searchIcon.addEventListener('click', event => {
 
-function get(){
-    let searchItem = document.querySelector('#search_field').value;
-    console.log(searchItem.length);
+        function get(){
+        let searchItem = document.querySelector('#search_field').value;
+        console.log(searchItem.length);
 
-    let settings = {
+     let settings = {
         "async": true,
         "crossDomain": true,
         "url": `https://api.themoviedb.org/3/search/multi?include_adult=false&page=1&query=${searchItem}&language=en-US&api_key=2db0c43524a948edd34445269d54997d`,
@@ -238,34 +238,34 @@ function get(){
                 
                 <div id="wrapper"  >
     
-            <div id="poster" 
-            
-            ><img  class='pic' src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
-            </div>
-            <span class='idj' style="display:none">${results.id}</span>
-            <div id="details" 
-            ><ul>
-            <li id='title'>Title: ${results.title}</li>
-            <li>Release: ${makefine}</li>
-            
-            
+                <div id="poster" 
+                
+                ><img  class='pic' src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+                </div>
+                <span class='idj' style="display:none">${results.id}</span>
+                <div id="details" 
+                ><ul>
+                <li id='title'>Title: ${results.title}</li>
+                <li>Release: ${makefine}</li>
+                
+                
 
-            <li>Rating: ${results.vote_average}</li>
-            
-            </ul>
-            </div>
-    
-            <div id="descrip"
-            >
-            <p> Description:  <br/>${results.overview}</p>
-            
-            </div>
-    
-             </div>
-    
+                <li>Rating: ${results.vote_average}</li>
                 
+                </ul>
+                </div>
+        
+                <div id="descrip"
+                >
+                <p> Description:  <br/>${results.overview}</p>
                 
-                `
+                </div>
+        
+                </div>
+        
+                    
+                    
+                    `
                 
                 $(search).append(output)
     
@@ -445,10 +445,10 @@ return get();
 
 
 });
-function trail() {
+
     const movie = document.querySelector('#title');
     const br = document.querySelector('.pic');
-    const trailerButton = document.querySelector('#search ');
+    const trailerButton = document.querySelector('#wrapper ');
 
     trailerButton.onclick = () => {
         const id = document.querySelector('.idj').innerText;
@@ -460,7 +460,7 @@ function trail() {
     }
 
 
-}
+
 
 // search above
 
