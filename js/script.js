@@ -178,7 +178,7 @@ menu_mb.addEventListener('click' , ()=>{
 window.onload = get_trend()  , set_head_mv() ,get_crime()  , get_action();
 setTimeout(()=>{
     view() ;
-    trailer()
+    trailer(); trail();
 }, 4000)
 
 
@@ -240,12 +240,12 @@ function get(){
     
             <div id="poster" 
             
-            ><img   src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+            ><img  class='pic' src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
             </div>
-    
+            <span class='idj' style="display:none">${results.id}</span>
             <div id="details" 
             ><ul>
-            <li>Title: ${results.title}</li>
+            <li id='title'>Title: ${results.title}</li>
             <li>Release: ${makefine}</li>
             
             
@@ -280,12 +280,12 @@ function get(){
     
             <div id="poster" 
             
-            ><img   src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+            ><img class='pic'  src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
             </div>
-    
+            <span class='idj' style="display:none">${results.id}</span>
             <div id="details" 
             ><ul>
-            <li>Title: ${results.original_name}</li>
+            <li id='title'>Title: ${results.original_name}</li>
             <li>First aired: ${makefine}</li>
             
 
@@ -365,12 +365,12 @@ return get();
             
                     <div id="poster" 
                     
-                    ><img   src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+                    ><img  class='pic' src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
                     </div>
-            
+                    <span class='idj' style="display:none">${results.id}</span>
                     <div id="details" 
                     ><ul>
-                    <li>Title: ${results.title}</li>
+                    <li id='title'>Title: ${results.title}</li>
                     <li>Release: ${makefine}</li>
                   
 
@@ -404,12 +404,12 @@ return get();
             
                     <div id="poster" 
                     
-                    ><img   src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+                    ><img  class='pic' src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
                     </div>
-            
+                    <span class='idj' style="display:none">${results.id}</span>
                     <div id="details" 
                     ><ul>
-                    <li>Title: ${results.original_name}</li>
+                    <li id='title'>Title: ${results.original_name}</li>
                     <li>First aired: ${makefine}</li>
                     
 
@@ -445,7 +445,24 @@ return get();
 
 
 });
+function trail() {
+    const movie = document.querySelector('#title');
+    const br = document.querySelector('.pic');
+    const trailerButton = document.querySelector('#search ');
 
+    trailerButton.onclick = () => {
+        const id = document.querySelector('.idj').innerText;
+        console.log(id);
+        const id_b = id;
+        localStorage.setItem('movie_id', id_b)
+        window.location.href = 'view.html'
+
+    }
+
+
+}
+
+// search above
 
 
 const tv_show_btn=  document.querySelector('#tv-shows');
