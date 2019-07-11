@@ -36,7 +36,8 @@
           <span id='col-menu' class="mb-menu"><i class="fas fa-bars fa-2x"></i></span>
             <h1 class='logo'>Ruvver</h1>
             <div class="buttons">
-                <span><i class="fas fa-search fa-lg"></i></span>
+                <input type="text" name="search" placeholder="Search" id="search_field" >
+                <span><i id="searchIcon" class="fas fa-search fa-lg"></i></span>
             </div>
         </nav>
         <div class="content">
@@ -52,6 +53,12 @@
         </div>
         <div class="blur"></div>
     </header>
+    <div id="search" >
+        <div id="box1"></div>
+        <div id="box2"></div>
+        <div id="box3" ></div>
+
+    </div>
     <section class='main'>
 
         <div class="movies">
@@ -73,8 +80,10 @@
 
                 </ul>
             </div>
+            
         </div>
     </section>
+    
     <footer class=footer>
         <div class="col"><span>RUVVER</span> <br/> <span>entertainment</span></div>
         <div class="col"><ul>

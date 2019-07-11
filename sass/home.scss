@@ -31,6 +31,8 @@
 
 body{
     height:100vh;
+    overflow-x: hidden;
+    background: #080E1A;
 }
 .mb-menu {
   display: none;
@@ -347,8 +349,28 @@ footer.footer{
     margin-bottom: 1em;
     outline:none;
 }
-button{
+.buttons{
+    position: relative;
+    right:3em;
+    top:1em;
     cursor: pointer;
+    display: flex;
+    #searchIcon{
+        position: relative;
+        top: 6px;
+    }
+
+
+    #search_field {
+        border-radius: 0px;
+        
+        height: 27px;
+        width: 0em;
+        outline: none;
+        padding-left: 0px;
+        transition: all ease 500ms;
+
+    }
 }
 %trailer-button{
     background-color:#0F0F0F ;
@@ -362,8 +384,73 @@ button{
     outline:none;
 }
 //End Classes-
+
+#search {
+    color:#ffff;
+    background: #080E1A;
+    
+    
+
+    #wrapper {
+            display: grid;
+            margin-top: 3em;
+            margin-bottom: 2em;
+            position: relative;
+            left: 17rem;
+            width:52rem;
+            
+            grid-template-columns: 25rem 25rem;
+            grid-template-rows: 15rem auto;
+            border: 1px solid rgb(22, 35, 65);
+            border-radius: 14px;
+            
+
+
+            #poster {
+                background: #080E1A;
+                grid-row: 1/3;
+
+                img{
+                    height: 28rem  ; 
+                    width: 22rem ; 
+                    padding-left: 4rem;
+                     padding-top: 1.5rem;
+                }
+            }
+
+            #details{
+                background: #080E1A;
+
+                ul{
+                    list-style: none;
+                    position: relative;
+                    top: 3em;
+                    
+                    li{
+                        padding-bottom: 1em;
+                    }
+
+                    
+                }
+            }
+
+            #descrip{
+                background:#080E1A ;
+                line-height: 23px;
+                
+            }
+
+    }
+}
+
+
+
 //Start responsive
 @media all and (max-width:1149px){
+
+    body {
+        overflow-x: hidden;
+    }
 
   .nav-open{
     clip-path:circle(25in at 10% 15%) !important;
@@ -450,5 +537,100 @@ button{
     flex-direction: column;
     height: 15em;
   }
+
+ //resposive search results
+  #search {
+    color:#ffff;
+    background: #080E1A;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    overflow-x: hidden;
+    
+
+    #wrapper {
+            display: block;
+            margin-top: 3em;
+            margin-bottom: 2em;
+            position: relative;
+            left: 0em;
+            margin: auto;
+            width: 90%;
+            
+           
+            border: 1px solid rgb(22, 35, 65);
+            border-radius: 14px;
+            
+
+
+            #poster {
+                background: #080E1A;
+               
+
+                img{
+                    height: 22rem  ; 
+                    width: 90% ; 
+                    padding-left: 0rem;
+                    padding-top: 2rem;
+                }
+            }
+
+            #details{
+                background: #080E1A;
+
+
+                ul{
+                    list-style: none;
+                    position: relative;
+                    top: 3em;
+                    padding-left: 10px;
+                    li{
+                        padding-bottom: 1em;
+                    }
+
+                    
+                }
+            }
+
+            #descrip{
+                background:#080E1A ;
+                line-height: 23px;
+                padding-top: 3em;
+                padding-bottom:  2em;
+                padding-left: 10px;
+            }
+
+    }
 }
-//end responsive
+ 
+
+
+
+}
+/*
+#search {
+
+    display: grid;
+    
+    position: relative;
+    left: 17rem;
+    grid-template-columns: 25rem 25rem;
+    grid-template-rows: 15rem 15rem;
+
+    #box1{
+        background: orange;
+        grid-row: 1/3;
+    }
+
+    #box2 {
+        background: #F4311E;
+
+    }
+
+    #box3 {
+        background: green;
+    }
+}
+*/

@@ -193,4 +193,368 @@ setTimeout(()=>{
     view()
     trailer()
 }, 4000)
- get_action()
+
+
+//search below
+ 
+function value() {
+    let Item = document.querySelector('#search_field').value;
+
+    return Item.length;
+}
+
+const result = document.querySelector('#search');
+
+let Item = document.querySelector('#search_field').value;
+
+const searchField =  document.querySelector('#search_field');
+
+const searchIcon = document.querySelector('#searchIcon');
+
+searchIcon.addEventListener('click', event => {
+    if (searchField.style.width == '0em') {
+      searchField.style.width = '15em'  ;
+      searchField.style.paddingLeft = '4px' ;
+      searchField.style.borderRadius = '8px';
+       
+                    searchIcon.addEventListener('click', event => {
+
+function get(){
+    let searchItem = document.querySelector('#search_field').value;
+    console.log(searchItem.length);
+
+    let settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": `https://api.themoviedb.org/3/search/multi?include_adult=false&page=1&query=${searchItem}&language=en-US&api_key=2db0c43524a948edd34445269d54997d`,
+        "method": "GET",
+        "headers": {},
+        "data": "{}"
+      }
+      
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+        let results = response.results;
+        console.log(results);
+        results.forEach( results => {
+            const search = document.querySelector('#search');
+            
+            if(results.media_type == "movie") {
+                let date = results.release_date;
+                console.log(date);
+                let year = date.toString();
+                console.log(year);
+                let makefine = year.slice(0,4);
+                
+    
+                const output = `
+                
+                <div id="wrapper"  >
+    
+            <div id="poster" 
+            
+            ><img   src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+            </div>
+    
+            <div id="details" 
+            ><ul>
+            <li>Title: ${results.title}</li>
+            <li>Release: ${makefine}</li>
+            
+            
+
+            <li>Rating: ${results.vote_average}</li>
+            
+            </ul>
+            </div>
+    
+            <div id="descrip"
+            >
+            <p> Description:  <br/>${results.overview}</p>
+            
+            </div>
+    
+             </div>
+    
+                
+                
+                `
+                
+                $(search).append(output)
+    
+            } else {
+                let date = results.first_air_date;
+                let year = date.toString();
+                let makefine = year.slice(0,4);
+    
+                const output = `
+                
+                <div id="wrapper"  >
+    
+            <div id="poster" 
+            
+            ><img   src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+            </div>
+    
+            <div id="details" 
+            ><ul>
+            <li>Title: ${results.original_name}</li>
+            <li>First aired: ${makefine}</li>
+            
+
+            <li>Rating: ${results.vote_average}</li>
+            
+            </ul>
+            </div>
+    
+            <div id="descrip"
+            ><p> Description:<br/>${results.overview}</p>
+            
+            </div>
+    
+             </div>
+    
+                
+                
+                `
+                
+                $(search).append(output)
+            }
+    
+            
+            
+        })
+      });
+
+}
+
+$(result).empty();
+return get();
+}
+)
+
+
+        
+    } else if (value() == 0 ) {
+    searchField.style.borderRadius = '0px';
+      searchField.style.width = '0em';
+      searchField.style.paddingLeft = '0px' ;
+    }
+  });
+
+  searchField.addEventListener('keypress', function (e) {
+    let key = e.which || e.keyCode;
+    if (key === 13) { 
+        function get(){
+            let searchItem = document.querySelector('#search_field').value;
+            console.log(searchItem.length);
+        
+            let settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": `https://api.themoviedb.org/3/search/multi?include_adult=false&page=1&query=${searchItem}&language=en-US&api_key=2db0c43524a948edd34445269d54997d`,
+                "method": "GET",
+                "headers": {},
+                "data": "{}"
+              }
+              
+              $.ajax(settings).done(function (response) {
+                console.log(response);
+                let results = response.results;
+                console.log(results);
+                results.forEach( results => {
+                    const search = document.querySelector('#search');
+                    
+                    if(results.media_type == "movie") {
+                        let date = results.release_date;
+                        console.log(date);
+                        let year = date.toString();
+                        console.log(year);
+                        let makefine = year.slice(0,4);
+            
+                        const output = `
+                        
+                        <div id="wrapper"  >
+            
+                    <div id="poster" 
+                    
+                    ><img   src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+                    </div>
+            
+                    <div id="details" 
+                    ><ul>
+                    <li>Title: ${results.title}</li>
+                    <li>Release: ${makefine}</li>
+                  
+
+                    <li>Rating: ${results.vote_average}</li>
+                    
+                    </ul>
+                    </div>
+            
+                    <div id="descrip"
+                    >
+                    <p> Description:  <br/>${results.overview}</p>
+                    
+                    </div>
+            
+                     </div>
+            
+                        
+                        
+                        `
+                        
+                        $(search).append(output)
+            
+                    } else {
+                        let date = results.first_air_date;
+                        let year = date.toString();
+                        let makefine = year.slice(0,4);
+            
+                        const output = `
+                        
+                        <div id="wrapper"  >
+            
+                    <div id="poster" 
+                    
+                    ><img   src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+                    </div>
+            
+                    <div id="details" 
+                    ><ul>
+                    <li>Title: ${results.original_name}</li>
+                    <li>First aired: ${makefine}</li>
+                    
+
+                    <li>Rating: ${results.vote_average}</li>
+                    
+                    </ul>
+                    </div>
+            
+                    <div id="descrip"
+                    ><p> Description:<br/>${results.overview}</p>
+                    
+                    </div>
+            
+                     </div>
+            
+                        
+                        
+                        `
+                        
+                        $(search).append(output)
+                    }
+            
+                    
+                    
+                })
+              });
+        
+        }
+
+        $(result).empty();
+        return get();
+    }
+
+
+});
+
+
+
+const tv_show_btn=  document.querySelector('#tv-shows');
+const movies_btn=  document.querySelector('#movies');
+movies_btn.onclick =  ()=>{
+    $(movies_btn).removeClass('disabled')
+    $(tv_show_btn).addClass('disabled')
+    $(movies_btn).addClass('active')
+    const trend = $('#trending')
+    const crime = $('#crime')
+    const action = $('#action')
+    $(trend).find(".series").fadeOut();
+    $(trend).find(".series").remove();
+    $(crime).find(".series").fadeOut();
+    $(crime).find(".series").remove();
+    $(action).find(".series").fadeOut();
+    $(action).find(".series").remove();
+    get_crime()
+    get_trend() 
+    get_action()
+}
+tv_show_btn.onclick = ()=>{
+    $(tv_show_btn).removeClass('disabled')
+    $(tv_show_btn).addClass('active')
+    $(movies_btn).addClass('disabled')
+    fetch(tv_shows[0].url)
+    .then(res => res.json())
+    .then(json =>{
+        $('#trending').find(".movies").fadeOut();
+        $('#crime').find(".movies").fadeOut();
+        $('#crime').find(".movies").remove();
+        $('#action').find(".movies").fadeOut();
+        $('#action').find(".movies").remove();
+        $('#trending').find(".series").remove();
+        const results = json.results;
+        results.forEach(movie => {
+            const date =movie.first_air_date;
+            const tr = date.replace('-' , " ");
+            const year = tr.split(' ')[0];
+            const container = document.querySelector('#trending');
+            const output = `
+            <li class='series'>
+            <div class="boxart">
+            <img src="http://image.tmdb.org/t/p/w500//${movie.poster_path}" alt="">
+            <span class='id' style="display:none">${movie.id}</span>
+            </div>
+            <span class="name">${movie.name}</span>
+            <span class="year">${year}</span>
+            </li>
+            `
+            $(container).append(output)
+        });
+    })
+    fetch(tv_shows[1].url)
+    .then(res => res.json())
+    .then(json =>{
+        const results = json.results;
+        results.forEach(movie => {
+            const date =movie.first_air_date;
+            const tr = date.replace('-' , " ");
+            const year = tr.split(' ')[0];
+            const container = document.querySelector('#crime');
+            const output = `
+            <li class='series'>
+            <div class="boxart">
+            <img src="http://image.tmdb.org/t/p/w500//${movie.poster_path}" alt="">
+            <span class='id' style="display:none">${movie.id}</span>
+            </div>
+            <span class="name">${movie.name}</span>
+            <span class="year">${year}</span>
+            </li>
+            `
+            $(container).append(output)
+        });
+    })
+    fetch(tv_shows[2].url)
+    .then(res => res.json())
+    .then(json =>{
+        const results = json.results;
+        results.forEach(movie => {
+            const date =movie.first_air_date;
+            const tr = date.replace('-' , " ");
+            const year = tr.split(' ')[0];
+            const container = document.querySelector('#action');
+            const output = `
+            <li class='series'>
+            <div class="boxart">
+            <img src="http://image.tmdb.org/t/p/w500//${movie.poster_path}" alt="">
+            <span class='id' style="display:none">${movie.id}</span>
+            </div>
+            <span class="name">${movie.name}</span>
+            <span class="year">${year}</span>
+            </li>
+            `
+            $(container).append(output)
+        });
+    })
+
+}
