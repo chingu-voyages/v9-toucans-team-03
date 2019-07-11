@@ -1,3 +1,4 @@
+
 const menu = document.querySelector('#menu');
 let clicks = 0;
 const sideNav = document.querySelector('.sideNav');
@@ -19,6 +20,10 @@ let tv_shows = [
         name:'action' 
     }
 ]
+const settings_button = document.querySelector('.settings');
+settings_button.onclick = ()=>{
+    alert_soon()
+}
 menu.onclick = () => {
     if (clicks == 0) {
         sideNav.style.width = '25em'
@@ -37,13 +42,14 @@ window.addEventListener('click', function (e) {
 
     }
 });
-
 function set_head_mv(){
+    let header_movies_id= 0;
     fetch(url_trending)
     .then(res => res.json())
     .then(json =>{
         const random = Math.floor(Math.random() * json.results.length);
         const res = json.results[random];
+        header_movies_id = res.id;
         $('header.top').css("background-image" ,`linear-gradient(rgba(0, 0, 0, 0.500),rgba(0, 0, 0, 0.500)) , url('http://image.tmdb.org/t/p/original//${res.backdrop_path}')`)
         const best= json.results[random].genre_ids[0];
         $('.box .title').text(res.title)
@@ -60,13 +66,19 @@ function set_head_mv(){
             }
         })
     })
+    const button= document.querySelector('#movie_id_bt');
+    button.onclick = ()=>{
+     localStorage.setItem('movie_id' , header_movies_id)   
+     localStorage.setItem('type' ,'movie')   
+     window.location.href = 'view.html'
+    }
 }
 function get_trend(){
     fetch(url_trending)
     .then(rs => rs.json())
     .then(json => {
         const results = json.results;
-    results.forEach(movie => {
+      results.forEach(movie => {
         const date =movie.release_date;
         const tr = date.replace('-' , " ");
         const year = tr.split(' ')[0];
@@ -143,6 +155,7 @@ function view(){
            const id = sd.getElementsByClassName('id');
            const id_b = id[0].innerText;
            localStorage.setItem('movie_id', id_b)
+           localStorage.setItem('type' , 'movie')
            window.location.href= 'view.html'
 
        }
@@ -175,105 +188,9 @@ menu_mb.addEventListener('click' , ()=>{
   ths.classList.toggle('fixed')
 
 })
-window.onload = get_trend()  , set_head_mv() ,get_crime()  , get_action();
+window.onload =   get_trend()  , set_head_mv() ,get_crime()  , get_action();
 setTimeout(()=>{
-    view() ;
+    view()
     trailer()
 }, 4000)
-const tv_show_btn=  document.querySelector('#tv-shows');
-const movies_btn=  document.querySelector('#movies');
-movies_btn.onclick =  ()=>{
-    $(movies_btn).removeClass('disabled')
-    $(tv_show_btn).addClass('disabled')
-    $(movies_btn).addClass('active')
-    const trend = $('#trending')
-    const crime = $('#crime')
-    const action = $('#action')
-    $(trend).find(".series").fadeOut();
-    $(trend).find(".series").remove();
-    $(crime).find(".series").fadeOut();
-    $(crime).find(".series").remove();
-    $(action).find(".series").fadeOut();
-    $(action).find(".series").remove();
-    get_crime()
-    get_trend() 
-    get_action()
-}
-tv_show_btn.onclick = ()=>{
-    $(tv_show_btn).removeClass('disabled')
-    $(tv_show_btn).addClass('active')
-    $(movies_btn).addClass('disabled')
-    fetch(tv_shows[0].url)
-    .then(res => res.json())
-    .then(json =>{
-        $('#trending').find(".movies").fadeOut();
-        $('#crime').find(".movies").fadeOut();
-        $('#crime').find(".movies").remove();
-        $('#action').find(".movies").fadeOut();
-        $('#action').find(".movies").remove();
-        $('#trending').find(".series").remove();
-        const results = json.results;
-        results.forEach(movie => {
-            const date =movie.first_air_date;
-            const tr = date.replace('-' , " ");
-            const year = tr.split(' ')[0];
-            const container = document.querySelector('#trending');
-            const output = `
-            <li class='series'>
-            <div class="boxart">
-            <img src="http://image.tmdb.org/t/p/w500//${movie.poster_path}" alt="">
-            <span class='id' style="display:none">${movie.id}</span>
-            </div>
-            <span class="name">${movie.name}</span>
-            <span class="year">${year}</span>
-            </li>
-            `
-            $(container).append(output)
-        });
-    })
-    fetch(tv_shows[1].url)
-    .then(res => res.json())
-    .then(json =>{
-        const results = json.results;
-        results.forEach(movie => {
-            const date =movie.first_air_date;
-            const tr = date.replace('-' , " ");
-            const year = tr.split(' ')[0];
-            const container = document.querySelector('#crime');
-            const output = `
-            <li class='series'>
-            <div class="boxart">
-            <img src="http://image.tmdb.org/t/p/w500//${movie.poster_path}" alt="">
-            <span class='id' style="display:none">${movie.id}</span>
-            </div>
-            <span class="name">${movie.name}</span>
-            <span class="year">${year}</span>
-            </li>
-            `
-            $(container).append(output)
-        });
-    })
-    fetch(tv_shows[2].url)
-    .then(res => res.json())
-    .then(json =>{
-        const results = json.results;
-        results.forEach(movie => {
-            const date =movie.first_air_date;
-            const tr = date.replace('-' , " ");
-            const year = tr.split(' ')[0];
-            const container = document.querySelector('#action');
-            const output = `
-            <li class='series'>
-            <div class="boxart">
-            <img src="http://image.tmdb.org/t/p/w500//${movie.poster_path}" alt="">
-            <span class='id' style="display:none">${movie.id}</span>
-            </div>
-            <span class="name">${movie.name}</span>
-            <span class="year">${year}</span>
-            </li>
-            `
-            $(container).append(output)
-        });
-    })
-
-}
+ get_action()

@@ -7,49 +7,36 @@
   position: fixed;
   height: 100%;
   width: 7em;
-  -webkit-transition: all ease 500ms;
   transition: all ease 500ms;
   z-index: 6;
   float: left;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  flex-direction: column;
+  box-sizing: border-box;
   background-color: #fff;
   overflow: hidden;
 }
-
 #sideNav span.menu img {
   width: 2em;
 }
-
 #sideNav span.menu {
   position: absolute;
   left: 2.3em;
   padding: 2em 0;
   position: relative;
 }
-
 #sideNav span.menu::after {
-  content: 'MENU';
+  content: "MENU";
   left: 8em;
   position: absolute;
 }
-
 #sideNav img {
   cursor: pointer;
 }
-
 #sideNav span.settings img {
   width: 2.2em;
   margin-bottom: 1em;
 }
-
 #sideNav span.settings {
   position: absolute;
   z-index: 2;
@@ -58,62 +45,52 @@
   width: 25em;
   cursor: pointer;
 }
-
 #sideNav span.settings::after {
-  content: 'SETTINGS';
-  top: .5em;
+  content: "SETTINGS";
+  top: 0.5em;
   left: 7.5em;
   position: absolute;
 }
-
 #sideNav ul li img {
   width: 2.8em;
 }
-
 #sideNav ul li {
   margin: 3em 0;
   position: relative;
   right: 2.5em;
   cursor: pointer;
 }
-
-#sideNav ul li:nth-child(1) {
+#sideNav ul a:first-child li:nth-child(1) {
   position: relative;
 }
-
-#sideNav ul li:nth-child(1)::after {
-  content: 'HOME';
-  left: 8em;
-  top: .8em;
+#sideNav ul a:first-child li:nth-child(1)::after {
+  content: "HOME";
+  left: 8.4em;
+  top: 0.8em;
   position: absolute;
 }
-
-#sideNav ul li:nth-child(2) {
+#sideNav ul a:nth-child(2) li:nth-child(1) {
   position: relative;
   width: 25em;
 }
-
-#sideNav ul li:nth-child(2)::after {
-  content: 'TV SHOWS';
+#sideNav ul a:nth-child(2) li:nth-child(1)::after {
+  content: "TV SHOWS";
   text-align: center;
-  left: 7.3em;
-  top: .2em;
+  left: 7.4em;
+  top: 0.2em;
   position: absolute;
 }
-
-#sideNav ul li:nth-child(3) {
+#sideNav ul a:nth-child(3) li:nth-child(1) {
   position: relative;
 }
-
-#sideNav ul li:nth-child(3)::after {
-  content: 'documentary';
+#sideNav ul a:nth-child(3) li:nth-child(1)::after {
+  content: "About us";
   text-transform: uppercase;
   text-align: center;
-  left: 6em;
-  top: .5em;
+  left: 7.4em;
+  top: 0.5em;
   position: absolute;
 }
-
 #sideNav ul {
   position: absolute;
   top: 7em;
@@ -129,9 +106,7 @@
   font-family: Montserrat;
   color: #FFFFFF;
   font-weight: lighter;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
   text-transform: uppercase;
   font-weight: lighter;
 }
@@ -143,15 +118,11 @@ body {
 
 /* Cards container */
 #father {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: auto;
   position: relative;
   top: 130px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 /* Card's container ends here*/
@@ -162,25 +133,21 @@ body {
   height: 431px;
   color: #FFFFFF;
   border-radius: 15%;
-  -webkit-box-shadow: 6px 0px 5px #ccc;
-          box-shadow: 6px 0px 5px #ccc;
+  box-shadow: 6px 0px 5px #ccc;
   z-index: 5;
   position: relative;
   left: 30px;
 }
-
 #card1 h2 {
   padding-top: 30px;
   padding-left: 32px;
   font-size: 35px;
   font-weight: bold;
 }
-
 #card1 ul a {
   text-decoration: none;
   color: unset;
 }
-
 #card1 ul li {
   display: inline-block;
   list-style-type: none;
@@ -189,14 +156,9 @@ body {
   bottom: 6px;
   padding-bottom: 32px;
 }
-
 #card1 #social_media {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   padding-left: 110px;
   padding-right: 110px;
   position: relative;
@@ -212,7 +174,6 @@ body {
   color: black;
   border-radius: 15%;
 }
-
 #card2 h2 {
   padding-top: 30px;
   padding-left: 80px;
@@ -220,7 +181,6 @@ body {
   font-weight: bold;
   padding-bottom: 2px;
 }
-
 #card2 p {
   position: relative;
   bottom: 1.7em;
@@ -228,11 +188,9 @@ body {
   padding-left: 5.2em;
   color: gray;
 }
-
 #card2 #wrapper {
   padding-left: 5.2em;
 }
-
 #card2 #wrapper #name {
   border-bottom: black solid 1px;
   border-left: none;
@@ -241,7 +199,6 @@ body {
   height: 2em;
   outline: none;
 }
-
 #card2 #wrapper #email {
   border-bottom: black solid 1px;
   border-left: none;
@@ -251,7 +208,6 @@ body {
   outline: none;
   background-color: transparent;
 }
-
 #card2 #wrapper #textarea {
   border-bottom: black solid 1px;
   border-left: none;
@@ -263,7 +219,6 @@ body {
   outline: none;
   background-color: transparent;
 }
-
 #card2 #wrapper a {
   text-decoration: none;
   background-color: #E84C3D;
@@ -281,7 +236,6 @@ body {
   width: 100%;
   background-color: #070B14;
 }
-
 .footer .flogo {
   display: block;
   position: relative;
@@ -290,7 +244,6 @@ body {
   float: left;
   text-align: center;
 }
-
 .footer .flogo #underlogo {
   font-family: Montserrat;
   color: #646464;
@@ -298,7 +251,6 @@ body {
   letter-spacing: 3px;
   text-transform: uppercase;
 }
-
 .footer .flogo p {
   position: relative;
   bottom: 2em;
@@ -308,20 +260,14 @@ body {
   font-size: 12px;
   font-weight: lighter;
 }
-
 .footer #socialMediaIcon {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   position: relative;
   padding-top: 5em;
   left: 25%;
   width: 12em;
 }
-
 .footer #rights {
   position: relative;
   float: right;
@@ -350,35 +296,28 @@ body {
     top: 5px;
     z-index: 999;
   }
+
   .nav-open {
     clip-path: circle(25in at 10% 15%) !important;
     -webkit-clip-path: circle(25in at 10% 15%) !important;
   }
+
   .fixed {
     position: fixed !important;
   }
+
   .mb-navbar {
     position: fixed;
     z-index: 999;
     background: #F4311E;
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     clip-path: circle(100px at 0% -40%);
     -webkit-clip-path: circle(100px at 0% -40%);
-    -webkit-transition: all 500ms ease-out;
     transition: all 500ms ease-out;
   }
   .mb-navbar ul {
@@ -398,6 +337,7 @@ body {
     color: #fff;
     font-weight: bolder;
   }
+
   .logo {
     position: relative;
     margin: 0 auto;
@@ -409,34 +349,30 @@ body {
     text-align: center;
     text-transform: uppercase;
   }
+
   body {
     margin: 0px;
     height: auto;
     max-width: 100%;
     overflow-x: hidden;
   }
+
   #sideNav {
     display: none;
   }
+
   #father {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     position: relative;
     margin: 0 auto;
     left: 0em;
     top: 4em;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
+
   #card1 {
-    -webkit-box-shadow: 0px 0px 0px;
-            box-shadow: 0px 0px 0px;
+    box-shadow: 0px 0px 0px;
     position: relative;
     left: 0em;
     margin: 0 auto;
@@ -451,20 +387,16 @@ body {
     font-size: 15px;
   }
   #card1 #social_media {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     padding-left: 30%;
     padding-right: 30%;
     position: relative;
     bottom: 30px;
   }
+
   #card2 {
-    -webkit-box-shadow: 0px 0px 0px;
-            box-shadow: 0px 0px 0px;
+    box-shadow: 0px 0px 0px;
     position: relative;
     top: 2em;
     border-radius: 18%;
@@ -483,21 +415,15 @@ body {
     padding-left: 3.4em;
     padding-right: 1em;
   }
+
   .footer {
     position: relative;
     top: 10em;
     margin: 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     width: 100%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-direction: column;
+    justify-content: center;
   }
   .footer .flogo {
     display: inline-block;
@@ -508,12 +434,8 @@ body {
     text-align: center;
   }
   .footer #socialMediaIcon {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     position: relative;
     padding-top: 2em;
     left: 0em;
@@ -534,4 +456,5 @@ body {
     margin: 0 auto;
   }
 }
+
 /*# sourceMappingURL=contact.css.map */

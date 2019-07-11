@@ -19,22 +19,26 @@ menu_mb.addEventListener('click' , ()=>{
   ths.classList.toggle('fixed')
 
 })
-
-const settings = document.querySelector('.settings');
-
-const settingsPanel = document.querySelector('#settingsPanel')
-
-settings.addEventListener('click', event => {
-  if (settingsPanel.style.display == 'none'  ) {
-
-    settingsPanel.style.display = 'flex';
-    
-  } else {
-
-    settingsPanel.style.display = 'none';
-
-  }
+const settings_button = document.querySelector('.settings');
+settings_button.onclick = ()=>{
+    alert_soon()
 }
-  )
+
+// const settings = document.querySelector('.settings');
+
+// const settingsPanel = document.querySelector('#settingsPanel')
+
+// settings.addEventListener('click', event => {
+//   if (settingsPanel.style.display == 'none'  ) {
+
+//     settingsPanel.style.display = 'flex';
+    
+//   } else {
+
+//     settingsPanel.style.display = 'none';
+
+//   }
+// }
+//   )
 
 
