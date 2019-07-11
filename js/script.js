@@ -233,17 +233,14 @@ function get(){
       }
       
       $.ajax(settings).done(function (response) {
-        console.log(response);
         let results = response.results;
-        console.log(results);
+        console.log(results.length);
         results.forEach( results => {
             const search = document.querySelector('#search');
             
             if(results.media_type == "movie") {
                 let date = results.release_date;
-                console.log(date);
                 let year = date.toString();
-                console.log(year);
                 let makefine = year.slice(0,4);
                 
     
@@ -260,11 +257,8 @@ function get(){
             ><ul>
             <li>Title: ${results.title}</li>
             <li>Release: ${makefine}</li>
-            
-            
-
             <li>Rating: ${results.vote_average}</li>
-            
+           5165 
             </ul>
             </div>
     
@@ -347,8 +341,6 @@ return get();
     if (key === 13) { 
         function get(){
             let searchItem = document.querySelector('#search_field').value;
-            console.log(searchItem.length);
-        
             let settings = {
                 "async": true,
                 "crossDomain": true,
@@ -359,19 +351,14 @@ return get();
               }
               
               $.ajax(settings).done(function (response) {
-                console.log(response);
                 let results = response.results;
-                console.log(results);
                 results.forEach( results => {
+                    console.log(results)
                     const search = document.querySelector('#search');
-                    
                     if(results.media_type == "movie") {
                         let date = results.release_date;
-                        console.log(date);
                         let year = date.toString();
-                        console.log(year);
                         let makefine = year.slice(0,4);
-            
                         const output = `
                         
                         <div id="wrapper"  >
@@ -385,8 +372,7 @@ return get();
                     ><ul>
                     <li>Title: ${results.title}</li>
                     <li>Release: ${makefine}</li>
-                  
-
+                    <li><${results.id}/li>
                     <li>Rating: ${results.vote_average}</li>
                     
                     </ul>

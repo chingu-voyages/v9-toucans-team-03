@@ -8,11 +8,11 @@ let tv_shows = [
         name:'popular tv shows'
     },
     {
-        url:`http://api.themoviedb.org/3/discover/tv?api_key=${Api}&sort_by=popularity.desc&with_genres=80`,
+        url:`https://api.themoviedb.org/3/discover/tv?api_key=${Api}&sort_by=popularity.desc&with_genres=80`,
         name:'crime' 
     },
     {
-        url:`http://api.themoviedb.org/3/discover/tv?api_key=${Api}&sort_by=popularity.desc&with_genres=28`,
+        url:`https://api.themoviedb.org/3/discover/tv?api_key=${Api}&sort_by=popularity.desc&with_genres=28`,
         name:'action' 
     }
 ]
