@@ -102,7 +102,7 @@ header.top{
                background-color:#707070;
                margin: .2em 0 ;
            }
-           p.description{
+           p.description_hd{
                color:#fff;
                width:52%;
                margin-bottom: 1em;
@@ -520,6 +520,7 @@ footer.footer{
     z-index: 999;
   }
   header.top{
+    height: 153vh;
     background-position: center;
     .content .box {
       button{
@@ -534,8 +535,8 @@ footer.footer{
       padding: 0 1em;
       box-sizing: border-box;;
       width: 100% !important;
-      p.description{
-        width:88%;
+      p.description_hd{
+        width:93%;
       }
       span.title{
             font-size: 2.5em;

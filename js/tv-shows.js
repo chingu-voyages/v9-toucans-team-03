@@ -114,7 +114,7 @@ function set_header_tv(url){
         $('header.top').css("background-image" ,`linear-gradient(rgba(0, 0, 0, 0.500),rgba(0, 0, 0, 0.500)) , url('http://image.tmdb.org/t/p/original//${res.backdrop_path}')`)
         const best= json.results[random].genre_ids[0];
         $('.box .title').text(res.name)
-        $('.box .description').text(res.overview)
+        $('.box .description_hd').text(res.overview)
         $('.box .idm').text(res.id)
         fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=2db0c43524a948edd34445269d54997d&language=en-US')
         .then(res => res.json())
@@ -178,3 +178,10 @@ window.onload =  get_trendering_tvShows(tv_shows[0].url),
 get_crime(tv_shows[1].url),
 get_action(tv_shows[2].url),
 set_header_tv(tv_shows[0].url);
+setTimeout(function(){
+    const description = document.querySelector('.description_hd').textContent;
+    if(description.length > 100 ){
+    const shorten = description.substring(0 , 200)
+    document.querySelector('.description_hd').textContent = shorten + '...';
+    }
+    }, 1500)

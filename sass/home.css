@@ -106,7 +106,7 @@ header.top .content .box span.title::after {
   background-color: #707070;
   margin: 0.2em 0;
 }
-header.top .content .box p.description {
+header.top .content .box p.description_hd {
   color: #fff;
   width: 52%;
   margin-bottom: 1em;
@@ -486,6 +486,7 @@ header.top .content .box button.trailer, section.main .switcher button:last-chil
   }
 
   header.top {
+    height: 153vh;
     background-position: center;
   }
   header.top .content .box button {
@@ -500,8 +501,8 @@ header.top .content .box button.trailer, section.main .switcher button:last-chil
     box-sizing: border-box;
     width: 100% !important;
   }
-  header.top .content .box p.description {
-    width: 88%;
+  header.top .content .box p.description_hd {
+    width: 93%;
   }
   header.top .content .box span.title {
     font-size: 2.5em;
