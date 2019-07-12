@@ -170,34 +170,34 @@ header.top{
             margin:3em 0;
             cursor: pointer;
         }
-        ul li:nth-child(1){
+        ul a:first-child li:nth-child(1){
             position: relative;
         }
-        ul li:nth-child(1)::after{
+        ul a:first-child li:nth-child(1)::after{
             content:'HOME';
-            left: 8em;
+            left: 8.4em;
             top:.8em;
             position: absolute;
         }
-        ul li:nth-child(2){
+        ul a:nth-child(2) li:nth-child(1){
             position: relative;
             width:25em;
         }
-        ul li:nth-child(2)::after{
+        ul a:nth-child(2)  li:nth-child(1)::after{
             content:'TV SHOWS';
             text-align: center;
-            left: 7.3em;
+            left: 7.4em;
             top:.2em;
             position: absolute;
         }
-        ul li:nth-child(3){
+        ul a:nth-child(3) li:nth-child(1){
             position: relative;
         }
-        ul li:nth-child(3)::after{
-            content:'documentary';
+        ul a:nth-child(3) li:nth-child(1)::after{
+            content:'About us';
             text-transform: uppercase;
             text-align: center;
-            left: 6em;
+            left: 7.4em;
             top:.5em;
             position: absolute;
         }
@@ -246,6 +246,7 @@ section.main{
         }
     }
     .movies{
+        padding-top:4em;
         height:70%;
         width:100%;
         .row{
@@ -492,11 +493,6 @@ footer.footer{
   }
    .sideNav{
     display: none !important;
-  }
-  section.main .switcher{
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   header.top nav .mb-menu{
     display: initial;

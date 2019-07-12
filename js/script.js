@@ -1,3 +1,4 @@
+
 const menu = document.querySelector('#menu');
 let clicks = 0;
 const sideNav = document.querySelector('.sideNav');
@@ -19,6 +20,10 @@ let tv_shows = [
         name:'action' 
     }
 ]
+const settings_button = document.querySelector('.settings');
+settings_button.onclick = ()=>{
+    alert_soon()
+}
 menu.onclick = () => {
     if (clicks == 0) {
         sideNav.style.width = '25em'
@@ -37,13 +42,14 @@ window.addEventListener('click', function (e) {
 
     }
 });
-
 function set_head_mv(){
+    let header_movies_id= 0;
     fetch(url_trending)
     .then(res => res.json())
     .then(json =>{
         const random = Math.floor(Math.random() * json.results.length);
         const res = json.results[random];
+        header_movies_id = res.id;
         $('header.top').css("background-image" ,`linear-gradient(rgba(0, 0, 0, 0.500),rgba(0, 0, 0, 0.500)) , url('http://image.tmdb.org/t/p/original//${res.backdrop_path}')`)
         const best= json.results[random].genre_ids[0];
         $('.box .title').text(res.title)
@@ -60,13 +66,19 @@ function set_head_mv(){
             }
         })
     })
+    const button= document.querySelector('#movie_id_bt');
+    button.onclick = ()=>{
+     localStorage.setItem('movie_id' , header_movies_id)   
+     localStorage.setItem('type' ,'movie')   
+     window.location.href = 'view.html'
+    }
 }
 function get_trend(){
     fetch(url_trending)
     .then(rs => rs.json())
     .then(json => {
         const results = json.results;
-    results.forEach(movie => {
+      results.forEach(movie => {
         const date =movie.release_date;
         const tr = date.replace('-' , " ");
         const year = tr.split(' ')[0];
@@ -143,6 +155,7 @@ function view(){
            const id = sd.getElementsByClassName('id');
            const id_b = id[0].innerText;
            localStorage.setItem('movie_id', id_b)
+           localStorage.setItem('type' , 'movie')
            window.location.href= 'view.html'
 
        }
@@ -175,10 +188,15 @@ menu_mb.addEventListener('click' , ()=>{
   ths.classList.toggle('fixed')
 
 })
-window.onload = get_trend()  , set_head_mv() ,get_crime()  , get_action();
+window.onload =   get_trend()  , set_head_mv() ,get_crime()  , get_action();
 setTimeout(()=>{
+<<<<<<< HEAD
     view() ;
     trailer(); 
+=======
+    view()
+    trailer()
+>>>>>>> 7dbabe4222b2fafa8f705f4173fa05ed6f296de1
 }, 4000)
 
 
@@ -220,17 +238,14 @@ searchIcon.addEventListener('click', event => {
       }
       
       $.ajax(settings).done(function (response) {
-        console.log(response);
         let results = response.results;
-        console.log(results);
+        console.log(results.length);
         results.forEach( results => {
             const search = document.querySelector('#search');
             
             if(results.media_type == "movie") {
                 let date = results.release_date;
-                console.log(date);
                 let year = date.toString();
-                console.log(year);
                 let makefine = year.slice(0,4);
                 
     
@@ -238,6 +253,7 @@ searchIcon.addEventListener('click', event => {
                 
                 <div id="wrapper"  >
     
+<<<<<<< HEAD
                 <div id="poster" 
                 
                 ><img  class='pic' src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
@@ -251,6 +267,30 @@ searchIcon.addEventListener('click', event => {
                 
 
                 <li>Rating: ${results.vote_average}</li>
+=======
+            <div id="poster" 
+            
+            ><img   src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+            </div>
+    
+            <div id="details" 
+            ><ul>
+            <li>Title: ${results.title}</li>
+            <li>Release: ${makefine}</li>
+            <li>Rating: ${results.vote_average}</li>
+           5165 
+            </ul>
+            </div>
+    
+            <div id="descrip"
+            >
+            <p> Description:  <br/>${results.overview}</p>
+            
+            </div>
+    
+             </div>
+    
+>>>>>>> 7dbabe4222b2fafa8f705f4173fa05ed6f296de1
                 
                 </ul>
                 </div>
@@ -333,8 +373,6 @@ return get();
     if (key === 13) { 
         function get(){
             let searchItem = document.querySelector('#search_field').value;
-            console.log(searchItem.length);
-        
             let settings = {
                 "async": true,
                 "crossDomain": true,
@@ -345,19 +383,14 @@ return get();
               }
               
               $.ajax(settings).done(function (response) {
-                console.log(response);
                 let results = response.results;
-                console.log(results);
                 results.forEach( results => {
+                    console.log(results)
                     const search = document.querySelector('#search');
-                    
                     if(results.media_type == "movie") {
                         let date = results.release_date;
-                        console.log(date);
                         let year = date.toString();
-                        console.log(year);
                         let makefine = year.slice(0,4);
-            
                         const output = `
                         
                         <div id="wrapper"  >
@@ -371,8 +404,7 @@ return get();
                     ><ul>
                     <li class='title'>Title: ${results.title}</li>
                     <li>Release: ${makefine}</li>
-                  
-
+                    <li><${results.id}/li>
                     <li>Rating: ${results.vote_average}</li>
                     
                     </ul>

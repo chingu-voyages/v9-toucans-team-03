@@ -92,37 +92,37 @@ body{
         margin:3em 0;
         cursor: pointer;
     }
-    ul li:nth-child(1){
-        position: relative;
-    }
-    ul li:nth-child(1)::after{
-        content:'HOME';
-        left: 8em;
-        top:.8em;
-        position: absolute;
-    }
-    ul li:nth-child(2){
-        position: relative;
-        width:25em;
-    }
-    ul li:nth-child(2)::after{
-        content:'TV SHOWS';
-        text-align: center;
-        left: 7.3em;
-        top:.2em;
-        position: absolute;
-    }
-    ul li:nth-child(3){
-        position: relative;
-    }
-    ul li:nth-child(3)::after{
-        content:'documentary';
-        text-transform: uppercase;
-        text-align: center;
-        left: 6em;
-        top:.5em;
-        position: absolute;
-    }
+    ul a:first-child li:nth-child(1){
+      position: relative;
+  }
+  ul a:first-child li:nth-child(1)::after{
+      content:'HOME';
+      left: 8.4em;
+      top:.8em;
+      position: absolute;
+  }
+  ul a:nth-child(2) li:nth-child(1){
+      position: relative;
+      width:25em;
+  }
+  ul a:nth-child(2)  li:nth-child(1)::after{
+      content:'TV SHOWS';
+      text-align: center;
+      left: 7.4em;
+      top:.2em;
+      position: absolute;
+  }
+  ul a:nth-child(3) li:nth-child(1){
+      position: relative;
+  }
+  ul a:nth-child(3) li:nth-child(1)::after{
+      content:'About us';
+      text-transform: uppercase;
+      text-align: center;
+      left: 7.4em;
+      top:.5em;
+      position: absolute;
+  }   
     ul{
         position: absolute;
         top:7em;
