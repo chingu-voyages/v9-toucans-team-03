@@ -5,6 +5,7 @@
   position: fixed;
   background-color: rgba(0, 0, 0, 0.448);
 }
+
 .container_alert .alert {
   background-color: #fff;
   width: 40em;
@@ -14,36 +15,58 @@
   top: 50%;
   left: 50%;
   z-index: 999;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
+
 .container_alert header {
   width: 100%;
   height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 .container_alert header .picture img {
   width: 7em;
 }
+
 .container_alert div.message {
   width: 100%;
   height: 30%;
   text-align: center;
   padding: 0 1em;
 }
+
 .container_alert div.message span {
   font-size: 1.7em;
   color: #161414;
 }
+
 .container_alert div.button_agr {
   width: 100%;
   height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .container_alert div.button_agr button {
   background-color: #F4311E;
   padding: 10px 25px;
@@ -53,10 +76,9 @@
   font-weight: bolder;
   text-transform: uppercase;
   border: 0;
-  border-radius: 0.5em;
+  border-radius: .5em;
   font-size: 1.2em;
   margin-bottom: 1em;
   outline: none;
 }
-
 /*# sourceMappingURL=alert.css.map */

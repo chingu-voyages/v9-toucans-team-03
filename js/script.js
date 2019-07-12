@@ -190,13 +190,10 @@ menu_mb.addEventListener('click' , ()=>{
 })
 window.onload =   get_trend()  , set_head_mv() ,get_crime()  , get_action();
 setTimeout(()=>{
-<<<<<<< HEAD
     view() ;
     trailer(); 
-=======
     view()
     trailer()
->>>>>>> 7dbabe4222b2fafa8f705f4173fa05ed6f296de1
 }, 4000)
 
 
@@ -218,7 +215,8 @@ const searchIcon = document.querySelector('#searchIcon');
 
 searchIcon.addEventListener('click', event => {
     if (searchField.style.width == '0em') {
-      searchField.style.width = '15em'  ;
+
+      searchField.style.width = '12em'  ;
       searchField.style.paddingLeft = '4px' ;
       searchField.style.borderRadius = '8px';
        
@@ -253,54 +251,29 @@ searchIcon.addEventListener('click', event => {
                 
                 <div id="wrapper"  >
     
-<<<<<<< HEAD
                 <div id="poster" 
                 
                 ><img  class='pic' src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
                 </div>
                 <span class='idj' style="display:none">${results.id}</span>
-                <div id="details" 
-                ><ul>
-                <li id='title'>Title: ${results.title}</li>
-                <li>Release: ${makefine}</li>
-                
-                
-
-                <li>Rating: ${results.vote_average}</li>
-=======
-            <div id="poster" 
-            
-            ><img   src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
-            </div>
+               
     
             <div id="details" 
             ><ul>
             <li>Title: ${results.title}</li>
             <li>Release: ${makefine}</li>
             <li>Rating: ${results.vote_average}</li>
-           5165 
+           
             </ul>
             </div>
     
             <div id="descrip"
             >
-            <p> Description:  <br/>${results.overview}</p>
+            <p> Description: <br/> <br/>${results.overview}</p>
             
             </div>
     
-             </div>
-    
->>>>>>> 7dbabe4222b2fafa8f705f4173fa05ed6f296de1
-                
-                </ul>
-                </div>
-        
-                <div id="descrip"
-                >
-                <p> Description:  <br/>${results.overview}</p>
-                
-                </div>
-        
+             
                 </div>
                     
                     `
@@ -599,3 +572,5 @@ tv_show_btn.onclick = ()=>{
     })
 
 }
+
+

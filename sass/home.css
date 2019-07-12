@@ -1,8 +1,9 @@
 * {
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* ::-webkit-scrollbar-thumb:hover {
@@ -29,13 +30,14 @@
 }
 
 ::-webkit-scrollbar:vertical {
-  width: 0.5em;
+  width: .5em;
 }
 
-body {
+html, body {
   height: 100vh;
   overflow-x: hidden;
   background: #080E1A;
+  max-width: 100%;
 }
 
 .mb-menu {
@@ -52,38 +54,57 @@ header.top {
   background-size: cover;
   position: relative;
 }
+
 header.top nav {
   color: #fff;
   height: 10%;
   padding: 20px 0;
   width: 90%;
   float: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 header.top nav .logo {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   text-transform: uppercase;
   font-weight: lighter;
 }
+
 header.top nav .buttons {
   color: #fff;
-  flex: 0.1;
+  -webkit-box-flex: .1;
+      -ms-flex: .1;
+          flex: .1;
 }
+
 header.top nav .buttons span:last-child {
   margin-left: 25px;
 }
+
 header.top .content {
   width: 90%;
   height: 90%;
   float: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   overflow: hidden;
 }
+
 header.top .content .box span {
   display: block;
 }
+
 header.top .content .box span.type, header.top .content .box span.title {
   color: #fff;
   text-transform: uppercase;
@@ -91,62 +112,80 @@ header.top .content .box span.type, header.top .content .box span.title {
   font-size: 1.5em;
   letter-spacing: 15px;
 }
+
 header.top .content .box span.title {
   font-weight: bolder;
   font-size: 4em;
   width: 15em;
   letter-spacing: 0;
 }
+
 header.top .content .box span.title::after {
-  content: "";
+  content: '';
   display: block;
   width: 3em;
   height: 2px;
   background-color: #707070;
-  margin: 0.2em 0;
+  margin: .2em 0;
 }
+
 header.top .content .box p.description {
   color: #fff;
   width: 52%;
   margin-bottom: 1em;
 }
+
 header.top .content .box button.watch {
   margin-right: 2em;
 }
+
 header.top .sideNav {
   position: absolute;
   height: 100%;
   width: 7em;
+  -webkit-transition: all ease 500ms;
   transition: all ease 500ms;
   z-index: 1;
   float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   background-color: #fff;
   overflow: hidden;
 }
+
 header.top .sideNav span.menu img {
   width: 2em;
 }
+
 header.top .sideNav span.menu {
   position: absolute;
   left: 2.3em;
   padding: 2em 0;
   position: relative;
 }
+
 header.top .sideNav span.menu::after {
-  content: "MENU";
+  content: 'MENU';
   left: 8em;
   position: absolute;
 }
+
 header.top .sideNav img {
   cursor: pointer;
 }
+
 header.top .sideNav span.settings img {
   width: 2.2em;
   margin-bottom: 1em;
 }
+
 header.top .sideNav span.settings {
   position: absolute;
   z-index: 2;
@@ -155,50 +194,60 @@ header.top .sideNav span.settings {
   width: 25em;
   cursor: pointer;
 }
+
 header.top .sideNav span.settings::after {
-  content: "SETTINGS";
-  top: 0.5em;
+  content: 'SETTINGS';
+  top: .5em;
   left: 7.5em;
   position: absolute;
 }
+
 header.top .sideNav ul li img {
   width: 2.8em;
 }
+
 header.top .sideNav ul li {
   margin: 3em 0;
   cursor: pointer;
 }
+
 header.top .sideNav ul a:first-child li:nth-child(1) {
   position: relative;
 }
+
 header.top .sideNav ul a:first-child li:nth-child(1)::after {
-  content: "HOME";
+  content: 'HOME';
   left: 8.4em;
-  top: 0.8em;
+  top: .8em;
   position: absolute;
 }
+
 header.top .sideNav ul a:nth-child(2) li:nth-child(1) {
   position: relative;
   width: 25em;
 }
+
 header.top .sideNav ul a:nth-child(2) li:nth-child(1)::after {
-  content: "TV SHOWS";
+  content: 'TV SHOWS';
   text-align: center;
   left: 7.4em;
-  top: 0.2em;
+  top: .2em;
   position: absolute;
 }
+
 header.top .sideNav ul a:nth-child(3) li:nth-child(1) {
   position: relative;
 }
+
 header.top .sideNav ul a:nth-child(3) li:nth-child(1)::after {
-  content: "About us";
+  content: 'About us';
   text-transform: uppercase;
   text-align: center;
   left: 7.4em;
-  top: 0.5em;
+  top: .5em;
   position: absolute;
 }
+
 header.top .sideNav ul {
   position: absolute;
   top: 7em;
@@ -213,7 +262,8 @@ header.top .sideNav ul {
   position: absolute;
   z-index: 1;
   bottom: -1.5em;
-  filter: blur(40px);
+  -webkit-filter: blur(40px);
+          filter: blur(40px);
 }
 
 .active {
@@ -230,59 +280,81 @@ section.main {
   width: 100%;
   background-color: #080E1A;
 }
+
 section.main .switcher {
   width: 100%;
   padding: 5em 8em;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
+
 section.main .switcher button:first-child {
   margin-right: 1em;
+  -webkit-transition: all ease 500ms;
   transition: all ease 500ms;
 }
+
 section.main .switcher button:last-child {
+  -webkit-transition: all ease 500ms;
   transition: all ease 500ms;
 }
+
 section.main .movies {
   padding-top: 4em;
   height: 70%;
-  width: 100%;
+  max-width: 100%;
 }
+
 section.main .movies .row {
   margin: 0 auto;
   width: 90%;
   margin-bottom: 5em;
 }
+
 section.main .movies .row h1 {
   margin-left: 1.5em;
   margin-bottom: 1em;
   color: #fff;
 }
+
 section.main .movies .row .list-movies {
   overflow-x: scroll;
   overflow-y: hidden;
   list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
+
 section.main .movies .row .list-movies li {
   cursor: pointer;
   margin: 0 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
 }
+
 section.main .movies .row .list-movies li .boxart {
   width: 9em;
   overflow: hidden;
 }
+
 section.main .movies .row .list-movies li .boxart img {
   width: 100%;
 }
+
 section.main .movies .row .list-movies li span.name {
-  margin-top: 0.5em;
+  margin-top: .5em;
   color: #fff;
   text-transform: uppercase;
   word-wrap: break-word;
   width: 10em;
 }
+
 section.main .movies .row .list-movies li span.year {
   color: #fff;
 }
@@ -292,34 +364,56 @@ footer.footer {
   height: 10em;
   width: 100%;
   color: #646464;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   overflow: hidden;
 }
+
 footer.footer .col:nth-child(3) span {
   text-align: center;
 }
+
 footer.footer .col {
   height: 100%;
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 footer.footer .col img {
   width: 2em;
 }
+
 footer.footer .col ul {
   list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
+
 footer.footer .col ul li {
   margin: 0 1em;
 }
+
 footer.footer .col:nth-child(1) span:last-child {
-  font-size: 0.8em;
+  font-size: .8em;
   letter-spacing: 5px;
 }
+
 footer.footer .col:nth-child(1) span:first-of-type {
   text-align: center;
   text-transform: uppercase;
@@ -335,7 +429,7 @@ header.top .content .box button.watch, section.main .switcher button:first-child
   font-weight: bolder;
   text-transform: uppercase;
   border: 0;
-  border-radius: 0.5em;
+  border-radius: .5em;
   margin-bottom: 1em;
   outline: none;
 }
@@ -345,19 +439,36 @@ header.top .content .box button.watch, section.main .switcher button:first-child
   right: 3em;
   top: 1em;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
-.buttons #searchIcon {
+
+#searchIcon {
   position: relative;
-  top: 6px;
+  top: 5px;
 }
-.buttons #search_field {
+
+#search_field {
   border-radius: 0px;
   height: 27px;
   width: 0em;
   outline: none;
   padding-left: 0px;
+  -webkit-transition: all ease 500ms;
   transition: all ease 500ms;
+}
+
+#mobileSearch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+  width: auto;
 }
 
 header.top .content .box button.trailer, section.main .switcher button:last-child {
@@ -368,7 +479,7 @@ header.top .content .box button.trailer, section.main .switcher button:last-chil
   text-transform: uppercase;
   border: 0;
   border: solid 1px #959595;
-  border-radius: 0.5em;
+  border-radius: .5em;
   outline: none;
 }
 
@@ -376,70 +487,91 @@ header.top .content .box button.trailer, section.main .switcher button:last-chil
   color: #ffff;
   background: #080E1A;
 }
+
 #search #wrapper {
+  display: -ms-grid;
   display: grid;
   margin-top: 3em;
   margin-bottom: 2em;
   position: relative;
   left: 17rem;
   width: 52rem;
-  grid-template-columns: 25rem 25rem;
-  grid-template-rows: 15rem auto;
+  -ms-grid-columns: 25rem 25rem;
+      grid-template-columns: 25rem 25rem;
+  -ms-grid-rows: 15rem auto;
+      grid-template-rows: 15rem auto;
   border: 1px solid #162341;
   border-radius: 14px;
 }
+
 #search #wrapper #poster {
   background: #080E1A;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
   grid-row: 1/3;
 }
+
 #search #wrapper #poster img {
   height: 28rem;
   width: 22rem;
   padding-left: 4rem;
   padding-top: 1.5rem;
 }
+
 #search #wrapper #details {
   background: #080E1A;
 }
+
 #search #wrapper #details ul {
   list-style: none;
   position: relative;
   top: 3em;
 }
+
 #search #wrapper #details ul li {
   padding-bottom: 1em;
 }
+
 #search #wrapper #descrip {
   background: #080E1A;
   line-height: 23px;
 }
 
 @media all and (max-width: 1149px) {
-  body {
+  html, body {
+    margin: 0;
     overflow-x: hidden;
+    max-width: 100%;
   }
-
   .nav-open {
     clip-path: circle(25in at 10% 15%) !important;
     -webkit-clip-path: circle(25in at 10% 15%) !important;
   }
-
   .fixed {
     position: fixed !important;
   }
-
   .mb-navbar {
     position: fixed;
     z-index: 999;
     background: #F4311E;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 100%;
     clip-path: circle(100px at 0% -40%);
     -webkit-clip-path: circle(100px at 0% -40%);
+    -webkit-transition: all 500ms ease-out;
     transition: all 500ms ease-out;
   }
   .mb-navbar ul {
@@ -458,11 +590,9 @@ header.top .content .box button.trailer, section.main .switcher button:last-chil
     color: #fff;
     font-weight: bolder;
   }
-
   .sideNav {
     display: none !important;
   }
-
   header.top nav .mb-menu {
     display: initial;
     margin-right: 1em;
@@ -470,20 +600,19 @@ header.top .content .box button.trailer, section.main .switcher button:last-chil
     position: relative;
     z-index: 999;
   }
-
   header.top {
     background-position: center;
   }
   header.top .content .box button {
     margin-bottom: 1.1em;
   }
-
   header.top .content {
     width: 100%;
   }
   header.top .content .box {
     padding: 0 1em;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     width: 100% !important;
   }
   header.top .content .box p.description {
@@ -493,28 +622,46 @@ header.top .content .box button.trailer, section.main .switcher button:last-chil
     font-size: 2.5em;
     width: 70%;
   }
-
   header.top nav {
-    padding: 0 0.5em;
+    padding: 0.5em;
     width: 100%;
   }
   header.top nav .buttons {
-    flex: 0.2;
+    -webkit-box-flex: .2;
+        -ms-flex: .2;
+            flex: .2;
   }
-
   footer.footer {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     height: 15em;
   }
-
+  #mobileSearch {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    bottom: 1em;
+    left: 3em;
+    margin: 0 auto;
+  }
   #search {
     color: #ffff;
     background: #080E1A;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 90%;
-    margin: 0 auto;
+    margin-right: 0px;
     overflow-x: hidden;
   }
   #search #wrapper {
@@ -522,8 +669,8 @@ header.top .content .box button.trailer, section.main .switcher button:last-chil
     margin-top: 3em;
     margin-bottom: 2em;
     position: relative;
+    margin-left: 0.5em;
     left: 0em;
-    margin: auto;
     width: 90%;
     border: 1px solid #162341;
     border-radius: 14px;
@@ -533,8 +680,8 @@ header.top .content .box button.trailer, section.main .switcher button:last-chil
   }
   #search #wrapper #poster img {
     height: 22rem;
-    width: 90%;
-    padding-left: 0rem;
+    width: 231.47px;
+    padding-left: 1rem;
     padding-top: 2rem;
   }
   #search #wrapper #details {
@@ -557,30 +704,4 @@ header.top .content .box button.trailer, section.main .switcher button:last-chil
     padding-left: 10px;
   }
 }
-/*
-#search {
-
-    display: grid;
-    
-    position: relative;
-    left: 17rem;
-    grid-template-columns: 25rem 25rem;
-    grid-template-rows: 15rem 15rem;
-
-    #box1{
-        background: orange;
-        grid-row: 1/3;
-    }
-
-    #box2 {
-        background: #F4311E;
-
-    }
-
-    #box3 {
-        background: green;
-    }
-}
-*/
-
 /*# sourceMappingURL=home.css.map */

@@ -7,7 +7,9 @@
   font-family: Montserrat;
   color: #FFFFFF;
   font-weight: lighter;
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   text-transform: uppercase;
 }
 
@@ -17,43 +19,56 @@ body {
   width: 100%;
   height: auto;
   overflow-x: auto;
-  font-family: "Montserrat", "sans-serif";
+  font-family: 'Montserrat' , 'sans-serif';
 }
 
 #sideNav {
   position: fixed;
   height: 100%;
   width: 7em;
+  -webkit-transition: all ease 500ms;
   transition: all ease 500ms;
   z-index: 1;
   margin-left: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   background-color: #fff;
   overflow: hidden;
 }
+
 #sideNav span.menu img {
   width: 2em;
 }
+
 #sideNav span.menu {
   position: absolute;
   left: 2.3em;
   padding: 2em 0;
   position: relative;
 }
+
 #sideNav span.menu::after {
-  content: "MENU";
+  content: 'MENU';
   left: 8em;
   position: absolute;
 }
+
 #sideNav img {
   cursor: pointer;
 }
+
 #sideNav span.settings img {
   width: 2.2em;
   margin-bottom: 1em;
 }
+
 #sideNav span.settings {
   position: absolute;
   z-index: 2;
@@ -62,52 +77,62 @@ body {
   width: 25em;
   cursor: pointer;
 }
+
 #sideNav span.settings::after {
-  content: "SETTINGS";
-  top: 0.5em;
+  content: 'SETTINGS';
+  top: .5em;
   left: 7.5em;
   position: absolute;
 }
+
 #sideNav ul li img {
   width: 2.8em;
 }
+
 #sideNav ul li {
   margin: 3em 0;
   position: relative;
   right: 2.5em;
   cursor: pointer;
 }
+
 #sideNav ul a:first-child li:nth-child(1) {
   position: relative;
 }
+
 #sideNav ul a:first-child li:nth-child(1)::after {
-  content: "HOME";
+  content: 'HOME';
   left: 8.4em;
-  top: 0.8em;
+  top: .8em;
   position: absolute;
 }
+
 #sideNav ul a:nth-child(2) li:nth-child(1) {
   position: relative;
   width: 25em;
 }
+
 #sideNav ul a:nth-child(2) li:nth-child(1)::after {
-  content: "TV SHOWS";
+  content: 'TV SHOWS';
   text-align: center;
   left: 7.4em;
-  top: 0.2em;
+  top: .2em;
   position: absolute;
 }
+
 #sideNav ul a:nth-child(3) li:nth-child(1) {
   position: relative;
 }
+
 #sideNav ul a:nth-child(3) li:nth-child(1)::after {
-  content: "About us";
+  content: 'About us';
   text-transform: uppercase;
   text-align: center;
   left: 7.4em;
-  top: 0.5em;
+  top: .5em;
   position: absolute;
 }
+
 #sideNav ul {
   position: absolute;
   top: 7em;
@@ -116,13 +141,17 @@ body {
 }
 
 #company {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding-top: 10em;
 }
+
 #company img {
   position: relative;
   left: 4.5em;
 }
+
 #company h2 {
   font-family: Montserrat;
   font-weight: bolder;
@@ -131,6 +160,7 @@ body {
   font-size: 40px;
   padding-left: 1.65em;
 }
+
 #company p {
   font-family: Montserrat;
   font-size: 18px;
@@ -140,10 +170,13 @@ body {
 }
 
 #values {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding-top: 0em;
   padding-bottom: 0em;
 }
+
 #values h2 {
   font-weight: bolder;
   color: #FFFFFF;
@@ -152,6 +185,7 @@ body {
   padding-left: 3em;
   font-family: Montserrat;
 }
+
 #values p {
   font-family: Montserrat;
   font-size: 18px;
@@ -173,6 +207,7 @@ body {
   text-align: center;
   font-family: sans-serif;
 }
+
 #contact_link a {
   text-decoration: none;
   color: #FFFFFF;
@@ -190,6 +225,7 @@ body {
   width: 100%;
   background-color: #070B14;
 }
+
 .footer .flogo {
   display: block;
   position: relative;
@@ -198,6 +234,7 @@ body {
   float: left;
   text-align: center;
 }
+
 .footer .flogo #underlogo {
   font-family: Montserrat;
   color: #646464;
@@ -205,6 +242,7 @@ body {
   letter-spacing: 3px;
   text-transform: uppercase;
 }
+
 .footer .flogo p {
   position: relative;
   bottom: 2em;
@@ -214,14 +252,20 @@ body {
   font-size: 12px;
   font-weight: lighter;
 }
+
 .footer #socialMediaIcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: relative;
   padding-top: 5em;
   left: 25%;
   width: 12em;
 }
+
 .footer #rights {
   position: relative;
   float: right;
@@ -236,12 +280,17 @@ body {
   position: fixed;
   height: 100%;
   width: 25em;
+  -webkit-transition: all ease 500ms;
   transition: all ease 500ms;
   z-index: 7;
   margin-left: 0px;
   display: none;
-  flex-direction: column;
-  box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   background-color: #fff;
   overflow: hidden;
 }
@@ -263,28 +312,35 @@ body {
     top: 5px;
     z-index: 999;
   }
-
   .nav-open {
     clip-path: circle(25in at 10% 15%) !important;
     -webkit-clip-path: circle(25in at 10% 15%) !important;
   }
-
   .fixed {
     position: fixed !important;
   }
-
   .mb-navbar {
     position: fixed;
     z-index: 999;
     background: #F4311E;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 100%;
     clip-path: circle(100px at 0% -40%);
     -webkit-clip-path: circle(100px at 0% -40%);
+    -webkit-transition: all 500ms ease-out;
     transition: all 500ms ease-out;
   }
   .mb-navbar ul {
@@ -304,7 +360,6 @@ body {
     color: #fff;
     font-weight: bolder;
   }
-
   .logo {
     position: relative;
     margin: 0 auto;
@@ -316,31 +371,34 @@ body {
     text-align: center;
     text-transform: uppercase;
   }
-
   body {
     margin: 0px;
     height: auto;
     max-width: 100%;
     overflow-x: hidden;
   }
-
   #sideNav {
     display: none;
   }
-
   main {
     padding: 0px;
     max-width: 100%;
   }
-
   #company {
     position: relative;
     top: 1em;
     margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     max-width: 100%;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   #company img {
     position: relative;
@@ -365,15 +423,21 @@ body {
     padding-right: 0em;
     text-align: center;
   }
-
   #values {
     position: relative;
     top: 3em;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
     margin: 0 auto;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   #values h2 {
     margin-left: 1em;
@@ -395,19 +459,24 @@ body {
     margin: 0 auto;
     max-width: 60%;
   }
-
   #contact_link {
     text-align: center;
   }
-
   .footer {
     position: relative;
     top: 3em;
     margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .footer .flogo {
     display: inline-block;
@@ -418,8 +487,12 @@ body {
     text-align: center;
   }
   .footer #socialMediaIcon {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     position: relative;
     padding-top: 2em;
     left: 0em;
@@ -440,5 +513,4 @@ body {
     margin: 0 auto;
   }
 }
-
 /*# sourceMappingURL=about.css.map */
