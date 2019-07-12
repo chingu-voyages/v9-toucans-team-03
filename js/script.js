@@ -404,7 +404,7 @@ return get();
             
                         const output = `
                         
-                        <div id="wrapper"  >
+                        <div id="wrapper"  > 
             
                     <div id="poster" 
                     
