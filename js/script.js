@@ -1,5 +1,7 @@
+$(window).on('load' , ()=>{
+    $('.container_load').fadeOut('slow')
+})
 
-const menu = document.querySelector('#menu');
 let clicks = 0;
 const sideNav = document.querySelector('.sideNav');
 const movies_api = '2db0c43524a948edd34445269d54997d';
@@ -171,7 +173,6 @@ function trailer() {
 
     trailerButton.onclick = () => {
         const id = document.querySelector('.idm').innerText;
-        console.log(id);
         const id_b = id;
         localStorage.setItem('movie_id', id_b)
         window.location.href = 'view.html'
@@ -224,7 +225,6 @@ searchIcon.addEventListener('click', event => {
 
         function get(){
         let searchItem = document.querySelector('#search_field').value;
-        console.log(searchItem.length);
 
      let settings = {
         "async": true,
@@ -237,7 +237,6 @@ searchIcon.addEventListener('click', event => {
       
       $.ajax(settings).done(function (response) {
         let results = response.results;
-        console.log(results.length);
         results.forEach( results => {
             const search = document.querySelector('#search');
             
@@ -358,7 +357,6 @@ return get();
               $.ajax(settings).done(function (response) {
                 let results = response.results;
                 results.forEach( results => {
-                    console.log(results)
                     const search = document.querySelector('#search');
                     if(results.media_type == "movie") {
                         let date = results.release_date;
@@ -572,5 +570,3 @@ tv_show_btn.onclick = ()=>{
     })
 
 }
-
-

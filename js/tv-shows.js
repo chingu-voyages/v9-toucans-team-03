@@ -1,7 +1,20 @@
+$(window).on('load' , ()=>{
+    console.log('works')
+    $('.container_load').fadeOut('slow')
+})
+
 const Api = '2db0c43524a948edd34445269d54997d';
 const menu = document.querySelector('#menu');
 const sideNav = document.querySelector('.sideNav');
 let clicks = 0;
+const menu_mb = document.querySelector('#col-menu');
+const lists = document.querySelector('.mb-navbar')
+menu_mb.addEventListener('click' , ()=>{
+  const ths = document.querySelector('#col-menu');
+  lists.classList.toggle("nav-open");
+  ths.classList.toggle('fixed')
+
+})
 let tv_shows = [
     {
         url:`https://api.themoviedb.org/3/tv/popular?api_key=${Api}&language=en-US&page=1`,
@@ -44,7 +57,6 @@ function get_crime(url){
     fetch(url)
     .then(res => res.json())
     .then(data =>{
-        console.log(data)
         const results = data.results;
         results.forEach(tv_show => {
             

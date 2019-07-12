@@ -350,6 +350,7 @@ footer.footer{
     border-radius: .5em;
     margin-bottom: 1em;
     outline:none;
+    cursor:  no-drop;
 }
 .buttons{
     position: relative;
@@ -393,6 +394,7 @@ footer.footer{
     border:solid 1px #959595;
     border-radius: .5em;
     outline:none;
+    cursor: pointer;
 }
 //End Classes-
 
@@ -638,4 +640,6 @@ footer.footer{
 
 
 }
-
+@import './loading'
+  // Basic bits
+ 
