@@ -12,32 +12,42 @@
 </head>
 
 <body>
-  <div class="mb-navbar">
-    <ul>
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="about.html">ABOUT</a></li>
-      <li><a href="contact.html">CONTACT</a></li>
+    <div class='container_load' aria-bus="true" aria-describedby="main-status">
+        <div role="progressbar" id="main-status" aria-valuemin="0" aria-valuemax="100"
+            aria-label="Loading your content"></div>
+    </div>
+    <div class="mb-navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Tv shows</a></li>
+            <li><a href="contact.html">About us</a></li>
 
-    </ul>
-  </div>
+        </ul>
+    </div>
     <header class='top'>
         <div class="sideNav">
             <span id='menu' class='menu'><img src="images/icons/Menu icon.png" alt=""> </span>
             <ul>
-                <a href="index.html"><li><img src="images/icons/home.svg" alt=""></li>                </a>
-                <a href="tv-shows.html"><li><img src="images/icons/television.svg" alt=""></li></a> 
-                <a href="about.html"><li><img src="images/icons/info.svg" alt=""></li>                </a>
+                <a href="index.html">
+                    <li><img src="images/icons/home.svg" alt=""></li>
+                </a>
+                <a href="tv-shows.html">
+                    <li><img src="images/icons/television.svg" alt=""></li>
+                </a>
+                <a href="about.html">
+                    <li><img src="images/icons/info.svg" alt=""></li>
+                </a>
             </ul>
             <span class='settings'><img src="images/icons/cogwheel.png" alt=""></span>
         </div>
         <nav>
-          <span id='col-menu' class="mb-menu"><i class="fas fa-bars fa-2x"></i></span>
+            <span id='col-menu' class="mb-menu"><i class="fas fa-bars fa-2x"></i></span>
             <h1 class='logo'>Ruvver</h1>
             <div class="buttons">
                 <span><i class="fas fa-search fa-lg"></i></span>
             </div>
         </nav>
-        <div  class="content">
+        <div class="content">
             <div class="box">
                 <span class="type"></span>
                 <span class="title"></span>
@@ -53,20 +63,20 @@
     <section class='main'>
 
         <div class="movies">
-            <div  class="row">
-                    <h1>Trending now</h1>
-                <ul  id="trending" class="list-movies">
+            <div class="row">
+                <h1>Trending now</h1>
+                <ul id="trending" class="list-movies">
 
                 </ul>
             </div>
             <div class="row">
-                    <h1> Crime</h1>
+                <h1> Crime</h1>
                 <ul id='crime' class="list-movies">
 
                 </ul>
             </div>
             <div class="row">
-                    <h1>Action</h1>
+                <h1>Action</h1>
                 <ul id='action' class="list-movies">
 
                 </ul>
@@ -74,18 +84,18 @@
         </div>
     </section>
     <footer class=footer>
-        <div class="col"><span>RUVVER</span> <br/> <span>entertainment</span></div>
-        <div class="col"><ul>
-            <li><a href="#"><img src="images/icons/facebook-letter-logo.svg" alt=""></a></li>
-            <li><a href="#"><img src="images/icons/twitter-logo.svg" alt=""></a></li>
-            <li><a href="#"><img src="images/icons/youtube-play-button.svg" alt=""></a></li>
-        </ul></div>
+        <div class="col"><span>RUVVER</span> <br /> <span>entertainment</span></div>
+        <div class="col">
+            <ul>
+                <li><a href="#"><img src="images/icons/facebook-letter-logo.svg" alt=""></a></li>
+                <li><a href="#"><img src="images/icons/twitter-logo.svg" alt=""></a></li>
+                <li><a href="#"><img src="images/icons/youtube-play-button.svg" alt=""></a></li>
+            </ul>
+        </div>
         <div class="col"><span> © 2019 All right reserved</span></div>
     </footer>
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="js/tv-shows.js"></script>
 </body>
 

@@ -1,3 +1,6 @@
+$(window).on('load' , ()=>{
+    $('.container_load').fadeOut('slow')
+})
 const api_key = '2db0c43524a948edd34445269d54997d';
 const id = localStorage.getItem('movie_id');
 const type = localStorage.getItem('type');
