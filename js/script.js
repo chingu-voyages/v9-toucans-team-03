@@ -262,12 +262,11 @@ searchIcon.addEventListener('click', event => {
                 </div>
         
                 </div>
-        
-                    
                     
                     `
                 
                 $(search).append(output)
+                
     
             } else {
                 let date = results.first_air_date;
@@ -278,32 +277,32 @@ searchIcon.addEventListener('click', event => {
                 
                 <div id="wrapper"  >
     
-            <div id="poster" 
+                <div id="poster" 
             
-            ><img class='pic'  src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
-            </div>
-            <span class='idj' style="display:none">${results.id}</span>
-            <div id="details" 
-            ><ul>
-            <li id='title'>Title: ${results.original_name}</li>
-            <li>First aired: ${makefine}</li>
-            
+                ><img class='pic'  src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+                </div>
+                <span class='idj' style="display:none">${results.id}</span>
+                <div id="details" 
+                ><ul>
+                <li id='title'>Title: ${results.original_name}</li>
+                <li>First aired: ${makefine}</li>
+                
 
-            <li>Rating: ${results.vote_average}</li>
-            
-            </ul>
-            </div>
-    
-            <div id="descrip"
-            ><p> Description:<br/>${results.overview}</p>
-            
-            </div>
-    
-             </div>
-    
+                <li>Rating: ${results.vote_average}</li>
                 
+                </ul>
+                </div>
+        
+                <div id="descrip"
+                ><p> Description:<br/>${results.overview}</p>
                 
-                `
+                </div>
+        
+                </div>
+        
+                    
+                    
+                    `
                 
                 $(search).append(output)
             }
@@ -370,7 +369,7 @@ return get();
                     <span class='idj' style="display:none">${results.id}</span>
                     <div id="details" 
                     ><ul>
-                    <li id='title'>Title: ${results.title}</li>
+                    <li class='title'>Title: ${results.title}</li>
                     <li>Release: ${makefine}</li>
                   
 
@@ -409,7 +408,7 @@ return get();
                     <span class='idj' style="display:none">${results.id}</span>
                     <div id="details" 
                     ><ul>
-                    <li id='title'>Title: ${results.original_name}</li>
+                    <li class='title'>Title: ${results.original_name}</li>
                     <li>First aired: ${makefine}</li>
                     
 
@@ -446,18 +445,24 @@ return get();
 
 });
 
-    const movie = document.querySelector('#title');
-    const br = document.querySelector('.pic');
-    const trailerButton = document.querySelector('#wrapper ');
+function sview(){
+    const movie = document.querySelectorAll('.title');
+    const br = document.querySelectorAll('.pic')
+    for(let i = 0 ; i < results.length ; i++){
+       const sd = br[i];
+       sd.onclick = ()=>{
+           const id = sd.getElementsByClass('idj');
+           const id_b = id[0].innerText;
+           localStorage.setItem('movie_id', id_b)
+           window.location.href= 'view.html'
 
-    trailerButton.onclick = () => {
-        const id = document.querySelector('.idj').innerText;
-        console.log(id);
-        const id_b = id;
-        localStorage.setItem('movie_id', id_b)
-        window.location.href = 'view.html'
+       }
 
     }
+
+    
+
+}
 
 
 
