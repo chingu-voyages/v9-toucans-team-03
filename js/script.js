@@ -261,7 +261,7 @@ searchIcon.addEventListener('click', event => {
             <div id="details" 
             ><ul>
             <li>Title: ${results.title}</li>
-            <li>Release: ${makefine}</li>
+            
             <li>Rating: ${results.vote_average}</li>
            
             </ul>
@@ -377,7 +377,7 @@ return get();
                     ><ul>
                     <li class='title'>Title: ${results.title}</li>
                     <li>Release: ${makefine}</li>
-                    <li><${results.id}/li>
+                    
                     <li>Rating: ${results.vote_average}</li>
                     
                     </ul>
