@@ -324,7 +324,7 @@ setTimeout(function(){
                 
                             const output = `
                             
-                            <div id="wrapper"  > 
+                            <div id="wrapper" onclick="button();" > 
                 
                         <div id="poster" 
                         
@@ -365,10 +365,27 @@ setTimeout(function(){
             }
            
             $(result).empty();
-             const heading = `<h2> Search Results <h2>`;
-            $(search).append(heading);
+             
             return get();
         }
     
     
     });
+
+    
+
+    
+        
+        
+    
+        function button() {
+            const id = document.querySelector('.idj').innerText;
+            const id_b = id;
+            localStorage.setItem('movie_id', id_b)
+            localStorage.setItem('type', 'tv-show')
+            window.location.href = 'view.html'
+    
+        
+
+        }
+    

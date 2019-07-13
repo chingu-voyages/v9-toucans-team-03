@@ -206,7 +206,10 @@ function value() {
     return Item.length;
 }
 
+
 const result = document.querySelector('#search');
+
+const div = document.querySelector('#search').value;
 
 let Item = document.querySelector('#search_field').value;
 
@@ -224,7 +227,8 @@ searchIcon.addEventListener('click', event => {
          searchIcon.addEventListener('click', event => {
 
         function get(){
-        let searchItem = document.querySelector('#search_field').value;
+
+    let searchItem = document.querySelector('#search_field').value;
 
      let settings = {
         "async": true,
@@ -248,7 +252,7 @@ searchIcon.addEventListener('click', event => {
     
                 const output = `
                 
-                <div id="wrapper"  >
+                <div id="wrapper" onclick="button();" >
     
                 <div id="poster" 
                 
@@ -259,7 +263,7 @@ searchIcon.addEventListener('click', event => {
     
             <div id="details" 
             ><ul>
-            <li>Title: ${results.title}</li>
+            <li class="title">Title: ${results.title}</li>
             
             <li>Rating: ${results.vote_average}</li>
            
@@ -291,9 +295,9 @@ searchIcon.addEventListener('click', event => {
 
 }
 
-$(result).empty();
-const heading = `<h2> Search Results <h2>`;
-$(search).append(heading);
+$(result).empty()
+
+
 return get();
 }
 )
@@ -325,13 +329,13 @@ return get();
                 let results = response.results;
                 results.forEach( results => {
                     const search = document.querySelector('#search');
-                    if(results.media_type == "movie") {
+                    if(results.media_type == "movie" && searchItem.length > 0) {
                         let date = results.release_date;
                         let year = date.toString();
                         let makefine = year.slice(0,4);
                         const output = `
                         
-                        <div id="wrapper"  >
+                        <div id="wrapper" onclick='button();' >
             
                     <div id="poster" 
                     
@@ -346,6 +350,7 @@ return get();
                     <li>Rating: ${results.vote_average}</li>
                     
                     </ul>
+                    <a class="watch">Watch Trailer</a>
                     </div>
             
                     <div id="descrip"
@@ -361,6 +366,8 @@ return get();
                         `
                         
                         $(search).append(output)
+
+                        
             
                     } else {
                         return
@@ -374,9 +381,12 @@ return get();
         }
 
         $(result).empty();
-        const heading = `<h2> Search Results <h2>`;
-        $(search).append(heading);
+       
+        
+        
+        
         return get();
+        
     }
 
 
@@ -384,6 +394,19 @@ return get();
 
 
 
+    
+      
+    
+       function button(){
+            const id = document.querySelector('.idj').innerText;
+            const id_b = id;
+            localStorage.setItem('movie_id', id_b)
+            localStorage.setItem('type', 'movie')
+            window.location.href = 'view.html'
+    
+        
+
+        };
 
 
 
