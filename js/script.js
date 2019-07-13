@@ -350,7 +350,7 @@ return get();
                     <li>Rating: ${results.vote_average}</li>
                     
                     </ul>
-                    <a class="watch">Watch Trailer</a>
+                    
                     </div>
             
                     <div id="descrip"
