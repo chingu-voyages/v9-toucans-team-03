@@ -16,7 +16,7 @@ if(type == 'tv-show'){
         const over = document.querySelector('.description-pr');
         const poster = document.querySelector('#poster');
         const background = json.backdrop_path;
-        const url = `http://image.tmdb.org/t/p/original//${background}`;
+        const url = `https://image.tmdb.org/t/p/original//${background}`;
         $('section.main').css('background-image', `linear-gradient(rgba(0, 0, 0, 0.700),rgba(0, 0, 0, 0.700)) , url(${url})`)
         title.innerHTML = json.name;
         type.innerHTML = json.genres[0].name;
