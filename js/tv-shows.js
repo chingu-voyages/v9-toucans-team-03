@@ -1,5 +1,5 @@
 $(window).on('load' , ()=>{
-    console.log('works')
+    
     $('.container_load').fadeOut('slow')
 })
 
@@ -185,3 +185,190 @@ setTimeout(function(){
     document.querySelector('.description_hd').textContent = shorten + '...';
     }
     }, 1500)
+
+    function value() {
+        let Item = document.querySelector('#search_field').value;
+    
+        return Item.length;
+    }
+    
+    const result = document.querySelector('#search');
+    
+    let Item = document.querySelector('#search_field').value;
+    
+    const searchField =  document.querySelector('#search_field');
+    
+    const searchIcon = document.querySelector('#searchIcon');
+    
+    searchIcon.addEventListener('click', event => {
+        if (searchField.style.width == '0em') {
+    
+          searchField.style.width = '12em'  ;
+          searchField.style.paddingLeft = '4px' ;
+          searchField.style.borderRadius = '8px';
+           
+             searchIcon.addEventListener('click', event => {
+    
+            function get(){
+            let searchItem = document.querySelector('#search_field').value;
+    
+         let settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": `https://api.themoviedb.org/3/search/multi?include_adult=false&page=1&query=${searchItem}&language=en-US&api_key=2db0c43524a948edd34445269d54997d`,
+            "method": "GET",
+            "headers": {},
+            "data": "{}"
+          }
+          
+          $.ajax(settings).done(function (response) {
+            let results = response.results;
+            results.forEach( results => {
+                const search = document.querySelector('#search');
+                
+                if(results.media_type == "tv") {
+                    let date = results.first_air_date;
+                    let year = date.toString();
+                    let makefine = year.slice(0,4);
+
+                    
+        
+                    const output = `
+                    
+                    <div id="wrapper"  >
+        
+                    <div id="poster" 
+                
+                    ><img class='pic'  src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+                    </div>
+                    <span class='idj' style="display:none">${results.id}</span>
+                    <div id="details" 
+                    ><ul>
+                    <li id='title'>Title: ${results.original_name}</li>
+                    <li>First aired: ${makefine}</li>
+                    
+    
+                    <li>Rating: ${results.vote_average}</li>
+                    
+                    </ul>
+                    </div>
+            
+                    <div id="descrip"
+                    ><p> Description:<br/>${results.overview}</p>
+                    
+                    </div>
+            
+                    </div>
+            
+                        
+                        
+                        `
+                    
+                    $(search).append(output)
+                    
+                   
+                    
+        
+                } else {
+                    return
+                }
+        
+                
+                
+            })
+          });
+    
+    }
+   
+
+    $(result).empty();
+     const heading = `<h2> Search Results <h2>`;
+    $(search).append(heading);
+    return get();
+    }
+    )
+    
+    
+            
+        } else if (value() == 0 ) {
+        searchField.style.borderRadius = '0px';
+          searchField.style.width = '0em';
+          searchField.style.paddingLeft = '0px' ;
+        }
+      });
+    
+      searchField.addEventListener('keypress', function (e) {
+        let key = e.which || e.keyCode;
+        if (key === 13) { 
+            function get(){
+                let searchItem = document.querySelector('#search_field').value;
+                let settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": `https://api.themoviedb.org/3/search/multi?include_adult=false&page=1&query=${searchItem}&language=en-US&api_key=2db0c43524a948edd34445269d54997d`,
+                    "method": "GET",
+                    "headers": {},
+                    "data": "{}"
+                  }
+                  
+                  $.ajax(settings).done(function (response) {
+                    let results = response.results;
+                    results.forEach( results => {
+                        const search = document.querySelector('#search');
+                        if(results.media_type == "tv") {
+                            let date = results.first_air_date;
+                            let year = date.toString();
+                            let makefine = year.slice(0,4);
+                            
+                           
+                
+                            const output = `
+                            
+                            <div id="wrapper"  > 
+                
+                        <div id="poster" 
+                        
+                        ><img  class='pic' src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
+                        </div>
+                        <span class='idj' style="display:none">${results.id}</span>
+                        <div id="details" 
+                        ><ul>
+                        <li class='title'>Title: ${results.original_name}</li>
+                        <li>First aired: ${makefine}</li>
+                        
+    
+                        <li>Rating: ${results.vote_average}</li>
+                        
+                        </ul>
+                        </div>
+                
+                        <div id="descrip"
+                        ><p> Description:<br/>${results.overview}</p>
+                        
+                        </div>
+                
+                         </div>
+                
+                            `
+                            
+                            $(search).append(output)
+                
+                        } else {
+                            return
+                        }
+                
+                        
+                        
+                    })
+                  });
+            
+            }
+           
+            $(result).empty();
+             const heading = `<h2> Search Results <h2>`;
+            $(search).append(heading);
+            return get();
+        }
+    
+    
+    });

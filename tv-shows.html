@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="sass/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,500,600,700&display=swap" rel="stylesheet">
-    <title>Home</title>
+    <title>TV Shows</title>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
     <div class="mb-navbar">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">Tv shows</a></li>
+            <li><a href="tv-shows.html">Tv Shows</a></li>
             <li><a href="contact.html">About us</a></li>
 
         </ul>
@@ -44,7 +44,10 @@
             <span id='col-menu' class="mb-menu"><i class="fas fa-bars fa-2x"></i></span>
             <h1 class='logo'>Ruvver</h1>
             <div class="buttons">
-                <span><i class="fas fa-search fa-lg"></i></span>
+                <div id="mobileSearch">
+                    <input type="search" name="search" placeholder="Search" id="search_field" >
+                     <span><i id="searchIcon" class="fas fa-search fa-lg"></i></span>
+                </div>
             </div>
         </nav>
         <div class="content">
@@ -60,6 +63,10 @@
         </div>
         <div class="blur"></div>
     </header>
+    <div id="search" >
+        
+
+    </div>
     <section class='main'>
 
         <div class="movies">

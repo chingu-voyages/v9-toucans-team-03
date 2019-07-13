@@ -42,7 +42,7 @@ html, body{
 .mb-navbar{
   display: none;
 }
-//Header start
+
 header.top{
     height:100%;
     width:100%;
@@ -220,8 +220,8 @@ header.top{
     bottom:-1.5em;
     filter: blur(40px)
 }
-//Header end
-//Main Section
+
+
 .active{
     background-color:#F4311E !important;
     border:0;
@@ -293,8 +293,8 @@ section.main{
         }
     }
 }
-//Main Section end
-//Footer Start
+
+
 footer.footer{
     background-color:#060B14;
     height:10em;
@@ -337,9 +337,9 @@ footer.footer{
     }
 }
 
-//Footer end
 
-//Classes
+
+
 %watch-button{
     background-color:#F4311E;
     padding:10px 25px;
@@ -360,29 +360,7 @@ footer.footer{
     display: flex;
 }
 
-    #searchIcon{
-        position: relative;
-        top: 5px;
-    }
-
-
-    #search_field {
-        border-radius: 0px;
-        
-        height: 27px;
-        width: 0em;
-        outline: none;
-        padding-left: 0px;
-        transition: all ease 500ms;
-
-    }
-
-    #mobileSearch{
-        display: flex;
-        flex-direction: row;
-        position: relative;
-        width: auto;
-    }
+    
 
 %trailer-button{
     background-color:#0F0F0F ;
@@ -398,9 +376,43 @@ footer.footer{
 }
 //End Classes-
 
+#searchIcon{
+    position: relative;
+    top: 5px;
+}
+
+
+#search_field {
+    border-radius: 0px;
+    
+    height: 27px;
+    width: 0em;
+    outline: none;
+    padding-left: 0px;
+    transition: all ease 500ms;
+
+}
+
+#mobileSearch{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: auto;
+}
+
 #search {
+    display: block;
     color:#ffff;
     background: #080E1A;
+    margin-top: 2em;
+
+    h2{
+        
+        margin-left: 1.5em;
+        margin-bottom: 1em;
+        color:#fff;
+        font-weight: bolder;
+    }
     
     
 
@@ -459,7 +471,7 @@ footer.footer{
 
 
 
-//Start responsive
+
 @media all and (max-width:1149px){
 
    html, body {
@@ -558,7 +570,7 @@ footer.footer{
   }
 
 
-  //search field respnsive
+  
 #mobileSearch{
     display: flex;
     position: relative;
@@ -568,7 +580,7 @@ footer.footer{
     
 }
  
- //resposive search results
+ 
   #search {
     color:#ffff;
     background: #080E1A;
@@ -578,6 +590,7 @@ footer.footer{
     width: 95%;
     margin-right: 0px;
     overflow-x: hidden;
+    padding-top: 1em;
     
 
     #wrapper {
@@ -642,5 +655,5 @@ footer.footer{
 
 }
 @import './loading'
-  // Basic bits
+  
  

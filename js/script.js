@@ -198,7 +198,7 @@ setTimeout(()=>{
 }, 4000)
 
 
-//search below
+
  
 function value() {
     let Item = document.querySelector('#search_field').value;
@@ -281,42 +281,7 @@ searchIcon.addEventListener('click', event => {
                 
     
             } else {
-                let date = results.first_air_date;
-                let year = date.toString();
-                let makefine = year.slice(0,4);
-    
-                const output = `
-                
-                <div id="wrapper"  >
-    
-                <div id="poster" 
-            
-                ><img class='pic'  src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
-                </div>
-                <span class='idj' style="display:none">${results.id}</span>
-                <div id="details" 
-                ><ul>
-                <li id='title'>Title: ${results.original_name}</li>
-                <li>First aired: ${makefine}</li>
-                
-
-                <li>Rating: ${results.vote_average}</li>
-                
-                </ul>
-                </div>
-        
-                <div id="descrip"
-                ><p> Description:<br/>${results.overview}</p>
-                
-                </div>
-        
-                </div>
-        
-                    
-                    
-                    `
-                
-                $(search).append(output)
+                return
             }
     
             
@@ -327,6 +292,8 @@ searchIcon.addEventListener('click', event => {
 }
 
 $(result).empty();
+const heading = `<h2> Search Results <h2>`;
+$(search).append(heading);
 return get();
 }
 )
@@ -396,42 +363,7 @@ return get();
                         $(search).append(output)
             
                     } else {
-                        let date = results.first_air_date;
-                        let year = date.toString();
-                        let makefine = year.slice(0,4);
-            
-                        const output = `
-                        
-                        <div id="wrapper"  > 
-            
-                    <div id="poster" 
-                    
-                    ><img  class='pic' src="http://image.tmdb.org/t/p/w500//${results.poster_path}">
-                    </div>
-                    <span class='idj' style="display:none">${results.id}</span>
-                    <div id="details" 
-                    ><ul>
-                    <li class='title'>Title: ${results.original_name}</li>
-                    <li>First aired: ${makefine}</li>
-                    
-
-                    <li>Rating: ${results.vote_average}</li>
-                    
-                    </ul>
-                    </div>
-            
-                    <div id="descrip"
-                    ><p> Description:<br/>${results.overview}</p>
-                    
-                    </div>
-            
-                     </div>
-            
-                        
-                        
-                        `
-                        
-                        $(search).append(output)
+                        return
                     }
             
                     
@@ -442,35 +374,20 @@ return get();
         }
 
         $(result).empty();
+        const heading = `<h2> Search Results <h2>`;
+        $(search).append(heading);
         return get();
     }
 
 
 });
 
-function sview(){
-    const movie = document.querySelectorAll('.title');
-    const br = document.querySelectorAll('.pic')
-    for(let i = 0 ; i < results.length ; i++){
-       const sd = br[i];
-       sd.onclick = ()=>{
-           const id = sd.getElementsByClass('idj');
-           const id_b = id[0].innerText;
-           localStorage.setItem('movie_id', id_b)
-           window.location.href= 'view.html'
-
-       }
-
-    }
-
-    
-
-}
 
 
 
 
-// search above
+
+
 setTimeout(function(){
     const description = document.querySelector('.description_hd').textContent;
     if(description.length > 100 ){
