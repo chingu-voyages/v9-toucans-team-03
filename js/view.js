@@ -1,11 +1,22 @@
 $(window).on('load' , ()=>{
     $('.container_load').fadeOut('slow')
 })
+
+
+window.addEventListener('click', function (e) {
+    if (document.querySelector('.sideNav').contains(e.target)) {
+        return
+    } else {
+        sideNav.style.width = '7em'
+
+    }
+});
 const api_key = '2db0c43524a948edd34445269d54997d';
 const id = localStorage.getItem('movie_id');
 const type = localStorage.getItem('type');
 const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&language=en-US`;
 const url_tv = `https://api.themoviedb.org/3/tv/${id}?api_key=${api_key}&language=en-US`;
+console.log($('.description_hd'))
 if(type == 'tv-show'){
     fetch(url_tv)
     .then(res => res.json())

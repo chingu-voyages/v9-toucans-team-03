@@ -157,8 +157,8 @@ section.main{
     }
     .data{
         display: flex;
-        flex-direction: column;
         justify-content: center;
+        flex-direction: column;
         width: 50%;
         padding-left:.2em;
         height:100%;
@@ -190,6 +190,8 @@ section.main{
             margin-left:.5em;
             margin-bottom: .4em;
             font-size:1.2em;
+            overflow:scroll;
+            height:20%;
             width:80%;
         }
         p.description-pr::after{
@@ -222,6 +224,13 @@ section.main{
         }
         .buttons{
             margin-top: 2em;
+            margin-bottom: 2em;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            button:nth-child(1){
+              cursor: no-drop;
+            }
             button{cursor: pointer;}
         }
     }
@@ -261,6 +270,9 @@ section.main{
     clip-path:circle(25in at 10% 15%) !important;
     -webkit-clip-path:circle(25in at 10% 15%) !important;
   }
+  section.main{
+    height:unset;
+  }
   .fixed{
     position: fixed !important;
     z-index: 999;
@@ -271,6 +283,7 @@ section.main{
     background: #F4311E;
     width: 100%;
     display: flex;
+    cursor: pointer;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -312,7 +325,7 @@ section.main{
     padding: 0 2em;
   }
   body{
-    height: 200vh;
+    // height: 200vh;
   }
   .sideNav{
     display: none
@@ -320,11 +333,16 @@ section.main{
   .cn-bx{
     width: 100%;
     display: flex;
-    justify-content: center;
     height: 100%;
-    align-items: center;
+    position: relative;
+    margin-top: 10%;
+    justify-content: center;
+  }
+  .boxpr{
+    width:14em !important;
   }
 section.main .content{
+  margin-top: 15%;
   width: 100%;
   height:100%;
   flex-direction: column;
@@ -334,6 +352,7 @@ section.main .content{
     align-items: center;
     .titlepr{
       text-align: center;
+      font-size: 3em;
     }
     .titlepr:after{
       content: none;
